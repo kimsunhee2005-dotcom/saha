@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>울릉도 — 동해의 신비로운 섬</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-ocean: #0a1628;
+    --midnight: #06101e;
+    --wave-blue: #1a3a5c;
+    --sea-teal: #1b6ca8;
+    --foam: #a8d5f0;
+    --pearl: #e8f4f8;
+    --gold: #c9a84c;
+    --light-gold: #e8c97a;
+    --text-light: #f0f6fa;
+    --text-dim: #8ab0c8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--midnight);
+    color: var(--text-light);
+    font-family: 'Noto Serif KR', serif;
+    overflow-x: hidden;
+  }
+
+  /* === NAV === */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(6,16,30,0.95), transparent);
+  }
+
+  .nav-logo {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--foam);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* === HERO === */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-ocean {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(27, 108, 168, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(10, 40, 80, 0.5) 0%, transparent 50%),
+      linear-gradient(160deg, #0a1628 0%, #06101e 40%, #091522 70%, #0d1f35 100%);
+  }
+
+  /* Animated wave rings */
+  .wave-rings {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200vw;
+    height: 60vh;
+  }
+
+  .wave-ring {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 1px solid rgba(168, 213, 240, 0.1);
+    animation: wave-expand 8s ease-out infinite;
+  }
+
+  .wave-ring:nth-child(1) { width: 40vw; height: 20vw; animation-delay: 0s; }
+  .wave-ring:nth-child(2) { width: 70vw; height: 35vw; animation-delay: 2s; }
+  .wave-ring:nth-child(3) { width: 100vw; height: 50vw; animation-delay: 4s; }
+  .wave-ring:nth-child(4) { width: 130vw; height: 65vw; animation-delay: 6s; }
+
+  @keyframes wave-expand {
+    0% { opacity: 0.4; transform: translateX(-50%) scaleY(0.3); }
+    100% { opacity: 0; transform: translateX(-50%) scaleY(1); }
+  }
+
+  /* Island silhouette */
+  .island-silhouette {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  .island-silhouette svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Stars */
+  .stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 8%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 20%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 5%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 18%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 88% 10%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 35%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 30%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 28%, rgba(255,255,255,0.4) 0%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #e8f4f8 0%, #a8d5f0 40%, #c9a84c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s 0.2s ease both;
+  }
+
+  .hero-tagline {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: var(--text-dim);
+    letter-spacing: 0.2em;
+    font-weight: 300;
+    animation: fadeInUp 1s 0.4s ease both;
+  }
+
+  .hero-scroll {
+    margin-top: 3.5rem;
+    animation: fadeInUp 1s 0.6s ease both;
+  }
+
+  .scroll-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--foam);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  .scroll-btn:hover { color: var(--gold); }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scroll-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-pulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === INTRO SECTION === */
+  .intro {
+    padding: 8rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .intro-text h2 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--pearl);
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-text h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--text-dim);
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  .intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .stat-card {
+    background: rgba(26, 58, 92, 0.2);
+    border: 1px solid rgba(168, 213, 240, 0.1);
+    border-radius: 2px;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+  }
+
+  .stat-card:hover {
+    border-color: rgba(201, 168, 76, 0.3);
+    background: rgba(26, 58, 92, 0.35);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--light-gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+  }
+
+  /* === SECTION DIVIDER === */
+  .section-divider {
+    text-align: center;
+    padding: 1rem 0;
+    color: var(--gold);
+    font-size: 1.5rem;
+    opacity: 0.4;
+  }
+
+  /* === ATTRACTIONS === */
+  .attractions {
+    padding: 5rem 4rem 8rem;
+    background: linear-gradient(to bottom, transparent, rgba(10, 22, 40, 0.8), transparent);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--pearl);
+  }
+
+  .attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .attraction-card {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    group: true;
+  }
+
+  .attraction-card:first-child {
+    grid-row: span 2;
+  }
+
+  .attraction-bg {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.6s ease;
+  }
+
+  .attraction-card:first-child .attraction-bg {
+    min-height: 520px;
+  }
+
+  .attraction-card:hover .attraction-bg {
+    transform: scale(1.03);
+  }
+
+  /* Beautiful gradient-based attraction cards */
+  .attr-1 { background: linear-gradient(135deg, #0d2b4a 0%, #1a5c8a 40%, #0a3d62 100%); }
+  .attr-2 { background: linear-gradient(135deg, #1a3a2e 0%, #2d6b4f 60%, #0f2820 100%); }
+  .attr-3 { background: linear-gradient(135deg, #2d1a3a 0%, #5c3a7a 60%, #1a0f2a 100%); }
+  .attr-4 { background: linear-gradient(135deg, #3a2210 0%, #8a5c20 60%, #2a1a08 100%); }
+  .attr-5 { background: linear-gradient(135deg, #0a2a3a 0%, #1a6a8a 60%, #061520 100%); }
+
+  /* Decorative pattern overlay */
+  .attraction-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05) 0%, transparent 60%);
+  }
+
+  /* Icon for each card */
+  .attr-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    opacity: 0.4;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .attraction-card:hover .attr-icon {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+
+  .attraction-info {
+    position: relative;
+    z-index: 2;
+  }
+
+  .attraction-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+  }
+
+  .attraction-name {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pearl);
+    margin-bottom: 0.4rem;
+  }
+
+  .attraction-card:first-child .attraction-name {
+    font-size: 2.2rem;
+  }
+
+  .attraction-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 28ch;
+  }
+
+  /* === FOOD SECTION === */
+  .food-section {
+    padding: 6rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 3.5rem;
+  }
+
+  .food-card {
+    border: 1px solid rgba(168, 213, 240, 0.1);
+    padding: 2rem 1.5rem;
+    border-radius: 2px;
+    background: rgba(10, 22, 40, 0.5);
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .food-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+
+  .food-card:hover { 
+    border-color: rgba(201, 168, 76, 0.25);
+    transform: translateY(-4px);
+  }
+
+  .food-card:hover::after { transform: scaleX(1); }
+
+  .food-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .food-name {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--pearl);
+    margin-bottom: 0.5rem;
+  }
+
+  .food-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* === TRAVEL INFO === */
+  .travel-info {
+    padding: 6rem 4rem;
+    background: linear-gradient(135deg, rgba(10, 22, 40, 0.9) 0%, rgba(6, 16, 30, 1) 100%);
+    border-top: 1px solid rgba(168, 213, 240, 0.08);
+  }
+
+  .travel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3.5rem auto 0;
+  }
+
+  .travel-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(168, 213, 240, 0.1);
+    border-radius: 2px;
+    background: rgba(26, 58, 92, 0.15);
+  }
+
+  .travel-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .travel-card h3 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--pearl);
+    margin-bottom: 1rem;
+  }
+
+  .travel-item {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    margin-bottom: 0.7rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .travel-item::before {
+    content: '—';
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* === SEASONS === */
+  .seasons {
+    padding: 6rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .seasons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 3.5rem;
+  }
+
+  .season-card {
+    padding: 2.5rem 1.5rem;
+    border-radius: 2px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .season-card:hover { transform: translateY(-6px); }
+
+  .spring { background: linear-gradient(135deg, #2d1a3a 0%, #4a2060 100%); }
+  .summer { background: linear-gradient(135deg, #0a2a1a 0%, #1a6a3a 100%); }
+  .autumn { background: linear-gradient(135deg, #3a1a0a 0%, #8a4010 100%); }
+  .winter { background: linear-gradient(135deg, #0a1a3a 0%, #1a3a7a 100%); }
+
+  .season-emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .season-name {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pearl);
+    margin-bottom: 0.5rem;
+  }
+
+  .season-months {
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+
+  .season-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* === GALLERY STRIP === */
+  .gallery-strip {
+    padding: 3rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-track {
+    display: flex;
+    gap: 1rem;
+    animation: gallery-scroll 25s linear infinite;
+    width: max-content;
+  }
+
+  .gallery-item {
+    width: 200px;
+    height: 140px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-item-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s;
+  }
+
+  .gallery-item:hover .gallery-item-inner { transform: scale(1.05); }
+
+  .g1 { background: linear-gradient(135deg, #0d2b4a, #2a7ab8); }
+  .g2 { background: linear-gradient(135deg, #1a3a2e, #3d8a60); }
+  .g3 { background: linear-gradient(135deg, #2a1a0a, #8a5030); }
+  .g4 { background: linear-gradient(135deg, #0a1a3a, #2a4a9a); }
+  .g5 { background: linear-gradient(135deg, #2d1a4a, #7a3aaa); }
+  .g6 { background: linear-gradient(135deg, #0a2a2a, #1a7a6a); }
+  .g7 { background: linear-gradient(135deg, #1a1a0a, #6a6a20); }
+  .g8 { background: linear-gradient(135deg, #0a2a4a, #1a6a9a); }
+
+  .gallery-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 0.8rem 0.5rem;
+    background: linear-gradient(transparent, rgba(6,16,30,0.8));
+    font-size: 0.72rem;
+    color: var(--foam);
+    letter-spacing: 0.08em;
+  }
+
+  @keyframes gallery-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* === CTA === */
+  .cta {
+    padding: 8rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(27, 108, 168, 0.2) 0%, transparent 70%);
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta h2 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--pearl);
+    margin-bottom: 1rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 1rem 2.5rem;
+    background: var(--gold);
+    color: var(--midnight);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--light-gold);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--foam);
+    border: 1px solid rgba(168, 213, 240, 0.4);
+    border-radius: 2px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    font-weight: 300;
+    transition: border-color 0.3s, color 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  /* === FOOTER === */
+  footer {
+    padding: 3rem 4rem;
+    border-top: 1px solid rgba(168, 213, 240, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  .footer-text {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.78rem;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .intro { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
+    .attractions { padding: 4rem 2rem; }
+    .attractions-grid { grid-template-columns: 1fr 1fr; }
+    .attraction-card:first-child { grid-column: span 2; }
+    .food-grid { grid-template-columns: 1fr 1fr; padding: 0; }
+    .travel-grid { grid-template-columns: 1fr; }
+    .seasons-grid { grid-template-columns: 1fr 1fr; }
+    .food-section, .seasons, .travel-info, .cta { padding: 4rem 2rem; }
+    footer { padding: 2rem; flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .attractions-grid { grid-template-columns: 1fr; }
+    .attraction-card:first-child { grid-column: span 1; }
+    .food-grid { grid-template-columns: 1fr; }
+    .seasons-grid { grid-template-columns: 1fr; }
+    .intro-stats { grid-template-columns: 1fr 1fr; }
+    .hero-title { font-size: 4.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">鬱陵島</div>
+  <ul class="nav-links">
+    <li><a href="#attractions">관광명소</a></li>
+    <li><a href="#food">먹거리</a></li>
+    <li><a href="#seasons">여행시기</a></li>
+    <li><a href="#travel">교통·숙박</a></li>
+    <li><a href="#cta">여행계획</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ocean"></div>
+  <div class="stars"></div>
+  <div class="wave-rings">
+    <div class="wave-ring"></div>
+    <div class="wave-ring"></div>
+    <div class="wave-ring"></div>
+    <div class="wave-ring"></div>
+  </div>
+  <div class="island-silhouette">
+    <svg viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="islandGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1628"/>
+          <stop offset="100%" stop-color="#060e1a"/>
+        </linearGradient>
+        <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1f38"/>
+          <stop offset="100%" stop-color="#060e1a"/>
+        </linearGradient>
+      </defs>
+      <!-- Sea -->
+      <rect x="0" y="180" width="1440" height="120" fill="url(#seaGrad)" opacity="0.8"/>
+      <!-- Island mountains -->
+      <path d="M0,300 L0,220 Q80,180 120,195 Q180,130 240,140 Q290,80 340,100 Q390,60 420,85 Q460,30 500,55 Q540,10 560,40 Q590,20 610,45 Q640,15 660,35 Q700,0 720,25 Q750,5 770,30 Q810,50 840,45 Q880,30 920,60 Q960,40 990,70 Q1030,50 1060,80 Q1100,100 1130,90 Q1170,70 1200,100 Q1240,120 1280,115 Q1330,130 1380,160 Q1410,175 1440,185 L1440,300 Z" fill="url(#islandGrad)"/>
+      <!-- Water shimmer lines -->
+      <path d="M0,220 Q360,210 720,215 Q1080,220 1440,210" stroke="rgba(168,213,240,0.08)" stroke-width="1" fill="none"/>
+      <path d="M0,240 Q360,232 720,237 Q1080,242 1440,233" stroke="rgba(168,213,240,0.05)" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <p class="hero-subtitle">East Sea · 동해 · 37°30'N</p>
+    <h1 class="hero-title">울릉도</h1>
+    <p class="hero-tagline">시간이 멈춘 곳 · 동해의 비경</p>
+    <div class="hero-scroll">
+      <a href="#intro" class="scroll-btn">
+        <span>아래로</span>
+        <div class="scroll-line"></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+  <div class="intro-text reveal">
+    <h2>대한민국 마지막 <em>신비의 섬</em></h2>
+    <p>경북 울릉군에 속하는 울릉도는 동해 한가운데 솟아오른 화산섬으로, 울창한 원시림과 청정한 바다, 독특한 지형이 어우러진 천혜의 자연환경을 자랑합니다.</p>
+    <p>육지의 때 묻지 않은 순수함을 간직한 이 섬은 연간 35만 명 이상의 관광객이 찾는 한국의 보물입니다. 독도의 관문이기도 한 울릉도에서 특별한 여행의 기억을 만들어보세요.</p>
+  </div>
+  <div class="intro-stats reveal">
+    <div class="stat-card">
+      <div class="stat-number">73<small style="font-size:1.5rem">km²</small></div>
+      <div class="stat-label">섬의 총면적</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">984<small style="font-size:1.5rem">m</small></div>
+      <div class="stat-label">성인봉 해발고도</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">10<small style="font-size:1.5rem">k+</small></div>
+      <div class="stat-label">상주 인구</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">87<small style="font-size:1.5rem">km</small></div>
+      <div class="stat-label">포항에서의 거리</div>
+    </div>
+  </div>
+</section>
+
+<!-- ATTRACTIONS -->
+<section class="attractions" id="attractions">
+  <div class="section-header reveal">
+    <span class="section-label">Attractions</span>
+    <h2 class="section-title">주요 관광명소</h2>
+  </div>
+  <div class="attractions-grid">
+    <div class="attraction-card reveal">
+      <div class="attraction-bg attr-1">
+        <div class="attr-icon">🏔️</div>
+        <div class="attraction-info">
+          <div class="attraction-tag">NATURE · HIKING</div>
+          <h3 class="attraction-name">성인봉</h3>
+          <p class="attraction-desc">울릉도 최고봉으로 해발 984m. 울창한 원시림 속 등산로를 따라 정상에 오르면 섬 전체와 푸른 동해가 파노라마로 펼쳐집니다. 봄철 철쭉꽃 군락이 장관.</p>
+        </div>
+      </div>
+    </div>
+    <div class="attraction-card reveal">
+      <div class="attraction-bg attr-2">
+        <div class="attr-icon">🌿</div>
+        <div class="attraction-info">
+          <div class="attraction-tag">NATURE · CAVE</div>
+          <h3 class="attraction-name">나리분지</h3>
+          <p class="attraction-desc">울릉도 유일의 평지. 화산 폭발로 형성된 분화구에 자리잡은 너른 들판으로, 전통 투막집과 울릉 특산 나물 밭이 어우러집니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="attraction-card reveal">
+      <div class="attraction-bg attr-3">
+        <div class="attr-icon">🌊</div>
+        <div class="attraction-info">
+          <div class="attraction-tag">OCEAN · LANDMARK</div>
+          <h3 class="attraction-name">봉래폭포</h3>
+          <p class="attraction-desc">3단으로 쏟아지는 웅장한 폭포. 성인봉 북쪽 사면에 위치하며 연중 풍부한 수량을 자랑합니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="attraction-card reveal">
+      <div class="attraction-bg attr-4">
+        <div class="attr-icon">🏖️</div>
+        <div class="attraction-info">
+          <div class="attraction-tag">BEACH · SCENERY</div>
+          <h3 class="attraction-name">도동·저동항</h3>
+          <p class="attraction-desc">울릉도의 관문인 도동항과 어업 전진기지 저동항. 밤에 오징어잡이 어선의 불빛이 수평선을 수놓는 장관이 펼쳐집니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="attraction-card reveal">
+      <div class="attraction-bg attr-5">
+        <div class="attr-icon">🗿</div>
+        <div class="attraction-info">
+          <div class="attraction-tag">OCEAN · TOUR</div>
+          <h3 class="attraction-name">해안 일주도로</h3>
+          <p class="attraction-desc">섬을 한 바퀴 돌아보는 44km 해안 드라이브 코스. 코끼리바위, 삼선암, 관음도 등 기암괴석의 절경이 이어집니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div class="gallery-strip">
+  <div class="gallery-track">
+    <div class="gallery-item"><div class="gallery-item-inner g1"></div><div class="gallery-label">성인봉 정상</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g2"></div><div class="gallery-label">나리분지</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g3"></div><div class="gallery-label">도동항 일출</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g4"></div><div class="gallery-label">독도 전경</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g5"></div><div class="gallery-label">봉래폭포</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g6"></div><div class="gallery-label">해안 일주</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g7"></div><div class="gallery-label">울릉 특산물</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g8"></div><div class="gallery-label">오징어 어장</div></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="gallery-item"><div class="gallery-item-inner g1"></div><div class="gallery-label">성인봉 정상</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g2"></div><div class="gallery-label">나리분지</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g3"></div><div class="gallery-label">도동항 일출</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g4"></div><div class="gallery-label">독도 전경</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g5"></div><div class="gallery-label">봉래폭포</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g6"></div><div class="gallery-label">해안 일주</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g7"></div><div class="gallery-label">울릉 특산물</div></div>
+    <div class="gallery-item"><div class="gallery-item-inner g8"></div><div class="gallery-label">오징어 어장</div></div>
+  </div>
+</div>
+
+<!-- FOOD -->
+<section class="food-section" id="food">
+  <div class="section-header reveal">
+    <span class="section-label">Local Cuisine</span>
+    <h2 class="section-title">울릉도 먹거리</h2>
+  </div>
+  <div class="food-grid">
+    <div class="food-card reveal">
+      <span class="food-emoji">🦑</span>
+      <div class="food-name">오징어 물회</div>
+      <div class="food-desc">동해 청정 바다에서 갓 잡아 올린 싱싱한 오징어로 만든 물회. 쫄깃한 식감과 시원한 국물이 일품입니다.</div>
+    </div>
+    <div class="food-card reveal">
+      <span class="food-emoji">🌿</span>
+      <div class="food-name">울릉 산채 비빔밥</div>
+      <div class="food-desc">섬에서 자생하는 각종 희귀 나물로 만든 비빔밥. 육지에서는 맛볼 수 없는 독특한 향과 맛을 자랑합니다.</div>
+    </div>
+    <div class="food-card reveal">
+      <span class="food-emoji">🐟</span>
+      <div class="food-name">따개비 칼국수</div>
+      <div class="food-desc">울릉도 해안 바위에서 채취한 따개비로 우려낸 진하고 구수한 국물의 칼국수. 울릉도 대표 향토 음식.</div>
+    </div>
+    <div class="food-card reveal">
+      <span class="food-emoji">🍃</span>
+      <div class="food-name">홍합밥</div>
+      <div class="food-desc">동해 자연산 홍합을 넣어 지은 밥. 풍부한 해산물 향과 감칠맛이 가득한 울릉도만의 특별한 한 끼.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASONS -->
+<section class="seasons" id="seasons">
+  <div class="section-header reveal">
+    <span class="section-label">Best Time to Visit</span>
+    <h2 class="section-title">계절별 여행 정보</h2>
+  </div>
+  <div class="seasons-grid">
+    <div class="season-card spring reveal">
+      <span class="season-emoji">🌸</span>
+      <div class="season-name">봄</div>
+      <div class="season-months">3월 — 5월</div>
+      <div class="season-desc">철쭉꽃과 산나물의 계절. 성인봉 등산에 최적기이며 봄나물 채취 체험도 즐길 수 있습니다.</div>
+    </div>
+    <div class="season-card summer reveal">
+      <span class="season-emoji">🌊</span>
+      <div class="season-name">여름</div>
+      <div class="season-months">6월 — 8월</div>
+      <div class="season-desc">맑고 투명한 바다에서 스노클링과 다이빙을 즐기기 좋은 시기. 오징어 어획 성수기로 신선한 해산물 풍성.</div>
+    </div>
+    <div class="season-card autumn reveal">
+      <span class="season-emoji">🍂</span>
+      <div class="season-name">가을</div>
+      <div class="season-months">9월 — 11월</div>
+      <div class="season-desc">단풍으로 물드는 원시림. 맑은 날씨와 선선한 바람, 풍어기 오징어잡이 어선 불빛이 환상적입니다.</div>
+    </div>
+    <div class="season-card winter reveal">
+      <span class="season-emoji">❄️</span>
+      <div class="season-name">겨울</div>
+      <div class="season-months">12월 — 2월</div>
+      <div class="season-desc">폭설과 파도가 만드는 신비로운 설경. 눈꽃 드라이브와 독특한 겨울 울릉도를 경험할 수 있습니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVEL INFO -->
+<section class="travel-info" id="travel">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-header reveal">
+      <span class="section-label">Travel Guide</span>
+      <h2 class="section-title">교통 & 여행 정보</h2>
+    </div>
+    <div class="travel-grid">
+      <div class="travel-card reveal">
+        <div class="travel-card-icon">⛴️</div>
+        <h3>가는 방법</h3>
+        <div class="travel-item">포항 여객선 터미널 → 울릉도 도동항 (약 3시간)</div>
+        <div class="travel-item">강릉 여객선 터미널 → 울릉도 (약 3시간 30분)</div>
+        <div class="travel-item">묵호항 → 울릉도 (약 2시간 30분)</div>
+        <div class="travel-item">쾌속선 운항 (날씨에 따라 결항 가능)</div>
+        <div class="travel-item">헬기 왕복 이용 가능 (긴급·특별편)</div>
+      </div>
+      <div class="travel-card reveal">
+        <div class="travel-card-icon">🏨</div>
+        <h3>숙박 안내</h3>
+        <div class="travel-item">도동·저동 지구에 다양한 숙박시설 밀집</div>
+        <div class="travel-item">펜션, 민박, 호텔, 게스트하우스 등 다양</div>
+        <div class="travel-item">성수기(7~8월) 사전 예약 필수</div>
+        <div class="travel-item">나리분지 전통 투막집 체험 숙박 가능</div>
+        <div class="travel-item">평균 숙박비: 1박 6~15만원 수준</div>
+      </div>
+      <div class="travel-card reveal">
+        <div class="travel-card-icon">🚌</div>
+        <h3>섬 내 이동</h3>
+        <div class="travel-item">군내버스: 도동 기점 주요 관광지 연결</div>
+        <div class="travel-item">택시·렌터카: 소형차 권장 (험로 많음)</div>
+        <div class="travel-item">해안 일주도로 전체 44km (드라이브 추천)</div>
+        <div class="travel-item">관음도 연도교 보행 가능 (입장료 있음)</div>
+        <div class="travel-item">독도 당일 관광선 운항 (날씨 의존)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-content reveal">
+    <h2>울릉도로 떠나보세요</h2>
+    <p>동해 한가운데 숨어있는 신비의 섬, 울릉도에서 평생 잊지 못할 여행의 추억을 만드세요.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">여행 일정 계획하기</a>
+      <a href="#" class="btn-outline">여객선 예약 안내</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">울릉도 관광 안내</div>
+  <div class="footer-text">© 2025 울릉도 관광 · 경상북도 울릉군 · 동해의 신비를 품다</div>
+  <ul class="footer-links">
+    <li><a href="#">관광안내</a></li>
+    <li><a href="#">교통정보</a></li>
+    <li><a href="#">숙박예약</a></li>
+    <li><a href="#">문의</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // Stagger siblings
+  document.querySelectorAll('.attractions-grid, .food-grid, .seasons-grid, .travel-grid, .intro-stats').forEach(grid => {
+    const children = grid.querySelectorAll('.reveal');
+    children.forEach((child, i) => {
+      child.style.transitionDelay = `${i * 0.1}s`;
+    });
+  });
+</script>
+</body>
+</html>
