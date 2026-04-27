@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>반구대 암각화</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+	
+/* ═══════ RESET ═══════ */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background:#0b0c10;}
+body{
+  width:1920px;
+  min-width:1920px;
+  background:#0b0c10;
+  color:#e8e2d4;
+  font-family:'Nanum Myeongjo',serif;
+  font-weight:400;
+  cursor:default;
+  overflow-x:hidden;
+}
+
+/* ═══════ FONTS ═══════ */
+@font-face{
+  font-family:'KOHIBaeumOTF';
+  src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/KOHIBaeumOTF.woff') format('woff');
+  font-weight:normal;font-display:swap;
+}
+@font-face{
+  font-family:'HancomUlju';
+  src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/HakgyoansimByeolbichhaneulR.woff2') format('woff2');
+  font-display:swap;
+}
+
+/* ═══════ NAV ═══════ */
+header{
+  position:fixed;top:0;left:0;
+  width:1920px;height:108px;
+  background:rgba(11,12,16,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,166,107,.08);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 300px;
+  z-index:1000;
+}
+.logo{
+  font-family:'Nanum Myeongjo',serif;
+  font-size:22px;font-weight:700;
+  color:#fff;letter-spacing:.04em;
+  text-decoration:none;
+	margin-left: -220px; 
+}
+nav ul{
+  display:flex;list-style:none;gap:0;align-items:center;
+}
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav{
+  margin-left: auto;   /* 메뉴를 오른쪽으로 */
+}
+
+
+nav ul li a{
+  display:block;padding:0 20px;height:93px;line-height:108px;
+  font-family:'Nanum Myeongjo',serif;
+  font-size:16px;font-weight:400;
+  color:rgba(232,226,212,.7);
+  text-decoration:none;
+  transition:color .2s;
+  white-space:nowrap;
+	
+}
+	
+
+nav ul li a:hover{color:#C9A66B;}
+
+
+/* ═══════ HERO ═══════ */
+
+.hero-section{
+  width:1920px;
+  height:869px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* 🔥 배경 텍스트 전체 */
+.hero-bg-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+
+  width:200%; /* 화면 넘치게 */
+  text-align:center;
+
+  z-index:1;
+  pointer-events:none;
+}
+
+/* 🔥 위 텍스트 */
+.bg-line{
+  font-family:"NanumMyeongjo YetHangul";
+  color:#C9A66B;
+  opacity:0.4; /* ⭐ 둘 다 동일 적용 */
+
+  white-space:nowrap;
+}
+
+/* 위 */
+.bg-line.top{
+  font-size:100px;
+  margin-bottom:250px;
+} /*여기가 심연이랑 7000년 행간 조절 */
+
+/* 아래 */
+.bg-line.bottom{
+  font-size:100px;
+}
+
+/* 🔥 배경 이미지 */
+.hero-bg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background:url('https://i.imgur.com/vfdEARF.png') center/cover no-repeat;
+  opacity:0.4;
+
+  z-index:2;
+}
+
+/* 🔥 중앙 콘텐츠 */
+.hero-content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+
+  z-index:3;
+}
+
+/* 국보 텍스트 */
+.hero-kicker{
+  font-size:16px;
+  color:#ffffff;
+  margin-bottom:2px;
+}
+
+/* 🔥 이미지 타이틀 */
+.hero-title-img{
+  width:500px; /* 필요하면 조절 */
+}
+
+/* 아래 큰 문장 */
+.hero-copy{
+  font-size:120px;
+  color:#fff;
+  line-height:1.2;
+}
+
+/* ═══════ STATS BAR ═══════ */
+.stats-bar{
+  width:1920px;
+  height:80px;
+  background:rgba(11,12,16,.9);
+  border-top:1px solid rgba(201,166,107,.12);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat-item{
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  border-right:1px solid rgba(201,166,107,.1);
+  gap:4px;
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{
+  font-family:'Nanum Myeongjo',serif;
+  font-size:28px;font-weight:700;
+  color:#C9A66B;letter-spacing:-.01em;line-height:1;
+}
+.stat-label{
+  font-size:12px;font-weight:400;
+  color:rgba(180,170,150,.55);letter-spacing:.1em;
+}
+/* 배경 */
+.hero-bg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background:url('https://i.imgur.com/vfdEARF.png') center/cover no-repeat;
+  opacity:0.4;
+
+  z-index:1;
+}
+
+/* 내용 위로 */
+.hero-inner{
+  position:relative;
+  z-index:2;
+}
+
+/* 큰 카피 */
+.hero-copy{
+  margin-top:80px;
+  text-align:center;
+}
+
+.copy-top{
+  font-family:"NanumMyeongjo YetHangul";
+  font-size:120px;
+  color:#C9A66B;
+  line-height:1.1;
+}
+
+.copy-bottom{
+  font-family:"NanumMyeongjo YetHangul";
+  font-size:140px;
+  color:#fff;
+  line-height:1.1;
+}
+/* ═══════ SECTION 01 소개 ═══════ */
+.intro-section{
+  width:1920px;
+  background:#0B0C10;
+  padding:96px 0;
+}
+.intro-inner{
+  width:1320px;margin:0 auto;
+  display:grid;
+  grid-template-columns:600px 1fr;
+  gap:80px;
+  align-items:start;
+}
+/* 좌측 */
+.intro-left{}
+.sec-num-bg{
+  font-size:96px;font-weight:800;
+  color:rgba(201,166,107,.07);
+  line-height:.85;letter-spacing:-.04em;
+  display:block;margin-bottom:-8px;
+}
+.sec-label{
+  font-size:14px;font-weight:400;
+  letter-spacing:.18em;color:rgba(201,166,107,.45);
+  display:block;margin-bottom:16px;
+}
+.intro-title{
+  font-size:48px;font-weight:400;
+  color:#e8e2d4;line-height:1.2;
+  margin-bottom:0;
+}
+.intro-title-gold{
+  font-size:48px;font-weight:400;
+  color:#C9A66B;line-height:1.2;
+  display:block;margin-bottom:24px;
+}
+
+.intro-desc{
+  font-size:16px;font-weight:400;
+  color:rgba(180,170,150,.8);
+  line-height:1.9;margin-bottom:24px;
+}
+.quote-wrap{
+  display:flex;flex-direction:column;
+  border-left:2px solid rgba(201,166,107,.3);
+  padding-left:16px;
+  margin-bottom:32px;
+}
+.quote{
+  font-size:14px;font-weight:400;
+  color:#e8e2d4;line-height:1.8;
+  font-style:normal;
+}
+.quote-source{
+  font-size:12px;color:rgba(201,166,107,.45);
+  letter-spacing:.1em;margin-top:6px;
+}
+/* 탭 */
+.line-long{
+  width:100%;height:1px;
+  background:rgba(201,166,107,.12);
+  margin-bottom:0;
+  position:relative;
+}
+.line-highlight{
+  width:120px;height:2px;
+  background:#C9A66B;
+  position:absolute;top:-1px;left:0;
+}
+.tabs{
+  display:flex;gap:0;
+  border-bottom:1px solid rgba(201,166,107,.12);
+  margin-bottom:24px;
+}
+.tabs span{
+  padding:12px 24px;
+  font-size:14px;font-weight:400;
+  color:rgba(180,170,150,.5);
+  letter-spacing:.06em;cursor:pointer;
+}
+.tabs span:first-child{
+  border-bottom:2px solid #C9A66B;
+  color:#C9A66B;margin-top:1px;
+}
+.method{display:flex;flex-direction:column;gap:16px;}
+.method-title{
+  font-size:14px;font-weight:700;
+  color:rgba(200,194,180,.9);
+}
+.method-desc{
+  font-size:14px;font-weight:400;
+  color:rgba(160,152,130,.7);
+  line-height:1.75;
+}
+/* 우측 수치 */
+
+.stat-block{}
+	.intro-right{
+  position: relative;   /* 기준점 */
+  width: 1920px;        /* 필요하면 유지 */
+  height: 800px;       /* 배치할 공간 */
+}
+.stat-main{
+  font-family:'Nanum Myeongjo',serif;
+  font-size:52px;font-weight:700;
+  color:#C9A66B;line-height:1;
+  letter-spacing:-.02em;
+  display:flex;align-items:baseline;gap:6px;
+}
+.stat-unit{font-size:18px;color:#C9A66B;font-weight:500;}
+.stat-sub{
+  font-size:12px;font-weight:400;
+  color:rgba(180,170,150,.55);
+  letter-spacing:.1em;margin-top:4px;
+}
+.stat-desc2{
+  font-size:12px;font-weight:400;
+  color:rgba(120,112,90,.6);
+  letter-spacing:.06em;line-height:1.5;
+  margin-top:2px;
+}
+/* 개별 위치 지정 */
+.s1 { position: absolute; top: 470px; left: 100px; }
+.s2 { position: absolute; top: 650px; left: 200px; }
+.s3 { position: absolute; top: 530px; left: 400px; }
+.s4 { position: absolute; top: 750px; left: 500px; }
+	
+/* ═══════ SECTION 해독 (검은화면) ═══════ */
+.decipher-section{
+  width:1920px;height:1080px;
+  background:#06060a;
+  display:grid;
+  grid-template-columns:120px 1fr 120px;
+  position:relative;
+}
+.decipher-side{
+  background:rgba(11,12,16,.6);
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  gap:32px;
+}
+.side-text{
+  writing-mode:vertical-rl;
+  font-size:13px;font-weight:400;
+  color:rgba(180,170,150,.35);
+  letter-spacing:.2em;cursor:pointer;transition:color .2s;
+}
+.side-text.on{color:rgba(201,166,107,.7);}
+.side-text:hover{color:rgba(201,166,107,.5);}
+.decipher-main{
+  position:relative;overflow:hidden;
+  background:#06060a;
+}
+.decipher-hint{
+  position:absolute;top:24px;left:50%;transform:translateX(-50%);
+  font-size:14px;font-weight:400;letter-spacing:.24em;
+  color:rgba(201,166,107,.25);pointer-events:none;
+  animation:hint-fade 3s ease infinite;z-index:5;
+  white-space:nowrap;
+}
+@keyframes hint-fade{0%,100%{opacity:.3}50%{opacity:.85}}
+.decipher-hint.off{opacity:0;transition:opacity .5s;}
+#gc{position:absolute;inset:0;pointer-events:none;z-index:2;}
+#gscene{position:absolute;inset:0;z-index:1;}
+.glyph{position:absolute;transform:translate(-50%,-50%);cursor:pointer;}
+.glyph svg{display:block;filter:brightness(.06);transition:filter .45s ease;}
+.glyph.hover svg{filter:brightness(.88) drop-shadow(0 0 18px rgba(201,166,107,.65));}
+.glyph.solved svg{
+  filter:brightness(1.05) drop-shadow(0 0 22px rgba(201,166,107,.88)) drop-shadow(0 0 55px rgba(201,166,107,.4));
+  animation:spulse 3s ease-in-out infinite;
+}
+@keyframes spulse{0%,100%{filter:brightness(1) drop-shadow(0 0 18px rgba(201,166,107,.65));}50%{filter:brightness(1.12) drop-shadow(0 0 34px rgba(201,166,107,.98));}}
+/* 퀴즈 팝업 */
+.qpop{
+  position:absolute;z-index:20;width:280px;
+  opacity:0;pointer-events:none;
+  transform:scale(.96);transition:opacity .22s,transform .22s;
+}
+.qpop.show{opacity:1;pointer-events:all;transform:scale(1);}
+.qp-inner{
+  background:rgba(8,9,14,.97);
+  border:1px solid rgba(201,166,107,.22);
+  box-shadow:0 12px 48px rgba(0,0,0,.9);
+}
+.qp-head{
+  padding:10px 14px;
+  border-bottom:1px solid rgba(201,166,107,.1);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.qp-chapter{font-size:10px;letter-spacing:.18em;color:rgba(201,166,107,.5);}
+.qp-xbtn{
+  width:18px;height:18px;border-radius:50%;
+  background:rgba(201,166,107,.08);border:none;
+  color:rgba(201,166,107,.45);font-size:10px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+.qp-xbtn:hover{background:rgba(201,166,107,.18);}
+.qp-q{
+  padding:12px 14px 10px;
+  font-size:13px;color:rgba(232,226,212,.85);
+  line-height:1.6;
+  border-bottom:1px solid rgba(201,166,107,.07);
+}
+.qp-choices{padding:3px 0;}
+.qpc{
+  width:100%;padding:9px 14px;
+  display:flex;align-items:center;gap:8px;
+  background:none;border:none;
+  font-family:'Nanum Myeongjo',serif;
+  font-size:12px;color:rgba(232,226,212,.52);
+  cursor:pointer;text-align:left;
+  border-bottom:1px solid rgba(255,255,255,.025);
+  position:relative;transition:all .15s;
+}
+.qpc:last-child{border-bottom:none;}
+.qpc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:#C9A66B;opacity:0;transition:opacity .15s;}
+.qpc:hover{background:rgba(201,166,107,.07);color:rgba(232,226,212,.9);}
+.qpc:hover::before{opacity:.7;}
+.qpc-label{font-size:10px;color:rgba(201,166,107,.3);min-width:16px;font-family:sans-serif;}
+.qpc.correct{background:rgba(74,154,88,.12)!important;color:#7acc88!important;pointer-events:none;}
+.qpc.correct::before{background:#4a9a58;opacity:1!important;}
+.qpc.wrong{color:rgba(200,80,80,.45)!important;text-decoration:line-through;pointer-events:none;}
+.qpc.disabled{pointer-events:none;}
+.qp-fb{
+  padding:0 14px;max-height:0;overflow:hidden;
+  transition:max-height .3s,padding .3s;
+  font-size:11px;color:rgba(201,166,107,.55);line-height:1.75;
+}
+.qp-fb.show{max-height:80px;padding:8px 14px 11px;}
+/* 챕터 클리어 오버레이 */
+#chapter-cover{
+  position:absolute;inset:0;z-index:30;
+  display:flex;opacity:0;pointer-events:none;
+  transition:opacity .55s;
+}
+#chapter-cover.show{opacity:1;pointer-events:all;}
+.cc-left{flex:1;position:relative;overflow:hidden;background:rgba(5,5,9,.95);display:flex;align-items:center;justify-content:center;}
+.cc-right{
+  width:420px;background:rgba(6,7,12,.98);
+  border-left:1px solid rgba(201,166,107,.12);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:60px 48px;
+}
+.cc-eyebrow{font-size:12px;letter-spacing:.28em;color:rgba(201,166,107,.45);margin-bottom:16px;}
+.cc-title{font-size:48px;font-weight:400;color:#e8e2d4;line-height:1.2;margin-bottom:8px;}
+.cc-title em{color:#C9A66B;font-style:normal;}
+.cc-rule{width:28px;height:1px;background:rgba(201,166,107,.35);margin:16px 0;}
+.cc-body{font-size:16px;color:rgba(155,148,128,.9);line-height:1.9;margin-bottom:32px;}
+.cc-close{
+  padding:12px 0;background:none;border:none;
+  border-bottom:1px solid rgba(201,166,107,.3);
+  font-family:'Nanum Myeongjo',serif;font-size:14px;
+  color:#C9A66B;letter-spacing:.2em;cursor:pointer;text-align:left;
+  transition:letter-spacing .25s;
+}
+.cc-close:hover{letter-spacing:.28em;}
+/* 하단 단서 바 */
+.decipher-bar{
+  position:absolute;bottom:0;left:120px;right:120px;height:54px;z-index:10;
+  background:rgba(6,6,10,.93);backdrop-filter:blur(14px);
+  border-top:1px solid rgba(201,166,107,.09);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+}
+.dbar-groups{display:flex;gap:40px;align-items:center;}
+.dbar-group{display:flex;align-items:center;gap:8px;}
+.dbar-label{font-size:13px;color:rgba(180,170,150,.5);letter-spacing:.1em;}
+.dbar-count{font-size:12px;color:rgba(201,166,107,.4);}
+.dbar-dots{display:flex;gap:4px;margin-left:4px;}
+.dbar-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(201,166,107,.12);border:1px solid rgba(201,166,107,.2);
+  transition:all .35s;
+}
+.dbar-dot.done{background:#C9A66B;border-color:#C9A66B;box-shadow:0 0 6px rgba(201,166,107,.4);}
+.dbar-dot.clear{background:#4a9a58;border-color:#4a9a58;box-shadow:0 0 6px rgba(74,154,88,.5);}
+.dbar-badge{font-size:10px;color:#4a9a58;opacity:0;transition:opacity .35s;margin-left:4px;}
+.dbar-badge.show{opacity:1;}
+.dbar-next{
+  padding:8px 24px;background:transparent;
+  border:1px solid rgba(232,226,212,.2);
+  font-family:'Nanum Myeongjo',serif;font-size:13px;
+  color:rgba(232,226,212,.5);letter-spacing:.12em;cursor:pointer;
+  transition:all .25s;pointer-events:none;opacity:.4;
+}
+.dbar-next.active{opacity:1;pointer-events:all;border-color:rgba(201,166,107,.4);color:rgba(201,166,107,.8);}
+/* 챕터 커버 애니메이션 */
+@keyframes wswim{0%{transform:translate(-80px,0) scaleX(1);}46%{transform:translate(100px,12px) scaleX(1);}50%{transform:translate(100px,12px) scaleX(-1);}96%{transform:translate(-80px,0) scaleX(-1);}100%{transform:translate(-80px,0) scaleX(1);}}
+@keyframes wanim{0%,100%{transform:translateX(0);}50%{transform:translateX(-18px);}}
+@keyframes bubanim{0%{transform:translateY(0);opacity:.5;}100%{transform:translateY(-120px);opacity:0;}}
+@keyframes twalk{0%,100%{transform:translateX(-60px);}50%{transform:translateX(60px);}}
+@keyframes lsway{0%,100%{transform:rotate(-10deg);}50%{transform:rotate(10deg);}}
+@keyframes hthrow{0%,100%{transform:rotate(0);}28%{transform:rotate(-18deg);}55%{transform:rotate(8deg);}}
+@keyframes spfly{0%,38%{transform:translate(0,0);opacity:0;}42%{opacity:1;}78%{transform:translate(140px,-68px);opacity:1;}85%{opacity:0;}100%{opacity:0;}}
+
+/* ═══════ SECTION 03 단서기록 ═══════ */
+.clue-section{
+  width:1920px;
+  background:#0B0C10;
+  padding:96px 0;
+}
+.clue-inner{width:1320px;margin:0 auto;}
+.sec-head{margin-bottom:48px;}
+.chapter-row{
+  display:grid;
+  grid-template-columns:80px 560px 1fr;
+  gap:0;
+  border-top:1px solid rgba(201,166,107,.1);
+  padding:48px 0;
+  align-items:start;
+}
+/* 좌측 탭 */
+.ch-tabs{
+  display:flex;flex-direction:column;gap:0;padding-top:4px;
+}
+.ch-tab{
+  font-size:14px;color:rgba(180,170,150,.45);
+  letter-spacing:.06em;padding:5px 0;cursor:pointer;transition:color .2s;
+}
+.ch-tab.on{color:#e8e2d4;}
+.ch-tab.on::before{content:'· ';}
+/* 중앙 비주얼 박스 */
+.ch-visual{margin-right:48px;}
+.ch-visual-box{
+  background:#0d2020;
+  border:1px solid rgba(201,166,107,.1);
+  flex-direction:column;align-items:stretch;overflow:hidden;
+  display:flex;
+}
+/* 우측 텍스트 */
+.ch-text{}
+.ch-num{font-size:12px;letter-spacing:.22em;color:rgba(201,166,107,.4);margin-bottom:12px;display:block;}
+.ch-title{font-size:48px;font-weight:400;color:#e8e2d4;line-height:1.25;}
+.ch-title-gold{display:block;color:#C9A66B;font-size:48px;font-weight:400;}
+.ch-body{font-size:16px;color:rgba(180,170,150,.75);line-height:1.85;margin:16px 0;}
+.ch-more{
+  font-size:14px;color:rgba(201,166,107,.65);
+  background:none;border:none;border-bottom:1px solid rgba(201,166,107,.25);
+  padding-bottom:2px;cursor:pointer;font-family:'Nanum Myeongjo',serif;
+  transition:color .2s;
+}
+.ch-more:hover{color:#C9A66B;}
+.ch-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.ch-tag{font-size:12px;color:rgba(160,152,130,.6);letter-spacing:.06em;}
+.ch-tag::before{content:'·';margin-right:4px;color:rgba(201,166,107,.4);}
+.ch-meta{
+  display:flex;justify-content:space-between;
+  font-size:12px;color:rgba(140,132,110,.5);letter-spacing:.1em;
+  padding-top:16px;border-top:1px solid rgba(201,166,107,.08);margin-top:20px;
+}
+/* 드래그 카드 */
+.drag-palette{
+  display:flex;flex-wrap:wrap;gap:8px;
+  padding:10px;border:1px dashed rgba(201,166,107,.14);margin-bottom:10px;
+}
+.drag-card,.tool-card{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:8px 10px;cursor:grab;
+  border-bottom:1px solid rgba(201,166,107,.14);
+  transition:border-color .2s;user-select:none;
+}
+.drag-card span,.tool-card span{font-size:10px;color:rgba(201,166,107,.45);}
+.drag-card:hover,.tool-card:hover{border-bottom-color:#C9A66B;}
+.drop-zone{
+  min-height:60px;padding:10px;
+  border:1px dashed rgba(201,166,107,.14);transition:all .2s;
+}
+.drop-zone.over{border-color:rgba(201,166,107,.4);background:rgba(201,166,107,.04);}
+.dz-label{font-size:10px;letter-spacing:.16em;color:rgba(201,166,107,.3);margin-bottom:6px;}
+.dz-chip{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:3px 9px;border-bottom:1px solid rgba(201,166,107,.2);
+  font-size:10px;color:rgba(201,166,107,.6);
+  cursor:pointer;margin:2px;transition:color .2s;
+}
+.dz-chip:hover{color:#c05050;}
+.scene-result-box{
+  display:flex;flex-direction:column;
+  border-top:1px solid rgba(201,166,107,.1);
+}
+.scene-canvas-area{
+  height:200px;position:relative;overflow:hidden;flex-shrink:0;
+}
+.scene-canvas-area svg{
+  position:absolute;inset:0;width:100%;height:100%;
+}
+.scene-info-area{
+  display:none;flex-direction:column;gap:6px;
+  padding:10px 14px 12px;
+  background:rgba(5,14,10,.95);
+  border-top:1px solid rgba(201,166,107,.08);
+}
+.scene-desc-text{font-size:14px;line-height:1.8;}
+.scene-badges{display:flex;gap:5px;flex-wrap:wrap;}
+.scene-bdg{font-size:11px;padding:2px 8px;border-radius:2px;}
+.reset-btn{
+  margin-top:8px;padding:6px 0;background:none;border:none;
+  border-bottom:1px solid rgba(201,166,107,.12);
+  font-family:'Nanum Myeongjo',serif;font-size:12px;
+  color:rgba(201,166,107,.3);letter-spacing:.14em;cursor:pointer;transition:color .2s;
+}
+.reset-btn:hover{color:#C9A66B;}
+.hunters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.hunter-zone{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:12px 8px;border:1px dashed rgba(201,166,107,.12);
+  transition:all .25s;min-height:128px;justify-content:center;
+}
+.hunter-zone.over{border-color:rgba(201,166,107,.4);background:rgba(201,166,107,.04);}
+.hunter-zone.assigned{border-color:rgba(201,166,107,.24);}
+.hz-label{font-size:10px;letter-spacing:.14em;color:rgba(201,166,107,.32);}
+.hz-tool{font-size:10px;color:rgba(201,166,107,.28);letter-spacing:.05em;text-align:center;line-height:1.5;}
+.hz-tool.set{color:#C9A66B;}
+/* 바다 계절 버튼 */
+.sea-season-btn{
+  flex:1;padding:8px 0;background:none;border:none;
+  border-bottom:2px solid transparent;
+  font-family:'Nanum Myeongjo',serif;font-size:12px;
+  color:rgba(201,166,107,.38);letter-spacing:.1em;cursor:pointer;
+  transition:all .2s;
+}
+.sea-season-btn.on{border-bottom-color:#C9A66B;color:#C9A66B;}
+.sea-season-btn:hover{color:rgba(201,166,107,.7);}
+
+/* ═══════ 결론 ═══════ */
+.conclusion-section{
+  width:1920px;background:#05161A;
+  padding:96px 0;text-align:center;
+}
+.conc-inner{max-width:1320px;margin:0 auto;padding:0;}
+.conc-kicker{font-size:12px;letter-spacing:.3em;color:rgba(201,166,107,.4);margin-bottom:24px;display:block;}
+.conc-title{font-size:48px;font-weight:400;color:#e8e2d4;line-height:1.22;margin-bottom:20px;}
+.conc-rule{width:28px;height:1px;background:rgba(201,166,107,.35);margin:0 auto 48px;}
+.conc-cols{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid rgba(201,166,107,.1);margin-bottom:64px;
+}
+.conc-col{padding:32px 28px;border-right:1px solid rgba(201,166,107,.1);}
+.conc-col:last-child{border-right:none;}
+.conc-col-num{font-size:10px;letter-spacing:.22em;color:rgba(201,166,107,.38);margin-bottom:12px;}
+.conc-col-title{font-size:20px;font-weight:400;color:#e8e2d4;margin-bottom:10px;}
+.conc-col-body{font-size:16px;color:rgba(180,170,150,.7);line-height:1.85;}
+.conc-quote{
+  font-size:36px;font-weight:400;color:rgba(200,194,180,.7);
+  line-height:1.7;letter-spacing:.03em;margin-bottom:14px;
+  max-width:900px;margin-left:auto;margin-right:auto;
+}
+.conc-cite{font-size:14px;letter-spacing:.2em;color:rgba(160,152,130,.5);}
+
+/* ═══════ AR 섹션 ═══════ */
+.ar-section{
+  width:1920px;background:#081c22;padding:96px 0;
+}
+.ar-inner{
+  width:1320px;margin:0 auto;
+  display:grid;grid-template-columns:320px 1fr;gap:80px;align-items:center;
+}
+.phone-wrap{display:flex;justify-content:center;}
+.phone-frame{
+  width:240px;border-radius:38px;padding:8px;
+  background:linear-gradient(145deg,rgba(201,166,107,.07),rgba(5,22,26,.3));
+  border:1px solid rgba(201,166,107,.15);
+  box-shadow:0 30px 65px rgba(0,0,0,.8);
+}
+.phone-screen{
+  border-radius:30px;overflow:hidden;
+  background:#050a06;aspect-ratio:9/18;
+  position:relative;display:flex;align-items:center;justify-content:center;
+}
+.phone-bg-el{position:absolute;inset:0;background:linear-gradient(155deg,#0c180c,#050a05);}
+.phone-glyph{position:relative;z-index:2;filter:drop-shadow(0 0 14px rgba(201,166,107,.55));animation:pg-anim 3s ease-in-out infinite;}
+@keyframes pg-anim{0%,100%{filter:drop-shadow(0 0 9px rgba(201,166,107,.45));}50%{filter:drop-shadow(0 0 22px rgba(201,166,107,.85));}}
+.phone-scan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,166,107,.4),transparent);animation:scan-anim 3s linear infinite;}
+@keyframes scan-anim{0%{top:10%}100%{top:90%}}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:54px;height:6px;background:#050a05;border-radius:0 0 5px 5px;z-index:5;}
+.phone-corners{position:absolute;inset:8px;}
+.pc{position:absolute;width:11px;height:11px;border-color:rgba(201,166,107,.6);border-style:solid;}
+.pc.tl{top:0;left:0;border-width:1.5px 0 0 1.5px}
+.pc.tr{top:0;right:0;border-width:1.5px 1.5px 0 0}
+.pc.bl{bottom:0;left:0;border-width:0 0 1.5px 1.5px}
+.pc.br{bottom:0;right:0;border-width:0 1.5px 1.5px 0}
+.ar-text{}
+.ar-at-trace{font-size:11px;letter-spacing:.22em;color:rgba(201,166,107,.4);margin-bottom:8px;display:block;}
+.ar-main-title{font-size:48px;font-weight:400;color:#e8e2d4;margin-bottom:4px;}
+.ar-main-gold{font-size:48px;font-weight:400;color:#C9A66B;margin-bottom:16px;display:block;}
+.ar-side-desc{
+  display:flex;gap:16px;margin-bottom:24px;
+}
+.ar-side-line{width:1px;height:60px;background:rgba(201,166,107,.25);flex-shrink:0;margin-top:4px;}
+.ar-side-text{font-size:16px;color:rgba(180,170,150,.7);line-height:1.85;}
+.ar-sub-label{font-size:12px;letter-spacing:.18em;color:rgba(201,166,107,.4);margin-bottom:6px;display:block;}
+.ar-sub-title{font-size:32px;font-weight:400;color:#e8e2d4;margin-bottom:12px;}
+.ar-sub-body{font-size:16px;color:rgba(180,170,150,.65);line-height:1.85;max-width:480px;margin-bottom:16px;}
+.ar-divider{width:100%;height:1px;background:rgba(201,166,107,.12);}
+.ar-feats{display:flex;flex-direction:column;}
+.ar-feat{display:flex;gap:12px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(201,166,107,.08);}
+.ar-feat-dot{width:4px;height:4px;border-radius:50%;background:rgba(201,166,107,.4);flex-shrink:0;margin-top:10px;}
+.ar-feat-title{font-size:16px;font-weight:400;color:rgba(200,194,180,.9);margin-bottom:4px;}
+.ar-feat-body{font-size:14px;color:rgba(160,152,130,.65);line-height:1.7;}
+
+/* ═══════ 수위 섹션 ═══════ */
+.water-section{
+  width:1920px;background:#0B0C10;padding:96px 0;
+}
+.water-inner{
+  width:1320px;margin:0 auto;
+  display:grid;grid-template-columns:520px 1fr;gap:80px;align-items:start;
+}
+.water-sec-num{font-size:96px;font-weight:800;color:rgba(201,166,107,.06);line-height:.85;letter-spacing:-.04em;display:block;margin-bottom:-8px;}
+.water-sec-sub{font-size:16px;letter-spacing:.18em;color:rgba(201,166,107,.4);margin-bottom:16px;display:block;}
+.water-title{font-family:'NanumMyeongjo YetHangul',sans-serif;font-size:64px;font-weight:400;color:#e8e2d4;line-height:1.1;margin-bottom:4px;}
+.water-title-gold{font-family:'NanumMyeongjo YetHangul',sans-serif;font-size:64px;font-weight:400;color:#C9A66B;margin-bottom:16px;display:block;line-height:1.1;}
+.water-rule{width:28px;height:1px;background:rgba(201,166,107,.3);margin:16px 0;}
+.water-intro{font-size:14px;color:rgba(180,170,150,.65);line-height:1.85;margin-bottom:24px;}
+.water-cond-list{display:flex;flex-direction:column;}
+.water-cond{
+  display:flex;flex-direction:column;
+  padding:16px 0;border-bottom:1px solid rgba(201,166,107,.07);
+}
+.water-cond:first-child{border-top:1px solid rgba(201,166,107,.07);}
+.water-cond-label{font-size:14px;color:rgba(160,152,130,.65);margin-bottom:4px;}
+.water-cond-sublabel{font-size:12px;color:rgba(140,132,110,.5);}
+.water-cond-value{font-size:16px;font-weight:400;margin-top:4px;}
+/* 우측 게이지 */
+.water-right{
+   position: absolute;
+  top: 4280px;
+  left: 1000px;}
+.gauge-box{
+  width:561px;height:331px;
+  background:#040d10;
+  border:1px solid rgba(201,166,107,.1);
+  position:relative;overflow:hidden;
+  margin-bottom:24px;
+}
+.gauge-water{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(139,100,40,.5),rgba(139,100,40,.2));
+  transition:height 1s ease;
+  border-top:1px solid rgba(201,166,107,.2);
+}
+.gauge-shim{
+  position:absolute;top:0;left:-100%;width:100%;height:2px;
+  background:linear-gradient(to right,transparent,rgba(201,166,107,.3),transparent);
+  animation:gshim 3s linear infinite;
+}
+@keyframes gshim{0%{left:-100%}100%{left:100%}}
+.gauge-glyph-layer{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;z-index:3;
+}
+.gauge-scale{
+  position:absolute;right:10px;top:0;bottom:0;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:8px 0;
+}
+.gs-val{font-size:11px;color:rgba(160,152,130,.55);font-family:'Nanum Myeongjo',serif;}
+.dam-num-wrap{display:flex;align-items:baseline;gap:6px;margin-bottom:8px;}
+.dam-num{font-family:'Nanum Myeongjo',serif;font-size:52px;font-weight:700;color:#C9A66B;line-height:1;letter-spacing:-.03em;}
+.dam-unit{font-size:18px;color:rgba(180,170,150,.6);}
+.dam-status{font-size:14px;letter-spacing:.1em;margin-bottom:16px;display:block;}
+.st-ok{color:#4a9a58;}.st-warn{color:#C9A66B;}.st-bad{color:#c05050;}
+/* 수위 구분선 */
+.water-div-line{width:461px;height:1px;background:rgba(201,166,107,.15);margin-bottom:16px;}
+.sim-label-text{font-size:12px;letter-spacing:.18em;color:rgba(201,166,107,.38);display:block;margin-bottom:8px;}
+/* 슬라이더 전체 */
+input[type=range].water-slider{
+  -webkit-appearance: none;
+  appearance: none;
+  width:461px;
+  height:1px;
+  background: rgba(201,166,107,.12);
+  outline: none;
+  cursor: pointer;
+}
+
+/* 트랙 */
+input[type=range].water-slider::-webkit-slider-runnable-track {
+  height: 1px;
+  background: transparent;
+}
+
+/* 버튼 */
+input[type=range].water-slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#C9A66B;
+  border:2px solid #0B0C10;
+  box-shadow:0 0 6px rgba(201,166,107,.5);
+  margin-top:-7px;
+  cursor:pointer;
+}
+
+/* Firefox */
+input[type=range].water-slider::-moz-range-track {
+  height:1px;
+  background: transparent;
+}
+
+input[type=range].water-slider::-moz-range-thumb {
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#C9A66B;
+  border:2px solid #0B0C10;
+  box-shadow:0 0 6px rgba(201,166,107,.5);
+  cursor:pointer;
+}
+input[type=range].water-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;width:15px;height:15px;border-radius:50%;
+  background:#C9A66B;border:2px solid #0B0C10;
+  box-shadow:0 0 6px rgba(201,166,107,.5);cursor:pointer;
+}
+
+/* ═══════ 체험 프로그램 ═══════ */
+.exp-section{
+  width:1920px;
+  background:linear-gradient(180deg,#081c22 0%,#0B0C10 100%);
+  padding:96px 0;text-align:center;
+}
+.exp-inner{width:1320px;margin:0 auto;}
+.exp-header{margin-bottom:64px;}
+.exp-sec-num{font-size:96px;font-weight:800;color:rgba(201,166,107,.06);line-height:.85;letter-spacing:-.04em;display:block;margin-bottom:-8px;}
+.exp-sec-sub{font-size:14px;letter-spacing:.2em;color:rgba(201,166,107,.35);display:block;margin-bottom:16px;}
+.exp-title{font-size:48px;font-weight:400;color:#e8e2d4;line-height:1.22;}
+.exp-title-gold{display:block;color:#C9A66B;}
+.exp-rule{width:28px;height:1px;background:rgba(201,166,107,.35);margin:16px auto 24px;}
+.exp-desc{font-size:16px;color:rgba(180,170,150,.65);line-height:1.85;}
+/* 카드 3개 */
+.exp-cards{
+  display:flex;gap:24px;
+  align-items:flex-start;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.exp-card{
+  width:400px;
+  background:#0d2020;
+  border:1px solid rgba(201,166,107,.1);
+  border-radius:48px 0 48px 0;
+  overflow:visible;
+  position:relative;
+  flex-shrink:0;
+}
+.exp-card-img{
+  width:400px;height:400px;
+  background:#0d2020;
+  border-radius:48px 0 48px 0;
+  overflow:hidden;
+  border:1px solid rgba(201,166,107,.1);
+  position:relative;
+}
+.exp-card-img-inner{
+  width:100%;height:100%;
+  background:rgba(13,32,32,.9);
+}
+/* 노란 서브카드 */
+.exp-subcard{
+  width:348px;
+  background:#C9A66B;
+  border-radius:48px 0 0 48px;
+  padding:24px 32px 24px 32px;
+  cursor:pointer;
+  overflow:hidden;
+  transition:height .4s ease;
+  position:relative;
+  max-height:158px;
+}
+.exp-subcard.expanded{max-height:400px;}
+.exp-subcard-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+}
+.exp-subcard-title{font-size:20px;font-weight:400;color:#0b0c10;font-family:'Nanum Myeongjo',serif;line-height:1.3;}
+.exp-subcard-plus{
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(11,12,16,.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:#0b0c10;cursor:pointer;
+  transition:transform .3s;flex-shrink:0;margin-top:2px;
+  font-weight:300;line-height:1;
+}
+.exp-subcard.expanded .exp-subcard-plus{transform:rotate(45deg);}
+.exp-subcard-body{
+  font-size:14px;color:rgba(11,12,16,.75);
+  line-height:1.75;margin-top:8px;
+  display:none;
+}
+.exp-subcard.expanded .exp-subcard-body{display:block;}
+
+/* ═══════ 커뮤니티 ═══════ */
+.community-section{width:1920px;background:#0B0C10;padding:96px 0;}
+.community-inner{width:1320px;margin:0 auto;}
+.comm-sec-num{font-size:96px;font-weight:800;color:rgba(201,166,107,.06);line-height:.85;letter-spacing:-.04em;display:block;margin-bottom:-8px;}
+.comm-sec-sub{font-size:14px;letter-spacing:.18em;color:rgba(201,166,107,.4);margin-bottom:16px;display:block;}
+.comm-title{font-size:48px;font-weight:400;color:#e8e2d4;line-height:1.22;}
+.comm-title-gold{display:block;color:#C9A66B;}
+.comm-rule{width:28px;height:1px;background:rgba(201,166,107,.3);margin:16px 0 48px;}
+.comm-cols{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid rgba(201,166,107,.1);
+}
+.comm-col{padding:40px;}
+.comm-col:first-child{border-right:1px solid rgba(201,166,107,.1);}
+.comm-col-title{font-size:20px;font-weight:400;color:#e8e2d4;margin-bottom:8px;}
+.comm-col-desc{font-size:14px;color:rgba(160,152,130,.65);line-height:1.7;margin-bottom:24px;}
+.qa-item{padding:12px 0;border-bottom:1px solid rgba(201,166,107,.06);cursor:pointer;transition:all .18s;}
+.qa-item:hover .qa-q-text{color:#C9A66B;}
+.qa-q-text{font-size:14px;color:rgba(200,194,180,.85);margin-bottom:4px;transition:color .18s;}
+.qa-meta{font-size:12px;color:rgba(120,112,90,.55);display:flex;gap:10px;}
+.qa-ans{color:rgba(201,166,107,.45);}
+.qa-ask-btn{
+  margin-top:16px;padding:8px 0;background:none;border:none;
+  border-bottom:1px solid rgba(201,166,107,.28);
+  font-family:'Nanum Myeongjo',serif;font-size:14px;
+  color:#C9A66B;letter-spacing:.14em;cursor:pointer;transition:letter-spacing .25s;
+}
+.qa-ask-btn:hover{letter-spacing:.22em;}
+.gf-label{display:block;font-size:12px;letter-spacing:.16em;color:rgba(201,166,107,.35);margin-bottom:5px;}
+.gf-input,.gf-textarea{
+  width:100%;background:transparent;border:none;
+  border-bottom:1px solid rgba(201,166,107,.12);
+  padding:8px 0;font-family:'Nanum Myeongjo',serif;
+  font-size:14px;color:#e8e2d4;outline:none;
+  transition:border-color .2s;resize:none;margin-bottom:12px;
+}
+.gf-input::placeholder,.gf-textarea::placeholder{color:rgba(90,82,60,.7);}
+.gf-input:focus,.gf-textarea:focus{border-bottom-color:rgba(201,166,107,.3);}
+.gf-textarea{height:64px;}
+.gf-submit{
+  padding:8px 0;background:none;border:none;
+  border-bottom:1px solid rgba(201,166,107,.28);
+  font-family:'Nanum Myeongjo',serif;font-size:14px;
+  color:#C9A66B;letter-spacing:.14em;width:100%;text-align:left;
+  cursor:pointer;transition:letter-spacing .25s;
+}
+.gf-submit:hover{letter-spacing:.22em;}
+.gf-entries{display:flex;flex-direction:column;gap:0;margin-top:12px;max-height:96px;overflow-y:auto;}
+.gf-entry{padding:6px 0;border-bottom:1px solid rgba(201,166,107,.05);}
+.gf-entry-name{font-size:11px;color:rgba(201,166,107,.32);margin-bottom:2px;}
+.gf-entry-msg{font-size:13px;color:rgba(160,152,130,.65);line-height:1.6;}
+
+/* ═══════ 오시는 길 ═══════ */
+.access-section{width:1920px;background:#0B0C10;padding:80px 0 64px;}
+.access-inner{width:1320px;margin:0 auto;}
+.access-sub{font-size:14px;letter-spacing:.22em;color:rgba(201,166,107,.4);margin-bottom:10px;display:block;}
+.access-title{font-size:48px;font-weight:400;color:#e8e2d4;margin-bottom:40px;}
+.access-cols{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  border:1px solid rgba(201,166,107,.1);
+}
+.access-col{padding:28px 24px;border-right:1px solid rgba(201,166,107,.08);}
+.access-col:last-child{border-right:none;}
+.ac-title{
+  font-size:16px;font-weight:400;color:rgba(200,194,180,.9);margin-bottom:16px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.ac-detail{font-size:12px;color:rgba(201,166,107,.45);letter-spacing:.1em;cursor:pointer;}
+.ac-row{display:flex;gap:10px;font-size:14px;margin-bottom:8px;}
+.ac-key{color:rgba(120,112,90,.55);flex-shrink:0;width:60px;font-size:14px;}
+.ac-val{color:rgba(160,152,130,.75);line-height:1.55;font-size:14px;}
+.access-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;
+  padding-top:24px;margin-top:8px;
+  border-top:1px solid rgba(201,166,107,.08);
+}
+.ab-contact{display:flex;gap:40px;}
+.ab-contact-label{font-size:12px;color:rgba(160,152,130,.5);letter-spacing:.12em;margin-bottom:4px;}
+.ab-contact-num{font-size:24px;font-weight:400;color:#e8e2d4;display:flex;align-items:center;gap:6px;}
+.ab-contact-num span{color:#C9A66B;}
+.ab-partners{display:flex;gap:6px;flex-wrap:wrap;}
+.ab-partner-label{font-size:12px;color:rgba(160,152,130,.5);letter-spacing:.14em;margin-bottom:8px;}
+.ab-partner{
+  padding:4px 10px;border-bottom:1px solid rgba(201,166,107,.1);
+  font-size:12px;color:rgba(120,112,90,.55);letter-spacing:.06em;
+  cursor:pointer;transition:all .2s;
+}
+.ab-partner:hover{border-bottom-color:#C9A66B;color:rgba(201,166,107,.6);}
+
+/* ═══════ FOOTER ═══════ */
+footer{
+  width:1920px;background:#0B0C10;
+  border-top:1px solid rgba(201,166,107,.08);
+  height:48px;padding:0 300px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.ft-logo{font-family:'Nanum Myeongjo',serif;font-size:16px;font-weight:700;color:#fff;}
+.ft-info{font-size:12px;color:rgba(120,112,90,.55);line-height:1.6;}
+.ft-copy{font-size:12px;color:rgba(120,112,90,.35);letter-spacing:.1em;}
+
+/* ═══════ 공통 CSS 애니메이션 ═══════ */
+@keyframes sc-flame{0%,100%{opacity:.75;transform:scaleY(1);}50%{opacity:1;transform:scaleY(1.12);}}
+@keyframes sc-tiger{0%{transform:translateX(0);}45%{transform:translateX(36px);}55%{transform:translateX(34px);}100%{transform:translateX(0);}}
+@keyframes sc-deer{0%,100%{transform:translateY(0);}50%{transform:translateY(-2px);}}
+@keyframes sc-walk{0%{transform:translateX(-30px);opacity:0;}5%{opacity:1;}90%{opacity:1;}100%{transform:translateX(220px);opacity:0;}}
+@keyframes sc-build{from{transform-origin:bottom center;transform:scaleY(0);opacity:0;}to{transform:scaleY(1);opacity:1;}}
+@keyframes sc-path{to{stroke-dashoffset:-20;}}
+@keyframes sea-whale{0%{transform:translate(-50px,0) scaleX(1);}46%{transform:translate(100px,8px) scaleX(1);}50%{transform:translate(100px,8px) scaleX(-1);}96%{transform:translate(-50px,0) scaleX(-1);}100%{transform:translate(-50px,0) scaleX(1);}}
+@keyframes sea-wave{0%,100%{transform:translateX(0);}50%{transform:translateX(-12px);}}
+@keyframes sea-bub{0%{transform:translateY(0);opacity:.5;}100%{transform:translateY(-60px);opacity:0;}}
+@keyframes sea-net{to{stroke-dashoffset:-16;}}
+@keyframes sea-spear{0%,35%{transform:translate(0,0);opacity:0;}40%{opacity:1;}78%{transform:translate(85px,-48px);opacity:1;}84%{opacity:0;}100%{opacity:0;}}
+@keyframes sea-fish{0%{transform:translateX(0);}100%{transform:translateX(-180px);}}
+@keyframes hunt-bow{0%,100%{transform:rotate(0);}30%{transform:rotate(-22deg);}55%{transform:rotate(8deg);}}
+@keyframes hunt-arrow{0%,32%{transform:translate(0,0);opacity:0;}37%{opacity:1;}72%{transform:translate(160px,-60px);opacity:1;}78%{opacity:0;}100%{opacity:0;}}
+@keyframes hunt-net-drop{0%,40%{transform:scaleY(0.1) translateY(-40px);opacity:0;}45%{opacity:1;}100%{transform:scaleY(1) translateY(0);opacity:1;}}
+@keyframes hunt-spear2{0%,55%{transform:translate(0,0) rotate(-25deg);opacity:0;}60%{opacity:1;}88%{transform:translate(110px,-48px) rotate(-25deg);opacity:1;}93%{opacity:0;}100%{opacity:0;}}
+
+/* ═══ 챕터 패널 공통 ═══ */
+#panel-wrap {
+  position: relative;
+  width: 1920px;
+}
+.ch-panel {
+  display: none;
+  width: 1920px;
+}
+.ch-panel.active {
+  display: block;
+}
+
+/* ── 풀페이지 레이아웃 ── */
+.fp-wrap {
+  display: flex;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+.fp-left {
+  flex: 0 0 1200px;
+  display: flex;
+  flex-direction: column;
+  background: #05161A;
+  overflow: hidden;
+}
+.fp-left-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sea-tabs-row {
+  display: flex;
+  border-bottom: 1px solid rgba(201,166,107,.1);
+  flex-shrink: 0;
+}
+.sea-tabs-row .sea-season-btn {
+  flex: 1;
+  padding: 16px 0;
+  font-size: 14px;
+}
+.fp-canvas-wrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #040d10;
+}
+.fp-desc-bar {
+  flex-shrink: 0;
+  padding: 16px 28px;
+  border-top: 1px solid rgba(201,166,107,.08);
+  background: rgba(4,14,20,.8);
+  min-height: 60px;
+}
+
+/* ── 우측 텍스트 ── */
+.fp-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 56px 0 48px;
+  border-left: 1px solid rgba(201,166,107,.08);
+  background: rgba(5,10,12,.5);
+  position: relative;
+  overflow: hidden;
+}
+.fp-ch-num-bg {
+  position: absolute;
+  top: 24px; right: 32px;
+  font-size: 120px; font-weight: 800;
+  color: rgba(201,166,107,.04);
+  line-height: 1; letter-spacing: -.04em;
+  pointer-events: none; user-select: none;
+  font-family: 'Nanum Myeongjo', serif;
+}
+.fp-ch-label {
+  font-size: 11px; letter-spacing: .26em;
+  color: rgba(201,166,107,.4);
+  margin-bottom: 14px; display: block;
+  text-transform: uppercase;
+}
+.fp-ch-title {
+  font-size: 42px; font-weight: 400;
+  color: #e8e2d4; line-height: 1.2;
+}
+.fp-ch-title-gold {
+  display: block; color: #C9A66B;
+  font-size: 42px; font-weight: 400;
+  margin-bottom: 20px;
+}
+.fp-rule {
+  width: 32px; height: 1px;
+  background: rgba(201,166,107,.28);
+  margin-bottom: 20px;
+}
+.fp-ch-body {
+  font-size: 15px;
+  color: rgba(160,152,130,.7);
+  line-height: 1.85; margin-bottom: 18px;
+  max-width: 340px;
+}
+.fp-more {
+  font-size: 13px; color: rgba(201,166,107,.55);
+  background: none; border: none;
+  border-bottom: 1px solid rgba(201,166,107,.2);
+  padding-bottom: 2px; cursor: pointer;
+  font-family: 'Nanum Myeongjo', serif;
+  margin-bottom: 10px; transition: color .2s;
+}
+.fp-more:hover { color: #C9A66B; }
+.fp-expand {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s;
+  font-size: 13px; color: rgba(160,152,130,.65);
+  line-height: 1.85; margin-bottom: 10px;
+}
+.fp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.fp-tag { font-size: 11px; color: rgba(160,152,130,.5); letter-spacing: .06em; }
+.fp-tag::before { content: '·'; margin-right: 4px; color: rgba(201,166,107,.35); }
+.fp-meta {
+  display: flex; justify-content: space-between;
+  font-size: 11px; color: rgba(120,112,90,.45);
+  letter-spacing: .1em;
+  border-top: 1px solid rgba(201,166,107,.07);
+  padding-top: 12px;
+}
+
+/* ── nav 활성 ── */
+.nav-ch-link.active-ch { color: #C9A66B !important; }
+
+/* ── decipher panel 감싸기 ── */
+#panel-decipher .decipher-section { margin: 0; }
+
+/* ═══════ 이미지 슬라이드 카드 (체험 프로그램 내) ═══════ */
+.img-card-wrap{
+  width:1320px;
+  display:flex;
+  gap:24px;
+  margin:40px auto 0 auto;
+}
+.img-card{
+  flex:1;
+  height:450px;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  background-color:#0d2020;
+  transition:flex .5s ease;
+  overflow:hidden;
+}
+.img-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  transition:.4s;
+}
+.img-card:hover{
+  flex:1.8;
+}
+.img-card:hover::before{
+  background:rgba(0,0,0,0.25);
+}
+.img-card-overlay{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:28px 32px;
+  background:linear-gradient(to top, rgba(0,0,0,.75) 0%, transparent 100%);
+  color:#fff;
+  transform:translateY(8px);
+  transition:transform .4s;
+}
+.img-card:hover .img-card-overlay{
+  transform:translateY(0);
+}
+.img-card-overlay h3{
+  font-size:22px;
+  font-family:'Nanum Myeongjo',serif;
+  font-weight:400;
+  margin-bottom:8px;
+  color:#e8e2d4;
+}
+.img-card-overlay p{
+  font-size:14px;
+  line-height:1.65;
+  color:rgba(220,210,190,.82);
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .4s .1s, transform .4s .1s;
+}
+.img-card:hover .img-card-overlay p{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<header>
+  <a href="" class="logo">반구대 암각화</a>
+  <nav>
+    <ul>
+      <li><a href="#hero" onclick="navTo('hero');return false;">소개</a></li>
+      <li><a href="#panel-wrap" onclick="showChapter('decipher');return false;" id="nav-decipher" class="nav-ch-link active-ch">해독</a></li>
+      <li><a href="#panel-wrap" onclick="showChapter('hunting');return false;" id="nav-hunting" class="nav-ch-link">사냥</a></li>
+      <li><a href="#panel-wrap" onclick="showChapter('territory');return false;" id="nav-territory" class="nav-ch-link">영역</a></li>
+      <li><a href="#panel-wrap" onclick="showChapter('survival');return false;" id="nav-survival" class="nav-ch-link">생존</a></li>
+      <li><a href="#water" onclick="navTo('water');return false;">관람 가능 지수</a></li>
+      <li><a href="#community" onclick="navTo('community');return false;">커뮤니티</a></li>
+      <li><a href="#access" onclick="navTo('access');return false;">길 안내</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- ════ HERO ════ -->
+<section id="hero" class="hero-section">
+
+  <!-- 🔥 배경 텍스트 -->
+  <div class="hero-bg-text">
+    <div class="bg-line top">심연에서 깨어난 태고의 각인</div>
+    <div class="bg-line bottom">7,000년의 침묵을 해독하다</div>
+  </div>
+
+  <!-- 🔥 배경 이미지 -->
+  <div class="hero-bg"></div>
+
+  <!-- 🔥 실제 콘텐츠 -->
+  <div class="hero-content">
+
+    <p class="hero-kicker">
+      국보 제285호 · 울산광역시 울주군 · 세계 최초 고래 사냥 기록
+    </p>
+
+    <!-- 🔥 이미지 타이틀 -->
+    <img src="https://i.imgur.com/dmgXR4Z.png">
+
+  </div>
+
+</section>
+<!-- 🔥 이건 유지 (중요) -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">7,000</div>
+    <div class="stat-label">년 전 제작 추정</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num">300+</div>
+    <div class="stat-label">암각화 도상 수</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num">8X3M</div>
+    <div class="stat-label">주 암면 크기</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num">NO.285</div>
+    <div class="stat-label">국보 지정</div>
+  </div>
+</div>
+    </div>
+    <div class="hero-divider"></div>
+  </div>
+  
+</section>
+
+<!-- ════ INTRO ════ -->
+<section id="intro" class="intro-section">
+  <div class="intro-inner">
+    <div class="intro-left">
+      <span class="sec-num-bg">01</span>
+      <span class="sec-label">반구대 소개 · 제작 기법 · 보존 가치</span>
+      <div class="intro-title">바위에 새긴</div>
+      <span class="intro-title-gold">7,000년의 언어</span>
+      <div class="line-small"></div>
+      <p class="intro-desc">태화강 상류 대곡천 절벽에 위치한 반구대 암각화는 신석기~청동기 시대에 걸쳐 제작된 세계 최고(最古)의 고래 사냥 기록입니다. 8×3m의 주 암면에 300여 점의 도상이 새겨져 있으며, 세계 최초의 포경 문화를 생생하게 보여줍니다.</p>
+      <div class="quote-wrap">
+        <div class="quote">"선사시대 인류의 바다 생태 관찰 능력이 현대 고래 연구자들을<br>놀라게 할 만큼 정밀하다"</div>
+        <div class="quote-source">ㅡ 울산 암각화 국제 학술심포지엄 . 2019</div>
+      </div>
+     
+      <div class="tabs"><span>제작 기법</span><span>보존 가치</span><span>보존 위기</span></div>
+      <div class="method">
+        <div><div class="method-title">· 쪼기 (Pecking) 기법</div><div class="method-desc">돌 도구로 반복적으로 두드려 음각 선을 만드는 기법.<br>선의 깊이와 폭으로 원근감을 표현했습니다.</div></div>
+        <div><div class="method-title">· 갈기 (Grinding) 기법</div><div class="method-desc">쪼기 후 다른 돌로 문질러 매끄럽게 마무리.<br>동물 실루엣의 부드러운 곡선을 구현했습니다.</div></div>
+        <div><div class="method-title">· 선각 (Incision) 기법</div><div class="method-desc">날카로운 도구로 가는 선을 그어 고래 배꼽선,<br>물줄기 등 세밀한 내부를 묘사했습니다.</div></div>
+      </div>
+    </div>
+    <div class="intro-right">
+      <div class="stat-block s1"><div class="stat-main">7,000<span class="stat-unit">년도</span></div><div class="stat-sub">신석기 시대 최초 제작</div></div>
+      <div class="stat-block s2"><div class="stat-main">300+<span class="stat-unit" style="font-size:14px;"> 도상</span></div><div class="stat-desc2">고래 10종, 육상동물, 인물 포함</div></div>
+      <div class="stat-block s3"><div class="stat-main">8X3m<span class="stat-unit" style="font-size:14px;"> 주암면</span></div><div class="stat-desc2">수직 절벽면 · 남향 · 대곡천 방향</div></div>
+      <div class="stat-block s4"><div class="stat-main">50%<span class="stat-unit">↑ 소실</span></div><div class="stat-desc2">수몰·건조 반복으로 원형 소실</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ DECIPHER ════ -->
+<!-- ★ 챕터 패널 컨테이너 (해독/사냥/영역/생존 교체 영역) ★ -->
+<div id="panel-wrap">
+<div class="ch-panel active" id="panel-decipher">
+<section id="decipher" class="decipher-section">
+  <div class="decipher-side">
+    <div class="side-text on" id="dsl-sea">바다</div>
+    <div class="side-text" id="dsl-land">산</div>
+    <div class="side-text" id="dsl-human">사람</div>
+  </div>
+  <div class="decipher-main">
+    <canvas id="gc"></canvas>
+    <div id="gscene"></div>
+    <div class="decipher-hint" id="g-hint">마우스를 움직여 암각화를 찾아보세요</div>
+    <div class="qpop" id="qpop">
+      <div class="qp-inner">
+        <div class="qp-head">
+          <span class="qp-chapter" id="qp-chapter">Chapter. 바다</span>
+          <button class="qp-xbtn" onclick="closeQuiz()">✕</button>
+        </div>
+        <div class="qp-q" id="qp-q"></div>
+        <div class="qp-choices" id="qp-choices"></div>
+        <div class="qp-fb" id="qp-fb"></div>
+      </div>
+    </div>
+    <div id="chapter-cover">
+      <div class="cc-left" id="cc-anim"></div>
+      <div class="cc-right">
+        <div class="cc-eyebrow" id="cc-eyebrow"></div>
+        <div class="cc-title" id="cc-title"></div>
+        <div class="cc-rule"></div>
+        <p class="cc-body" id="cc-body"></p>
+        <button class="cc-close" onclick="closeCover()">계속 탐험하기 →</button>
+      </div>
+    </div>
+    <div class="decipher-bar">
+      <div class="dbar-groups">
+        <div class="dbar-group"><span class="dbar-label">바다</span><span class="dbar-count" id="dc-sea">0/3</span><div class="dbar-dots"><div class="dbar-dot" id="dd-sea-0"></div><div class="dbar-dot" id="dd-sea-1"></div><div class="dbar-dot" id="dd-sea-2"></div></div><span class="dbar-badge" id="db-sea">CLEAR ✓</span></div>
+        <div class="dbar-group"><span class="dbar-label">산</span><span class="dbar-count" id="dc-land">0/3</span><div class="dbar-dots"><div class="dbar-dot" id="dd-land-0"></div><div class="dbar-dot" id="dd-land-1"></div><div class="dbar-dot" id="dd-land-2"></div></div><span class="dbar-badge" id="db-land">CLEAR ✓</span></div>
+        <div class="dbar-group"><span class="dbar-label">사람</span><span class="dbar-count" id="dc-human">0/3</span><div class="dbar-dots"><div class="dbar-dot" id="dd-human-0"></div><div class="dbar-dot" id="dd-human-1"></div><div class="dbar-dot" id="dd-human-2"></div></div><span class="dbar-badge" id="db-human">CLEAR ✓</span></div>
+      </div>
+      <button class="dbar-next" id="dbar-next" onclick="alert('다음 챕터로 이동!')">다음으로 →</button>
+    </div>
+  </div>
+  <div class="decipher-side"></div>
+</section>
+</div>
+<div class="ch-panel" id="panel-hunting">
+  <div class="fp-wrap">
+    <!-- 좌: 인터랙션 (크게) -->
+    <div class="fp-left">
+      <div class="fp-left-inner">
+        <div class="sea-tabs-row">
+          <button class="sea-season-btn on" onclick="seaSeason(this,'spring')">봄 · 접근</button>
+          <button class="sea-season-btn" onclick="seaSeason(this,'summer')">여름 · 포획</button>
+          <button class="sea-season-btn" onclick="seaSeason(this,'autumn')">가을 · 어로</button>
+          <button class="sea-season-btn" onclick="seaSeason(this,'winter')">겨울 · 기록</button>
+        </div>
+        <div class="fp-canvas-wrap">
+          <svg id="sea-scene-svg" style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 1200 900" fill="none"></svg>
+        </div>
+        <div class="fp-desc-bar">
+          <div id="sea-scene-desc" style="font-size:15px;color:rgba(160,152,128,.85);line-height:1.7;"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 우: 텍스트 (작게) -->
+    <div class="fp-right">
+      <div class="fp-ch-num-bg">01</div>
+      <span class="fp-ch-label">Chapter 01 · 사냥</span>
+      <div class="fp-ch-title">바다를 읽는</div>
+      <span class="fp-ch-title-gold">사람들</span>
+      <div class="fp-rule"></div>
+      <p class="fp-ch-body">귀신고래, 분기고래, 그물이 한 화면에 공존합니다. 선사인은 단순히 고래를 봤던 것이 아니라 고래의 습성 — 물을 뿜는 행동, 회유 경로, 무리의 크기 — 까지 관찰하고 기록했습니다.</p>
+      <button class="fp-more" onclick="toggleFpExpand(this)">더 읽기</button>
+      <div class="fp-expand">분기고래 도상에서 특히 주목할 점은 숨구멍에서 나오는 두 갈래 물줄기가 정밀하게 표현되어 있다는 것입니다. 그물 도상은 집단 어업의 존재를 증명합니다.</div>
+      <div class="fp-tags">
+        <span class="fp-tag">귀신고래</span>
+        <span class="fp-tag">분기고래</span>
+        <span class="fp-tag">그물</span>
+        <span class="fp-tag">작살 장면</span>
+        <span class="fp-tag">범고래</span>
+      </div>
+      <div class="fp-meta"><span>신석기 시대 · 약 7,000년 전</span><span>해양 생태 기록</span></div>
+    </div>
+  </div>
+</div>
+<div class="ch-panel" id="panel-territory">
+  <div class="fp-wrap">
+    <div class="fp-left">
+      <div class="fp-left-inner" style="display:flex;flex-direction:column;gap:0;">
+        <div style="padding:20px 28px 14px;">
+          <div style="font-size:11px;letter-spacing:.2em;color:rgba(201,166,107,.35);margin-bottom:14px;">도상을 드래그해서 생활 장면에 배치하세요</div>
+          <div id="card-palette" class="drag-palette">
+            <div class="drag-card" draggable="true" data-type="predator" data-name="호랑이" ondragstart="dstart(event)"><img src="https://i.imgur.com/XHjlOt3.png" width="56" height="34" style="object-fit:contain;display:block;"><path d="M 12.6 45.6 C 11.5 47.8 12.8 48.9 13.6 50.4 C 14.4 51.9 14.9 54.1 17.4 54.3 C 20.0 54.4 26.5 51.2 29.1 51.4 C 31.7 51.5 32.8 53.6 33.0 55.2 C 33.1 56.9 31.5 59.9 30.0 61.1 C 28.6 62.2 25.0 61.2 24.2 62.0 C 23.4 62.8 24.4 65.1 25.2 65.9 C 26.0 66.7 25.7 68.6 29.1 66.9 C 32.5 65.1 41.8 59.3 45.6 55.2 C 49.3 51.2 50.2 43.3 51.4 42.6 C 52.5 42.0 52.5 49.1 52.3 51.4 C 52.2 53.6 50.4 55.6 50.4 56.2 C 50.4 56.9 50.9 58.1 52.3 55.2 C 53.8 52.3 58.1 35.7 59.1 38.8 C 60.1 41.8 57.8 67.2 58.1 73.7 C 58.5 80.1 60.7 77.7 61.1 77.5 C 61.4 77.4 59.6 73.8 60.1 72.7 C 60.6 71.6 61.4 65.1 64.0 70.7 C 66.5 76.4 73.8 99.8 75.6 106.6 C 77.4 113.4 76.1 110.0 74.6 111.5 C 73.2 112.9 68.2 113.9 66.9 115.3 C 65.6 116.8 66.5 119.2 66.9 120.2 C 67.2 121.1 66.4 121.1 68.8 121.1 C 71.2 121.1 78.5 121.0 81.4 120.2 C 84.3 119.4 85.1 119.4 86.3 116.3 C 87.4 113.2 88.0 106.9 88.2 101.8 C 88.4 96.6 86.4 90.6 87.2 85.3 C 88.0 80.0 91.7 71.4 93.0 69.8 C 94.3 68.2 94.3 75.1 95.0 75.6 C 95.6 76.1 96.3 72.8 96.9 72.7 C 97.6 72.5 98.5 73.0 98.9 74.6 C 99.2 76.2 98.2 81.9 98.9 82.4 C 99.5 82.9 101.8 80.1 102.7 77.5 C 103.7 74.9 104.0 68.6 104.7 66.9 C 105.3 65.1 105.8 66.1 106.6 66.9 C 107.4 67.7 109.2 69.0 109.5 71.7 C 109.8 74.5 107.7 82.4 108.5 83.3 C 109.4 84.3 112.9 80.4 114.4 77.5 C 115.8 74.6 116.1 68.3 117.3 65.9 C 118.4 63.5 119.9 61.4 121.1 63.0 C 122.4 64.6 123.6 75.4 125.0 75.6 C 126.5 75.8 127.9 65.9 129.9 64.0 C 131.8 62.0 134.7 63.2 136.7 64.0 C 138.6 64.8 139.6 65.4 141.5 68.8 C 143.4 72.2 146.0 80.6 148.3 84.3 C 150.5 88.0 151.8 88.8 155.1 91.1 C 158.3 93.4 164.9 95.8 167.7 97.9 C 170.4 100.0 171.1 101.0 171.5 103.7 C 172.0 106.4 171.7 112.4 170.6 114.4 C 169.4 116.3 165.7 114.2 164.8 115.3 C 163.8 116.5 162.5 120.2 164.8 121.1 C 167.0 122.1 175.3 122.4 178.3 121.1 C 181.4 119.9 182.0 117.6 183.2 113.4 C 184.3 109.2 186.7 101.4 185.1 95.9 C 183.5 90.5 175.4 86.3 173.5 80.4 C 171.5 74.6 173.8 65.1 173.5 61.1 C 173.2 57.0 171.5 58.1 171.5 56.2 C 171.5 54.3 172.0 49.1 173.5 49.4 C 174.9 49.8 178.2 52.0 180.3 58.1 C 182.4 64.3 184.1 79.6 186.1 86.3 C 188.0 92.9 189.8 95.1 191.9 97.9 C 194.0 100.6 196.3 101.9 198.7 102.7 C 201.1 103.5 204.5 103.4 206.4 102.7 C 208.4 102.1 209.3 100.6 210.3 98.9 C 211.3 97.1 212.4 94.8 212.2 92.1 C 212.1 89.3 210.5 84.0 209.3 82.4 C 208.2 80.8 205.8 80.3 205.5 82.4 C 205.1 84.5 207.7 92.2 207.4 95.0 C 207.1 97.7 204.7 98.2 203.5 98.9 C 202.4 99.5 202.4 100.0 200.6 98.9 C 198.8 97.7 195.9 100.0 192.9 92.1 C 189.8 84.2 185.6 59.9 182.2 51.4 C 178.8 42.8 176.2 43.3 172.5 40.7 C 168.8 38.1 164.8 36.8 159.9 35.9 C 155.1 34.9 155.1 34.4 143.4 34.9 C 131.8 35.4 102.4 39.6 90.1 38.8 C 77.9 38.0 75.4 31.8 69.8 30.0 C 64.1 28.3 59.0 29.6 56.2 28.1 C 53.5 26.7 54.9 22.3 53.3 21.3 C 51.7 20.4 46.8 22.0 46.5 22.3 C 46.2 22.6 50.6 21.8 51.4 23.3 C 52.2 24.7 52.0 29.9 51.4 31.0 C 50.7 32.1 48.6 31.3 47.5 30.0 C 46.4 28.8 47.0 24.2 44.6 23.3 C 42.2 22.3 36.2 24.4 33.0 24.2 C 29.7 24.1 26.8 20.8 25.2 22.3 C 23.6 23.7 23.1 30.9 23.3 33.0 C 23.4 35.1 26.7 34.2 26.2 34.9 C 25.7 35.5 22.6 35.1 20.4 36.8 C 18.1 38.6 13.7 43.3 12.6 45.6 Z" fill="#C9A66B" stroke="none"/> <path d="M 138.6 72.7 C 138.1 72.2 136.5 72.5 135.7 72.7 C 134.9 72.8 134.4 73.2 133.7 73.7 C 133.1 74.1 132.5 75.3 131.8 75.6 C 131.2 75.9 130.5 75.4 129.9 75.6 C 129.2 75.8 128.3 76.1 127.9 76.6 C 127.6 77.0 127.6 77.2 127.9 78.5 C 128.3 79.8 129.4 83.0 129.9 84.3 C 130.4 85.6 130.2 85.3 130.8 86.3 C 131.5 87.2 132.9 88.7 133.7 90.1 C 134.6 91.6 135.2 93.5 135.7 95.0 C 136.2 96.4 136.5 97.6 136.7 98.9 C 136.8 100.1 136.8 101.4 136.7 102.7 C 136.5 104.0 136.2 105.6 135.7 106.6 C 135.2 107.6 134.1 108.1 133.7 108.5 C 133.4 109.0 134.4 109.0 133.7 109.5 C 133.1 110.0 131.2 111.1 129.9 111.5 C 128.6 111.8 127.0 111.1 126.0 111.5 C 125.0 111.8 124.4 112.7 124.1 113.4 C 123.7 114.0 123.9 114.7 124.1 115.3 C 124.2 116.0 122.6 116.9 125.0 117.3 C 127.4 117.6 136.0 117.4 138.6 117.3 C 141.2 117.1 139.4 117.4 140.5 116.3 C 141.7 115.2 144.1 112.3 145.4 110.5 C 146.7 108.7 147.2 107.1 148.3 105.6 C 149.4 104.2 151.5 102.7 152.2 101.8 C 152.8 100.8 152.5 100.8 152.2 99.8 C 151.8 98.9 150.5 97.2 150.2 95.9 C 149.9 94.7 150.4 93.0 150.2 92.1 C 150.1 91.1 150.7 91.9 149.3 90.1 C 147.8 88.4 142.8 83.2 141.5 81.4 C 140.2 79.6 141.8 80.1 141.5 79.5 C 141.2 78.8 140.0 78.2 139.6 77.5 C 139.1 76.9 138.8 76.4 138.6 75.6 C 138.4 74.8 139.1 73.2 138.6 72.7 Z" fill="#C9A66B" stroke="none"/> <path d="M 66.9 90.1 C 66.4 89.2 63.6 87.4 62.0 86.3 C 60.4 85.1 58.8 84.8 57.2 83.3 C 55.6 81.9 53.8 79.0 52.3 77.5 C 50.9 76.1 49.9 73.5 48.5 74.6 C 47.0 75.8 44.9 82.1 43.6 84.3 C 42.3 86.6 41.8 86.9 40.7 88.2 C 39.6 89.5 38.1 90.9 36.8 92.1 C 35.5 93.2 34.9 93.8 33.0 95.0 C 31.0 96.1 27.6 97.9 25.2 98.9 C 22.8 99.8 19.7 100.1 18.4 100.8 C 17.1 101.4 17.6 101.9 17.4 102.7 C 17.3 103.5 17.1 105.0 17.4 105.6 C 17.8 106.3 16.5 106.4 19.4 106.6 C 22.3 106.8 32.0 106.8 34.9 106.6 C 37.8 106.4 35.9 106.3 36.8 105.6 C 37.8 105.0 39.7 103.2 40.7 102.7 C 41.7 102.2 42.0 103.1 42.6 102.7 C 43.3 102.4 44.1 101.9 44.6 100.8 C 45.1 99.7 45.4 97.6 45.6 95.9 C 45.7 94.3 45.2 92.2 45.6 91.1 C 45.9 90.0 46.7 89.6 47.5 89.2 C 48.3 88.7 49.6 89.0 50.4 88.2 C 51.2 87.4 51.7 84.5 52.3 84.3 C 53.0 84.2 52.7 85.9 54.3 87.2 C 55.9 88.5 60.2 91.3 62.0 92.1 C 63.8 92.9 64.1 92.4 64.9 92.1 C 65.7 91.7 67.4 91.1 66.9 90.1 Z" fill="#C9A66B" stroke="none"/> <path d="M 29.1 34.9 C 29.4 34.1 30.2 33.3 31.0 33.0 C 31.8 32.6 33.1 32.1 33.9 33.0 C 34.7 33.8 35.9 36.8 35.9 37.8 C 35.9 38.8 35.1 38.8 33.9 38.8 C 32.8 38.8 29.9 38.4 29.1 37.8 C 28.3 37.2 28.8 35.7 29.1 34.9 Z" fill="#05161A" stroke="none"/></svg><span>호랑이</span></div>
+            <div class="drag-card" draggable="true" data-type="prey" data-name="사슴" ondragstart="dstart(event)"><img src="https://i.imgur.com/ztjNftM.png" width="40" height="80" style="object-fit:contain;display:block;"><path d="M 16.7 27.9 C 16.3 25.1 14.4 27.4 14.0 30.7 C 13.5 34.0 13.3 43.0 14.0 47.4 C 14.7 51.9 16.5 54.7 18.1 57.2 C 19.8 59.8 18.8 60.2 23.7 62.8 C 28.6 65.3 43.0 68.4 47.4 72.6 C 51.9 76.7 48.8 85.6 50.2 87.9 C 51.6 90.2 54.7 85.8 55.8 86.5 C 57.0 87.2 57.7 90.7 57.2 92.1 C 56.7 93.5 53.3 93.5 53.0 94.9 C 52.8 96.3 53.5 99.3 55.8 100.5 C 58.1 101.6 64.9 100.7 67.0 101.9 C 69.1 103.0 68.6 106.0 68.4 107.4 C 68.1 108.8 67.7 110.5 65.6 110.2 C 63.5 110.0 57.7 105.6 55.8 106.0 C 54.0 106.5 55.8 111.4 54.4 113.0 C 53.0 114.7 50.0 113.7 47.4 115.8 C 44.9 117.9 40.7 120.5 39.1 125.6 C 37.4 130.7 37.2 140.5 37.7 146.5 C 38.1 152.6 40.7 158.8 41.9 161.9 C 43.0 164.9 44.9 166.3 44.7 164.7 C 44.4 163.0 40.5 156.7 40.5 152.1 C 40.5 147.4 44.0 137.0 44.7 136.7 C 45.3 136.5 43.5 145.3 44.7 150.7 C 45.8 156.0 49.8 162.3 51.6 168.8 C 53.5 175.3 55.1 181.9 55.8 189.8 C 56.5 197.7 56.3 210.5 55.8 216.3 C 55.3 222.1 52.8 223.3 53.0 224.7 C 53.3 226.0 56.3 225.3 57.2 224.7 C 58.1 224.0 58.4 226.7 58.6 220.5 C 58.8 214.2 58.1 196.0 58.6 187.0 C 59.1 177.9 59.8 169.5 61.4 166.0 C 63.0 162.6 67.4 162.8 68.4 166.0 C 69.3 169.3 66.5 175.8 67.0 185.6 C 67.4 195.3 70.5 225.6 71.2 224.7 C 71.9 223.7 68.8 194.9 71.2 180.0 C 73.5 165.1 82.8 140.0 85.1 135.3 C 87.4 130.7 85.8 148.1 85.1 152.1 C 84.4 156.0 81.6 156.3 80.9 159.1 C 80.2 161.9 79.8 170.7 80.9 168.8 C 82.1 167.0 86.7 154.2 87.9 147.9 C 89.1 141.6 88.6 135.6 87.9 131.2 C 87.2 126.7 85.3 124.0 83.7 121.4 C 82.1 118.8 80.2 117.2 78.1 115.8 C 76.0 114.4 72.8 115.3 71.2 113.0 C 69.5 110.7 68.1 105.3 68.4 101.9 C 68.6 98.4 72.8 94.2 72.6 92.1 C 72.3 90.0 67.4 90.2 67.0 89.3 C 66.5 88.4 68.6 87.0 69.8 86.5 C 70.9 86.0 72.8 87.4 74.0 86.5 C 75.1 85.6 77.2 82.1 76.7 80.9 C 76.3 79.8 70.7 81.2 71.2 79.5 C 71.6 77.9 75.8 73.3 79.5 71.2 C 83.3 69.1 88.8 69.3 93.5 67.0 C 98.1 64.7 104.4 60.7 107.4 57.2 C 110.5 53.7 111.2 49.3 111.6 46.0 C 112.1 42.8 110.7 37.7 110.2 37.7 C 109.8 37.7 109.8 44.4 108.8 46.0 C 107.9 47.7 106.0 48.6 104.7 47.4 C 103.3 46.3 101.9 40.5 100.5 39.1 C 99.1 37.7 96.0 37.7 96.3 39.1 C 96.5 40.5 101.2 44.0 101.9 47.4 C 102.6 50.9 101.9 57.4 100.5 60.0 C 99.1 62.6 94.9 62.8 93.5 62.8 C 92.1 62.8 94.0 59.1 92.1 60.0 C 90.2 60.9 85.6 66.7 82.3 68.4 C 79.1 70.0 74.9 68.1 72.6 69.8 C 70.2 71.4 70.9 76.7 68.4 78.1 C 65.8 79.5 60.2 80.5 57.2 78.1 C 54.2 75.8 51.6 65.6 50.2 64.2 C 48.8 62.8 50.5 69.3 48.8 69.8 C 47.2 70.2 42.8 68.6 40.5 67.0 C 38.1 65.3 36.7 60.7 34.9 60.0 C 33.0 59.3 31.2 63.0 29.3 62.8 C 27.4 62.6 24.9 60.5 23.7 58.6 C 22.6 56.7 21.6 54.9 22.3 51.6 C 23.0 48.4 27.7 41.4 27.9 39.1 C 28.1 36.7 24.4 36.7 23.7 37.7 C 23.0 38.6 24.9 43.0 23.7 44.7 C 22.6 46.3 17.9 50.2 16.7 47.4 C 15.6 44.7 17.2 30.7 16.7 27.9 Z" fill="#C9A66B" stroke="none"/> <path d="M 55.8 115.8 C 56.7 115.3 56.5 120.0 57.2 121.4 C 57.9 122.8 58.8 123.7 60.0 124.2 C 61.2 124.7 63.0 124.4 64.2 124.2 C 65.3 124.0 66.3 123.3 67.0 122.8 C 67.7 122.3 67.9 122.3 68.4 121.4 C 68.8 120.5 68.8 117.9 69.8 117.2 C 70.7 116.5 73.0 115.6 74.0 117.2 C 74.9 118.8 75.1 124.7 75.3 127.0 C 75.6 129.3 75.6 129.5 75.3 131.2 C 75.1 132.8 74.7 134.9 74.0 136.7 C 73.3 138.6 72.8 140.7 71.2 142.3 C 69.5 144.0 65.8 145.8 64.2 146.5 C 62.6 147.2 62.3 146.7 61.4 146.5 C 60.5 146.3 60.0 146.3 58.6 145.1 C 57.2 144.0 54.2 140.9 53.0 139.5 C 51.9 138.1 52.1 137.9 51.6 136.7 C 51.2 135.6 50.5 134.4 50.2 132.6 C 50.0 130.7 50.0 127.0 50.2 125.6 C 50.5 124.2 50.7 125.8 51.6 124.2 C 52.6 122.6 54.9 116.3 55.8 115.8 Z" fill="#05161A" stroke="none"/> <path d="M 47.4 171.6 C 47.2 171.6 46.0 173.7 46.0 174.4 C 46.0 175.1 47.0 173.3 47.4 175.8 C 47.9 178.4 48.6 185.8 48.8 189.8 C 49.1 193.7 49.3 195.8 48.8 199.5 C 48.4 203.3 46.3 209.3 46.0 212.1 C 45.8 214.9 46.7 215.6 47.4 216.3 C 48.1 217.0 49.8 217.4 50.2 216.3 C 50.7 215.1 50.5 210.7 50.2 209.3 C 50.0 207.9 49.1 209.3 48.8 207.9 C 48.6 206.5 48.6 205.3 48.8 200.9 C 49.1 196.5 50.2 185.6 50.2 181.4 C 50.2 177.2 49.3 177.0 48.8 175.8 C 48.4 174.7 47.7 175.1 47.4 174.4 C 47.2 173.7 47.7 171.6 47.4 171.6 Z" fill="#C9A66B" stroke="none"/> <path d="M 75.3 180.0 C 75.1 184.9 76.0 211.4 76.7 217.7 C 77.4 224.0 79.5 220.2 79.5 217.7 C 79.5 215.1 77.0 207.2 76.7 202.3 C 76.5 197.4 78.4 192.1 78.1 188.4 C 77.9 184.7 75.6 175.1 75.3 180.0 Z" fill="#C9A66B" stroke="none"/></svg><span>사슴</span></div>
+            <div class="drag-card" draggable="true" data-type="predator" data-name="멧돼지" ondragstart="dstart(event)"><img src="https://i.imgur.com/8OLXqwA.png" width="83" height="58" style="object-fit:contain;display:block;"><path d="M 10.2 87.5 C 9.8 88.4 10.6 91.7 11.4 93.2 C 12.1 94.7 13.4 96.0 14.8 96.6 C 16.1 97.2 17.4 97.2 19.3 96.6 C 21.2 96.0 24.8 94.3 26.1 93.2 C 27.5 92.0 27.7 91.3 27.3 89.8 C 26.9 88.3 23.9 86.0 23.9 84.1 C 23.9 82.2 25.9 78.4 27.3 78.4 C 28.6 78.4 29.9 82.4 31.8 84.1 C 33.7 85.8 38.4 87.5 38.6 88.6 C 38.8 89.8 34.3 90.0 33.0 90.9 C 31.6 91.9 29.0 93.8 30.7 94.3 C 32.4 94.9 40.0 93.9 43.2 94.3 C 46.4 94.7 47.9 96.2 50.0 96.6 C 52.1 97.0 54.5 97.0 55.7 96.6 C 56.8 96.2 54.5 94.9 56.8 94.3 C 59.1 93.8 64.2 92.4 69.3 93.2 C 74.4 93.9 83.0 96.4 87.5 98.9 C 92.0 101.3 95.1 104.5 96.6 108.0 C 98.1 111.4 97.2 116.3 96.6 119.3 C 96.0 122.3 93.8 124.2 93.2 126.1 C 92.6 128.0 92.4 130.1 93.2 130.7 C 93.9 131.2 96.2 130.5 97.7 129.5 C 99.2 128.6 101.5 126.9 102.3 125.0 C 103.0 123.1 101.5 121.0 102.3 118.2 C 103.0 115.3 105.9 111.0 106.8 108.0 C 107.8 104.9 107.0 102.1 108.0 100.0 C 108.9 97.9 111.9 94.9 112.5 95.5 C 113.1 96.0 108.1 102.1 111.4 103.4 C 114.6 104.7 126.1 104.0 131.8 103.4 C 137.5 102.8 144.1 102.8 145.5 100.0 C 146.8 97.2 140.2 89.0 139.8 86.4 C 139.4 83.7 142.4 83.7 143.2 84.1 C 143.9 84.5 143.0 86.2 144.3 88.6 C 145.6 91.1 147.2 95.6 151.1 98.9 C 155.1 102.1 164.6 105.7 168.2 108.0 C 171.8 110.2 171.8 110.6 172.7 112.5 C 173.7 114.4 174.6 116.5 173.9 119.3 C 173.1 122.2 168.2 127.8 168.2 129.5 C 168.2 131.3 172.2 130.3 173.9 129.5 C 175.6 128.8 177.1 128.2 178.4 125.0 C 179.7 121.8 181.3 113.4 181.8 110.2 C 182.4 107.0 182.8 107.4 181.8 105.7 C 180.9 104.0 177.3 101.5 176.1 100.0 C 175.0 98.5 173.9 99.4 175.0 96.6 C 176.1 93.8 181.6 88.1 183.0 83.0 C 184.3 77.8 182.6 69.1 183.0 65.9 C 183.3 62.7 185.4 64.4 185.2 63.6 C 185.0 62.9 183.0 62.9 181.8 61.4 C 180.7 59.8 180.3 57.0 178.4 54.5 C 176.5 52.1 174.4 49.1 170.5 46.6 C 166.5 44.1 158.3 41.7 154.5 39.8 C 150.8 37.9 149.1 36.6 147.7 35.2 C 146.4 33.9 152.3 34.8 146.6 31.8 C 140.9 28.8 121.6 19.7 113.6 17.0 C 105.7 14.4 104.2 15.3 98.9 15.9 C 93.6 16.5 87.3 18.2 81.8 20.5 C 76.3 22.7 69.5 27.1 65.9 29.5 C 62.3 32.0 61.6 34.3 60.2 35.2 C 58.9 36.2 59.1 36.2 58.0 35.2 C 56.8 34.3 54.7 30.7 53.4 29.5 C 52.1 28.4 50.4 26.1 50.0 28.4 C 49.6 30.7 51.7 39.6 51.1 43.2 C 50.6 46.8 47.9 47.0 46.6 50.0 C 45.3 53.0 47.7 56.8 43.2 61.4 C 38.6 65.9 23.7 75.0 19.3 77.3 C 15.0 79.5 17.6 73.7 17.0 75.0 C 16.5 76.3 16.5 83.1 15.9 85.2 C 15.3 87.3 14.6 87.1 13.6 87.5 C 12.7 87.9 10.6 86.6 10.2 87.5 Z" fill="#C9A66B" stroke="none"/> <path d="M 87.5 103.4 C 87.1 103.0 86.0 103.8 85.2 103.4 C 84.5 103.0 84.3 101.5 83.0 101.1 C 81.6 100.8 78.2 100.0 77.3 101.1 C 76.3 102.3 77.7 105.7 77.3 108.0 C 76.9 110.2 75.8 113.1 75.0 114.8 C 74.2 116.5 73.7 117.0 72.7 118.2 C 71.8 119.3 69.7 120.5 69.3 121.6 C 68.9 122.7 69.9 124.4 70.5 125.0 C 71.0 125.6 71.6 125.6 72.7 125.0 C 73.9 124.4 76.3 122.3 77.3 121.6 C 78.2 120.8 77.3 122.5 78.4 120.5 C 79.5 118.4 82.6 111.6 84.1 109.1 C 85.6 106.6 86.9 106.6 87.5 105.7 C 88.1 104.7 87.9 103.8 87.5 103.4 Z" fill="#C9A66B" stroke="none"/> <path d="M 73.9 28.4 C 75.4 27.8 77.5 28.8 78.4 29.5 C 79.4 30.3 79.4 30.9 79.5 33.0 C 79.7 35.0 79.9 39.4 79.5 42.0 C 79.2 44.7 78.4 47.7 77.3 48.9 C 76.1 50.0 73.3 49.4 72.7 48.9 C 72.2 48.3 73.7 46.8 73.9 45.5 C 74.1 44.1 73.7 41.9 73.9 40.9 C 74.1 40.0 74.8 40.5 75.0 39.8 C 75.2 39.0 75.8 36.9 75.0 36.4 C 74.2 35.8 71.8 35.8 70.5 36.4 C 69.1 36.9 67.8 38.6 67.0 39.8 C 66.3 40.9 66.5 43.0 65.9 43.2 C 65.3 43.4 64.0 41.7 63.6 40.9 C 63.3 40.2 63.4 39.4 63.6 38.6 C 63.8 37.9 64.0 37.3 64.8 36.4 C 65.5 35.4 67.4 33.5 68.2 33.0 C 68.9 32.4 68.4 33.7 69.3 33.0 C 70.3 32.2 72.3 29.0 73.9 28.4 Z" fill="#05161A" stroke="none"/> <path d="M 152.3 104.5 C 151.5 104.4 150.4 104.2 150.0 104.5 C 149.6 104.9 149.8 105.1 150.0 106.8 C 150.2 108.5 151.7 112.5 151.1 114.8 C 150.6 117.0 147.3 118.8 146.6 120.5 C 145.8 122.2 146.0 124.4 146.6 125.0 C 147.2 125.6 148.9 124.4 150.0 123.9 C 151.1 123.3 152.1 123.1 153.4 121.6 C 154.7 120.1 157.2 116.3 158.0 114.8 C 158.7 113.3 157.6 113.1 158.0 112.5 C 158.3 111.9 160.0 112.1 160.2 111.4 C 160.4 110.6 159.7 108.5 159.1 108.0 C 158.5 107.4 157.6 108.3 156.8 108.0 C 156.1 107.6 155.3 106.2 154.5 105.7 C 153.8 105.1 153.0 104.7 152.3 104.5 Z" fill="#C9A66B" stroke="none"/> <path d="M 47.7 61.4 C 48.3 60.6 49.2 60.4 50.0 60.2 C 50.8 60.0 51.5 59.7 52.3 60.2 C 53.0 60.8 54.5 62.7 54.5 63.6 C 54.5 64.6 53.6 65.7 52.3 65.9 C 50.9 66.1 47.3 65.5 46.6 64.8 C 45.8 64.0 47.2 62.1 47.7 61.4 Z" fill="#05161A" stroke="none"/></svg><span>멧돼지</span></div>
+            <div class="drag-card" draggable="true" data-type="prey" data-name="노루" ondragstart="dstart(event)"><img src="https://i.imgur.com/b1Xfpr2.png" width="46" height="80" style="object-fit:contain;display:block;"><path d="M 89.9 13.9 C 88.8 13.3 84.6 14.8 83.5 16.5 C 82.5 18.1 84.6 21.9 83.5 24.1 C 82.5 26.2 78.7 28.7 77.2 29.1 C 75.7 29.5 75.9 25.7 74.7 26.6 C 73.4 27.4 71.1 32.9 69.6 34.2 C 68.1 35.4 66.9 34.6 65.8 34.2 C 64.8 33.8 63.7 31.6 63.3 31.6 C 62.9 31.6 64.6 32.1 63.3 34.2 C 62.0 36.3 58.9 42.6 55.7 44.3 C 52.5 46.0 47.0 45.1 44.3 44.3 C 41.6 43.5 40.3 40.7 39.2 39.2 C 38.2 37.8 39.5 36.3 38.0 35.4 C 36.5 34.6 32.3 35.2 30.4 34.2 C 28.5 33.1 28.3 30.0 26.6 29.1 C 24.9 28.3 21.7 29.5 20.3 29.1 C 18.8 28.7 18.6 28.3 17.7 26.6 C 16.9 24.9 16.0 20.3 15.2 19.0 C 14.3 17.7 13.5 19.4 12.7 19.0 C 11.8 18.6 10.5 16.0 10.1 16.5 C 9.7 16.9 9.3 19.4 10.1 21.5 C 11.0 23.6 10.5 25.9 15.2 29.1 C 19.8 32.3 34.0 38.2 38.0 40.5 C 42.0 42.8 39.0 40.9 39.2 43.0 C 39.5 45.1 38.6 51.1 39.2 53.2 C 39.9 55.3 42.8 55.3 43.0 55.7 C 43.2 56.1 40.9 55.1 40.5 55.7 C 40.1 56.3 39.9 57.8 40.5 59.5 C 41.1 61.2 43.9 63.7 44.3 65.8 C 44.7 67.9 44.7 67.7 43.0 72.2 C 41.4 76.6 35.9 86.9 34.2 92.4 C 32.5 97.9 32.3 100.0 32.9 105.1 C 33.5 110.1 36.7 117.1 38.0 122.8 C 39.2 128.5 40.3 138.8 40.5 139.2 C 40.7 139.7 38.8 128.7 39.2 125.3 C 39.7 121.9 42.2 116.5 43.0 119.0 C 43.9 121.5 43.7 136.1 44.3 140.5 C 44.9 144.9 46.2 149.6 46.8 145.6 C 47.5 141.6 46.8 121.1 48.1 116.5 C 49.4 111.8 53.4 109.1 54.4 117.7 C 55.5 126.4 54.0 159.9 54.4 168.4 C 54.9 176.8 56.8 172.4 57.0 168.4 C 57.2 164.3 55.1 151.1 55.7 144.3 C 56.3 137.6 59.7 128.1 60.8 127.8 C 61.8 127.6 61.6 143.9 62.0 143.0 C 62.4 142.2 62.4 128.5 63.3 122.8 C 64.1 117.1 66.5 113.7 67.1 108.9 C 67.7 104.0 68.6 99.4 67.1 93.7 C 65.6 88.0 59.7 78.7 58.2 74.7 C 56.8 70.7 59.3 71.1 58.2 69.6 C 57.2 68.1 54.0 66.2 51.9 65.8 C 49.8 65.4 46.6 67.3 45.6 67.1 C 44.5 66.9 45.1 65.4 45.6 64.6 C 46.0 63.7 46.8 62.4 48.1 62.0 C 49.4 61.6 51.7 61.6 53.2 62.0 C 54.6 62.4 55.7 65.8 57.0 64.6 C 58.2 63.3 60.3 57.6 60.8 54.4 C 61.2 51.3 59.5 47.7 59.5 45.6 C 59.5 43.5 58.6 43.7 60.8 41.8 C 62.9 39.9 69.2 35.7 72.2 34.2 C 75.1 32.7 75.9 34.4 78.5 32.9 C 81.0 31.4 85.9 27.0 87.3 25.3 C 88.8 23.6 86.9 23.6 87.3 22.8 C 87.8 21.9 89.5 21.7 89.9 20.3 C 90.3 18.8 90.9 14.6 89.9 13.9 Z" fill="#C9A66B" stroke="none"/> <path d="M 38.0 158.2 C 38.0 160.5 40.1 160.5 40.5 158.2 C 40.9 155.9 40.9 144.3 40.5 144.3 C 40.1 144.3 38.0 155.9 38.0 158.2 Z" fill="#C9A66B" stroke="none"/></svg><span>노루</span></div>
+            <div class="drag-card" draggable="true" data-type="predator" data-name="늑대" ondragstart="dstart(event)"><img src="https://i.imgur.com/RQxcwz7.png" width="83" height="52" style="object-fit:contain;display:block;"><path d="M 188.3 36.8 C 186.7 35.7 181.2 35.7 178.5 34.1 C 175.8 32.4 174.1 28.6 172.2 26.9 C 170.3 25.3 167.9 25.6 166.8 24.2 C 165.8 22.9 166.5 19.7 165.9 18.8 C 165.3 17.9 163.7 17.5 163.2 18.8 C 162.8 20.2 163.7 25.3 163.2 26.9 C 162.8 28.6 161.3 28.7 160.5 28.7 C 159.8 28.7 159.0 28.1 158.7 26.9 C 158.4 25.7 158.3 23.3 158.7 21.5 C 159.2 19.7 161.6 16.6 161.4 16.1 C 161.3 15.7 159.3 16.9 157.8 18.8 C 156.4 20.8 155.8 24.8 152.5 27.8 C 149.2 30.8 140.7 34.7 138.1 36.8 C 135.6 38.9 138.7 39.5 137.2 40.4 C 135.7 41.3 131.2 40.8 129.1 42.2 C 127.1 43.5 127.4 46.9 124.7 48.4 C 122.0 49.9 120.8 50.7 113.0 51.1 C 105.2 51.6 85.5 50.8 78.0 51.1 C 70.6 51.4 72.6 51.4 68.2 52.9 C 63.7 54.4 57.7 56.1 51.1 60.1 C 44.5 64.1 33.9 73.5 28.7 77.1 C 23.5 80.7 22.7 80.6 19.7 81.6 C 16.7 82.7 12.0 82.7 10.8 83.4 C 9.6 84.2 11.1 85.2 12.6 86.1 C 14.1 87.0 16.3 88.3 19.7 88.8 C 23.2 89.2 30.3 89.4 33.2 88.8 C 36.0 88.2 35.7 85.8 36.8 85.2 C 37.8 84.6 39.0 84.9 39.5 85.2 C 39.9 85.5 38.7 87.3 39.5 87.0 C 40.2 86.7 43.0 84.5 43.9 83.4 C 44.8 82.4 44.4 81.3 44.8 80.7 C 45.3 80.1 46.0 79.7 46.6 79.8 C 47.2 80.0 47.5 82.5 48.4 81.6 C 49.3 80.7 50.5 76.1 52.0 74.4 C 53.5 72.8 55.6 74.0 57.4 71.7 C 59.2 69.5 61.3 62.8 62.8 61.0 C 64.3 59.2 66.1 60.5 66.4 61.0 C 66.7 61.4 65.3 60.5 64.6 63.7 C 63.8 66.8 63.4 76.2 61.9 79.8 C 60.4 83.4 57.7 83.9 55.6 85.2 C 53.5 86.5 51.9 84.8 49.3 87.9 C 46.8 91.0 42.0 100.1 40.4 104.0 C 38.7 107.9 38.6 110.0 39.5 111.2 C 40.4 112.4 44.8 112.3 45.7 111.2 C 46.6 110.2 43.5 107.9 44.8 104.9 C 46.2 101.9 48.4 96.6 53.8 93.3 C 59.2 90.0 71.0 88.9 77.1 85.2 C 83.3 81.5 88.5 72.3 90.6 70.9 C 92.7 69.4 86.4 74.4 89.7 76.2 C 93.0 78.0 104.2 80.7 110.3 81.6 C 116.4 82.5 124.1 82.7 126.5 81.6 C 128.8 80.6 124.4 77.0 124.7 75.3 C 125.0 73.7 127.4 70.9 128.3 71.7 C 129.1 72.6 128.4 76.8 130.0 80.7 C 131.7 84.6 136.0 90.1 138.1 95.1 C 140.2 100.0 141.0 107.2 142.6 110.3 C 144.2 113.5 145.7 113.5 148.0 113.9 C 150.2 114.3 155.0 113.6 156.1 113.0 C 157.1 112.4 155.6 111.2 154.3 110.3 C 152.9 109.4 149.6 109.7 148.0 107.6 C 146.3 105.5 145.3 100.9 144.4 97.8 C 143.5 94.6 142.6 93.1 142.6 88.8 C 142.6 84.5 143.5 75.2 144.4 71.7 C 145.3 68.3 147.2 68.3 148.0 68.2 C 148.7 68.0 148.4 70.6 148.9 70.9 C 149.3 71.2 150.1 71.0 150.7 70.0 C 151.3 68.9 151.6 65.8 152.5 64.6 C 153.4 63.4 154.4 65.0 156.1 62.8 C 157.7 60.5 160.7 53.7 162.3 51.1 C 164.0 48.6 164.0 48.6 165.9 47.5 C 167.9 46.5 171.3 45.3 174.0 44.8 C 176.7 44.4 181.8 45.0 182.1 44.8 C 182.4 44.7 177.0 44.7 175.8 43.9 C 174.6 43.2 172.8 41.0 174.9 40.4 C 177.0 39.8 186.1 41.0 188.3 40.4 C 190.6 39.8 190.0 37.8 188.3 36.8 Z" fill="#C9A66B" stroke="none"/> <path d="M 90.6 79.8 C 90.3 79.5 89.4 79.7 88.8 79.8 C 88.2 80.0 87.4 80.4 87.0 80.7 C 86.5 81.0 86.5 81.0 86.1 81.6 C 85.7 82.2 85.1 83.4 84.3 84.3 C 83.6 85.2 82.8 86.1 81.6 87.0 C 80.4 87.9 78.9 88.9 77.1 89.7 C 75.3 90.4 71.9 90.6 70.9 91.5 C 69.8 92.4 70.6 93.9 70.9 95.1 C 71.2 96.3 71.4 96.6 72.6 98.7 C 73.8 100.7 76.8 105.8 78.0 107.6 C 79.2 109.4 79.5 109.0 79.8 109.4 C 80.1 109.9 78.5 110.0 79.8 110.3 C 81.2 110.6 86.5 111.4 87.9 111.2 C 89.2 111.1 88.3 109.7 87.9 109.4 C 87.4 109.1 85.9 109.6 85.2 109.4 C 84.5 109.3 84.0 109.0 83.4 108.5 C 82.8 108.1 82.4 107.9 81.6 106.7 C 80.9 105.5 79.5 102.7 78.9 101.3 C 78.3 100.0 78.2 99.9 78.0 98.7 C 77.9 97.5 76.8 96.0 78.0 94.2 C 79.2 92.4 83.6 89.4 85.2 87.9 C 86.8 86.4 87.0 86.2 87.9 85.2 C 88.8 84.2 90.1 82.5 90.6 81.6 C 91.0 80.7 90.9 80.1 90.6 79.8 Z" fill="#C9A66B" stroke="none"/> <path d="M 130.9 88.8 C 130.5 89.5 130.0 96.1 130.0 97.8 C 130.0 99.4 130.8 96.9 130.9 98.7 C 131.1 100.4 130.6 106.4 130.9 108.5 C 131.2 110.6 132.1 110.6 132.7 111.2 C 133.3 111.8 133.6 112.4 134.5 112.1 C 135.4 111.8 137.7 109.9 138.1 109.4 C 138.6 109.0 137.7 109.7 137.2 109.4 C 136.8 109.1 135.7 109.7 135.4 107.6 C 135.1 105.5 135.6 99.0 135.4 96.9 C 135.3 94.8 135.0 95.7 134.5 95.1 C 134.1 94.5 133.3 94.3 132.7 93.3 C 132.1 92.2 131.4 88.0 130.9 88.8 Z" fill="#C9A66B" stroke="none"/></svg><span>늑대</span></div>
+            <div class="drag-card" draggable="true" data-type="prey" data-name="물고기" ondragstart="dstart(event)">
+          <g transform="translate(0,0) scale(0.5000,0.5000)"><path d="M 10 30 C 10 12 35 4 70 4 C 105 4 135 12 148 24 C 155 30 155 42 148 48 C 135 60 105 68 70 68 C 35 68 10 56 10 42 Z" fill="#C9A66B" stroke="none"/><path d="M 4 36 C -8 28 -8 44 4 36 Z" fill="#C9A66B"/><circle cx="138" cy="22" r="4" fill="#05161A"/></g>
+          <span>물고기</span>
+        </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+            <div id="zone-threat" class="drop-zone" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropCard(event,'threat');this.classList.remove('over')"><div class="dz-label">위협 · 맹수 구역</div><div id="dz-threat"></div></div>
+            <div id="zone-hunt" class="drop-zone" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropCard(event,'hunt');this.classList.remove('over')"><div class="dz-label">사냥감 · 먹잇감 구역</div><div id="dz-hunt"></div></div>
+          </div>
+          <button class="reset-btn" onclick="resetZones()">초기화 →</button>
+        </div>
+        <div class="scene-result-box" id="life-scene" style="flex:1;">
+          <div class="scene-canvas-area" style="height:auto;flex:1;">
+            <svg id="scene-svg" style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 1200 900" fill="none">
+              <rect width="1200" height="900" fill="#06060a"/>
+              <text x="600" y="460" text-anchor="middle" fill="rgba(201,166,107,.2)" font-size="16" font-family="serif" letter-spacing="1">도상을 배치하면 장면이 달라집니다</text>
+            </svg>
+          </div>
+          <div class="scene-info-area" id="scene-info"><div class="scene-desc-text" id="scene-txt"></div><div class="scene-badges" id="scene-badges"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="fp-right">
+      <div class="fp-ch-num-bg">02</div>
+      <span class="fp-ch-label">Chapter 02 · 영역</span>
+      <div class="fp-ch-title">두 세계의</div>
+      <span class="fp-ch-title-gold">경계</span>
+      <div class="fp-rule"></div>
+      <p class="fp-ch-body">도상을 직접 배치해보세요. 어떤 동물을 어디에 두느냐에 따라 선사인의 하루가 달라집니다. 맹수가 많으면 이동이 잦아지고, 먹잇감이 많으면 정착이 가능해집니다.</p>
+      <button class="fp-more" onclick="toggleFpExpand(this)">더 읽기</button>
+      <div class="fp-expand">
+        <strong style="color:rgba(200,194,180,.9);">관찰 포인트:</strong> 호랑이는 완전한 측면으로, 사슴은 정면에 가깝게 새겨져 있습니다.
+        <div style="font-size:13px;color:rgba(160,152,130,.6);margin-top:10px;" id="ch2-res">아직 배치하지 않았습니다.</div>
+      </div>
+      <div class="fp-tags"><span class="fp-tag">호랑이 (완전 측면)</span><span class="fp-tag">사슴 (정면 앵글)</span><span class="fp-tag">멧돼지</span></div>
+      <div class="fp-meta"><span>신석기~청동기 · 약 5,000년 전</span><span>인지와 시각 언어</span></div>
+    </div>
+  </div>
+</div>
+<div class="ch-panel" id="panel-survival">
+  <div class="fp-wrap">
+    <div class="fp-left">
+      <div class="fp-left-inner" style="display:flex;flex-direction:column;gap:0;">
+        <div style="padding:20px 28px 14px;">
+          <div style="font-size:11px;letter-spacing:.2em;color:rgba(201,166,107,.35);margin-bottom:14px;">세 사냥꾼에게 도구를 배분하세요</div>
+          <div id="tool-palette" style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+            <div class="tool-card" draggable="true" data-tool="bow" ondragstart="tstart(event)"><img src="https://i.imgur.com/8ct47Q5.png" width="53" height="60" style="object-fit:contain;display:block;"><path d="M 0.0 0.0 C -14.7 16.7 -14.7 83.7 0.0 100.4 C 14.7 117.1 73.6 117.1 88.3 100.4 C 103.0 83.7 103.0 16.7 88.3 0.0 C 73.6 -16.7 14.7 -16.7 0.0 0.0 Z" fill="#C9A66B" stroke="none"/></svg><span>활과 화살</span></div>
+            <div class="tool-card" draggable="true" data-tool="spear" ondragstart="tstart(event)"><img src="https://i.imgur.com/bQBSyGQ.png" width="18" height="72" style="object-fit:contain;display:block;"><path d="M 0.0 0.0 C -6.5 26.7 -6.5 133.3 0.0 160.0 C 6.5 186.7 32.3 186.7 38.8 160.0 C 45.2 133.3 45.2 26.7 38.8 0.0 C 32.3 -26.7 6.5 -26.7 0.0 0.0 Z" fill="#C9A66B" stroke="none"/></svg><span>창</span></div>
+            <div class="tool-card" draggable="true" data-tool="net" ondragstart="tstart(event)"><img src="https://i.imgur.com/eV9abNt.png" width="62" height="52" style="object-fit:contain;display:block;"><path d="M 0.0 0.0 C -14.8 12.5 -14.8 62.7 0.0 75.2 C 14.8 87.8 73.8 87.8 88.5 75.2 C 103.3 62.7 103.3 12.5 88.5 0.0 C 73.8 -12.5 14.8 -12.5 0.0 0.0 Z" fill="#C9A66B" stroke="none"/></svg><span>그물</span></div>
+            <div class="tool-card" draggable="true" data-tool="torch" ondragstart="tstart(event)"><img src="https://i.imgur.com/b9kdgGc.png" width="40" height="72" style="object-fit:contain;display:block;"><path d="M 0.0 0.0 C -9.7 17.9 -9.7 89.5 0.0 107.4 C 9.7 125.3 48.7 125.3 58.4 107.4 C 68.2 89.5 68.2 17.9 58.4 0.0 C 48.7 -17.9 9.7 -17.9 0.0 0.0 Z" fill="#C9A66B" stroke="none"/></svg><span>횃불</span></div>
+          </div>
+          <div class="hunters-grid">
+            <div class="hunter-zone" id="hz-0" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="toolDrop(event,0);this.classList.remove('over')"><img src="https://i.imgur.com/GebNK9Q.png" width="32" height="56" style="object-fit:contain;display:block;"><path d="M 0.0 0.0 C -9.6 18.4 -9.6 92.0 0.0 110.4 C 9.6 128.8 48.0 128.8 57.6 110.4 C 67.2 92.0 67.2 18.4 57.6 0.0 C 48.0 -18.4 9.6 -18.4 0.0 0.0 Z" fill="#C9A66B" stroke="none"/></svg><div class="hz-label">사냥꾼 A</div><div class="hz-tool" id="ht-0">— 미배정 —</div></div>
+            <div class="hunter-zone" id="hz-1" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="toolDrop(event,1);this.classList.remove('over')"><img src="https://i.imgur.com/GebNK9Q.png" width="32" height="56" style="object-fit:contain;display:block;"><path d="M 0.0 0.0 C -9.6 18.4 -9.6 92.0 0.0 110.4 C 9.6 128.8 48.0 128.8 57.6 110.4 C 67.2 92.0 67.2 18.4 57.6 0.0 C 48.0 -18.4 9.6 -18.4 0.0 0.0 Z" fill="#C9A66B" stroke="none"/></svg><div class="hz-label">사냥꾼 B</div><div class="hz-tool" id="ht-1">— 미배정 —</div></div>
+            <div class="hunter-zone" id="hz-2" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="toolDrop(event,2);this.classList.remove('over')"><img src="https://i.imgur.com/GebNK9Q.png" width="32" height="56" style="object-fit:contain;display:block;"><path d="M 0.0 0.0 C -9.6 18.4 -9.6 92.0 0.0 110.4 C 9.6 128.8 48.0 128.8 57.6 110.4 C 67.2 92.0 67.2 18.4 57.6 0.0 C 48.0 -18.4 9.6 -18.4 0.0 0.0 Z" fill="#C9A66B" stroke="none"/></svg><div class="hz-label">사냥꾼 C</div><div class="hz-tool" id="ht-2">— 미배정 —</div></div>
+          </div>
+          <button class="reset-btn" onclick="resetHunters()">초기화 →</button>
+        </div>
+        <div class="scene-result-box" id="hunt-result" style="flex:1;">
+          <div class="scene-canvas-area" style="height:auto;flex:1;">
+            <svg id="hunt-svg" style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 1200 800" fill="none">
+              <rect width="1120" height="520" fill="#06060a"/>
+              <text x="560" y="268" text-anchor="middle" fill="rgba(201,166,107,.2)" font-size="16" font-family="serif" letter-spacing="1">도구를 배분하면 사냥 장면이 달라집니다</text>
+            </svg>
+          </div>
+          <div class="scene-info-area" id="hunt-info"><div class="scene-desc-text" id="hunt-txt"></div><div class="scene-badges" id="hunt-badges"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="fp-right">
+      <div class="fp-ch-num-bg">03</div>
+      <span class="fp-ch-label">Chapter 03 · 생존</span>
+      <div class="fp-ch-title">집단으로</div>
+      <span class="fp-ch-title-gold">살아남다</span>
+      <div class="fp-rule"></div>
+      <p class="fp-ch-body">사냥꾼, 그물, 집단 사냥. 개인이 아닌 집단의 협력, 역할의 분담. 반구대는 이것이 7,000년 전부터 존재했음을 증명합니다.</p>
+      <button class="fp-more" onclick="toggleFpExpand(this)">더 읽기</button>
+      <div class="fp-expand">
+        <strong style="color:rgba(200,194,180,.9);">관찰 포인트:</strong> 반구대에서는 사냥꾼이 항상 무리 지어 등장합니다. 이미 역할 분담과 집단 협업이 존재했음을 보여줍니다.
+        <div style="font-size:13px;color:rgba(160,152,130,.6);margin-top:10px;" id="ch3-res">아직 배분하지 않았습니다.</div>
+      </div>
+      <div class="fp-tags"><span class="fp-tag">사냥꾼 집단</span><span class="fp-tag">협동 그물</span><span class="fp-tag">포위 사냥</span></div>
+      <div class="fp-meta"><span>신석기 시대 · 약 6,000년 전</span><span>사회 구조의 시각화</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ════ CLUE RECORD ════ -->
+
+
+
+<!-- ════ AR ════ -->
+<section id="ar" class="ar-section">
+  <div class="ar-inner">
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-bg-el"></div>
+          <div class="phone-scan"></div>
+          <div class="phone-glyph"><svg width="143" height="80" viewBox="0 0 500 279" preserveAspectRatio="xMidYMid meet"><path d="M 10.8 160.7 C 9.0 166.2 37.0 163.7 47.6 160.7 C 58.2 157.7 67.6 146.2 74.5 142.7 C 81.4 139.3 74.5 135.8 88.9 140.0 C 103.2 144.2 149.5 164.3 160.7 167.9 C 171.9 171.5 155.7 162.6 156.2 161.6 C 156.6 160.5 147.2 155.0 163.4 161.6 C 179.5 168.2 232.2 193.9 253.1 201.1 C 274.1 208.3 293.5 206.3 289.0 204.7 C 284.6 203.0 242.8 196.3 226.2 191.2 C 209.6 186.1 197.9 179.1 189.4 174.1 C 180.9 169.2 158.6 158.7 175.0 161.6 C 191.5 164.4 265.7 186.3 288.2 191.2 C 310.6 196.1 311.0 192.1 309.7 191.2 C 308.3 190.3 276.8 186.9 280.1 185.8 C 283.4 184.8 323.6 183.9 329.4 184.9 C 335.3 186.0 321.1 184.8 315.1 192.1 C 309.1 199.4 300.4 219.6 293.5 228.9 C 286.7 238.2 276.3 243.4 273.8 247.8 C 271.2 252.1 270.6 256.0 278.3 254.9 C 285.9 253.9 306.9 249.1 319.6 241.5 C 332.3 233.8 343.1 215.0 354.6 209.2 C 366.1 203.3 388.1 205.9 388.7 206.5 C 389.3 207.1 365.8 203.9 358.2 212.7 C 350.5 221.6 344.7 250.6 342.9 259.4 C 341.1 268.3 342.5 267.8 347.4 265.7 C 352.3 263.6 364.8 257.0 372.5 246.9 C 380.3 236.7 383.9 213.6 394.1 204.7 C 404.2 195.7 422.5 197.5 433.6 193.0 C 444.6 188.5 460.7 177.9 460.5 177.7 C 460.4 177.6 433.9 193.4 432.7 192.1 C 431.5 190.8 456.9 168.5 453.3 169.7 C 449.7 170.9 419.4 194.5 411.1 199.3 C 402.9 204.1 399.8 202.1 403.9 198.4 C 408.1 194.6 437.9 176.2 436.3 176.8 C 434.6 177.4 407.1 197.3 394.1 202.0 C 381.1 206.6 357.7 205.9 358.2 204.7 C 358.6 203.5 387.0 198.5 396.8 194.8 C 406.5 191.1 418.3 181.8 416.5 182.2 C 414.7 182.7 395.1 194.6 386.0 197.5 C 376.9 200.3 363.4 201.7 361.8 199.3 C 360.1 196.9 374.3 186.4 376.1 183.1 C 377.9 179.8 369.5 180.4 372.5 179.5 C 375.5 178.6 383.9 182.8 394.1 177.7 C 404.2 172.7 418.9 154.2 433.6 149.0 C 448.2 143.8 473.7 145.9 482.0 146.3 C 490.4 146.8 484.1 152.9 483.8 151.7 C 483.5 150.5 484.4 142.7 480.3 139.1 C 476.1 135.5 470.2 133.2 458.7 130.2 C 447.2 127.2 440.8 124.5 411.1 121.2 C 381.5 117.9 311.2 114.0 281.0 110.4 C 250.7 106.8 238.0 99.5 229.8 99.6 C 221.6 99.8 234.3 108.0 231.6 111.3 C 228.9 114.6 229.4 117.0 213.6 119.4 C 197.9 121.8 159.3 125.4 137.3 125.7 C 115.4 126.0 93.7 124.9 81.7 121.2 C 69.7 117.4 71.2 107.0 65.5 103.2 C 59.8 99.5 48.8 94.7 47.6 98.7 C 46.4 102.8 64.5 117.1 58.3 127.5 C 52.2 137.8 12.6 155.1 10.8 160.7 Z" fill="#C9A66B" stroke="none"/> <path d="M 167.9 170.6 C 171.0 172.5 180.4 177.6 188.5 181.3 C 196.6 185.1 210.5 190.8 216.3 193.0 C 222.2 195.2 222.0 194.2 223.5 194.8 C 225.0 195.4 224.0 195.8 225.3 196.6 C 226.7 197.3 227.9 197.9 231.6 199.3 C 235.3 200.6 241.6 202.9 247.8 204.7 C 253.9 206.5 262.4 208.7 268.4 210.1 C 274.4 211.4 280.2 212.4 283.7 212.7 C 287.1 213.0 289.0 212.0 289.0 211.8 C 289.0 211.7 287.6 212.4 283.7 211.8 C 279.8 211.3 272.0 209.8 265.7 208.3 C 259.4 206.8 251.0 204.4 246.0 202.9 C 240.9 201.4 239.2 200.9 235.2 199.3 C 231.1 197.6 225.5 194.5 221.7 193.0 C 218.0 191.5 217.8 192.3 212.7 190.3 C 207.7 188.4 198.4 184.8 191.2 181.3 C 184.0 177.9 173.5 171.5 169.7 169.7 C 165.8 167.9 164.7 168.6 167.9 170.6 Z" fill="#C9A66B" stroke="none"/></svg></div>
+          <div class="phone-corners"><div class="pc tl"></div><div class="pc tr"></div><div class="pc bl"></div><div class="pc br"></div></div>
+          <div class="phone-notch"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ar-text">
+      <span style="font-size:96px;font-weight:800;color:rgba(201,166,107,.06);line-height:.85;letter-spacing:-.04em;display:block;margin-bottom:-8px;">03</span>
+      <span class="ar-at-trace">AR 추리 렌즈</span>
+      <div class="ar-main-title">물속에 잠긴</div>
+      <span class="ar-main-gold">흔적을 찾아내세요</span>
+      <div class="ar-side-desc">
+        <div class="ar-side-line"></div>
+        <p class="ar-side-text">증강현실로 수위에 따라 잠긴 암각화를 되살립니다.<br>살물 단서를 추적하며 선사인의 수수께끼를 풀어보세요.</p>
+      </div>
+      <span class="ar-sub-label">AT TRACE</span>
+      <div class="ar-sub-title">추리 렌즈</div>
+      <p class="ar-sub-body">현장에서 스마트폰을 암각화 방향으로 비추면 수위에 따라 잠긴 도상이 AR로 복원됩니다. 각 도상의 단서를 추적하여 선사인의 이야기를 완성하세요.</p>
+      <div class="ar-divider"></div>
+      <div class="ar-feats">
+        <div class="ar-feat"><div class="ar-feat-dot"></div><div><div class="ar-feat-title">실시간 도상 인식</div><div class="ar-feat-body">AI가 도상의 위치를 실시간으로 인식하고 해설 카드를 표시합니다.</div></div></div>
+        <div class="ar-feat"><div class="ar-feat-dot"></div><div><div class="ar-feat-title">수몰 복원 모드</div><div class="ar-feat-body">현재 수위 데이터와 연동하여 물속에 잠긴 도상을 실시간으로 투시합니다.</div></div></div>
+        <div class="ar-feat"><div class="ar-feat-dot"></div><div><div class="ar-feat-title">살물 단서 수집</div><div class="ar-feat-body">도상을 스캔할 때마다 단서 카드가 쌓이고 방문 인증 스탬프가 적립됩니다.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WATER ════ -->
+<section id="water" class="water-section">
+  <div class="water-inner">
+    <div>
+      <span class="water-sec-num">04</span>
+      <span class="water-sec-sub">실시간 관람 가능 지수</span>
+      <div class="water-title">오늘 암각화를</div>
+      <span class="water-title-gold">볼 수 있을까요?</span>
+      <div class="water-rule"></div>
+      <p class="water-intro">사연댐 수위에 따라 암각화 노출 상태가 실시간으로 변합니다.<br>방문 전 반드시 확인하세요.</p>
+      <div class="water-cond-list">
+        <div class="water-cond"><div class="water-cond-label">· 암각화 노출 상태</div><div class="water-cond-sublabel">현재 수위 기준 전체 도상 노출률</div><div class="water-cond-value" id="w-exp" style="color:#C9A66B;">84% 노출</div></div>
+        <div class="water-cond"><div class="water-cond-label">· 현장 해설 운영</div><div class="water-cond-sublabel">전문 해설사 탐방 오늘 정상 운영</div><div class="water-cond-value" style="color:#4a9a58;">10:00 / 13:00 / 15:00</div></div>
+        <div class="water-cond"><div class="water-cond-label">· AR 앱 연동 상태</div><div class="water-cond-sublabel">실시간 수위 데이터 AR 앱 동기화</div><div class="water-cond-value" style="color:#4a9a58;">동기화 완료</div></div>
+        <div class="water-cond"><div class="water-cond-label">· 예상 최적 관람일</div><div class="water-cond-sublabel">수위 예보 기준 도상 최대 노출 예상</div><div class="water-cond-value" style="color:#C9A66B;">4월 12일 (토)</div></div>
+      </div>
+    </div>
+    <div class="water-right">
+      <div class="gauge-box">
+        <div class="gauge-water" id="gauge-water" style="height:55%;"><div class="gauge-shim"></div></div>
+        <div class="gauge-glyph-layer">
+          <svg width="323" height="180" viewBox="0 0 500 279" preserveAspectRatio="xMidYMid meet" style="position:relative;z-index:3;"><path d="M 10.8 160.7 C 9.0 166.2 37.0 163.7 47.6 160.7 C 58.2 157.7 67.6 146.2 74.5 142.7 C 81.4 139.3 74.5 135.8 88.9 140.0 C 103.2 144.2 149.5 164.3 160.7 167.9 C 171.9 171.5 155.7 162.6 156.2 161.6 C 156.6 160.5 147.2 155.0 163.4 161.6 C 179.5 168.2 232.2 193.9 253.1 201.1 C 274.1 208.3 293.5 206.3 289.0 204.7 C 284.6 203.0 242.8 196.3 226.2 191.2 C 209.6 186.1 197.9 179.1 189.4 174.1 C 180.9 169.2 158.6 158.7 175.0 161.6 C 191.5 164.4 265.7 186.3 288.2 191.2 C 310.6 196.1 311.0 192.1 309.7 191.2 C 308.3 190.3 276.8 186.9 280.1 185.8 C 283.4 184.8 323.6 183.9 329.4 184.9 C 335.3 186.0 321.1 184.8 315.1 192.1 C 309.1 199.4 300.4 219.6 293.5 228.9 C 286.7 238.2 276.3 243.4 273.8 247.8 C 271.2 252.1 270.6 256.0 278.3 254.9 C 285.9 253.9 306.9 249.1 319.6 241.5 C 332.3 233.8 343.1 215.0 354.6 209.2 C 366.1 203.3 388.1 205.9 388.7 206.5 C 389.3 207.1 365.8 203.9 358.2 212.7 C 350.5 221.6 344.7 250.6 342.9 259.4 C 341.1 268.3 342.5 267.8 347.4 265.7 C 352.3 263.6 364.8 257.0 372.5 246.9 C 380.3 236.7 383.9 213.6 394.1 204.7 C 404.2 195.7 422.5 197.5 433.6 193.0 C 444.6 188.5 460.7 177.9 460.5 177.7 C 460.4 177.6 433.9 193.4 432.7 192.1 C 431.5 190.8 456.9 168.5 453.3 169.7 C 449.7 170.9 419.4 194.5 411.1 199.3 C 402.9 204.1 399.8 202.1 403.9 198.4 C 408.1 194.6 437.9 176.2 436.3 176.8 C 434.6 177.4 407.1 197.3 394.1 202.0 C 381.1 206.6 357.7 205.9 358.2 204.7 C 358.6 203.5 387.0 198.5 396.8 194.8 C 406.5 191.1 418.3 181.8 416.5 182.2 C 414.7 182.7 395.1 194.6 386.0 197.5 C 376.9 200.3 363.4 201.7 361.8 199.3 C 360.1 196.9 374.3 186.4 376.1 183.1 C 377.9 179.8 369.5 180.4 372.5 179.5 C 375.5 178.6 383.9 182.8 394.1 177.7 C 404.2 172.7 418.9 154.2 433.6 149.0 C 448.2 143.8 473.7 145.9 482.0 146.3 C 490.4 146.8 484.1 152.9 483.8 151.7 C 483.5 150.5 484.4 142.7 480.3 139.1 C 476.1 135.5 470.2 133.2 458.7 130.2 C 447.2 127.2 440.8 124.5 411.1 121.2 C 381.5 117.9 311.2 114.0 281.0 110.4 C 250.7 106.8 238.0 99.5 229.8 99.6 C 221.6 99.8 234.3 108.0 231.6 111.3 C 228.9 114.6 229.4 117.0 213.6 119.4 C 197.9 121.8 159.3 125.4 137.3 125.7 C 115.4 126.0 93.7 124.9 81.7 121.2 C 69.7 117.4 71.2 107.0 65.5 103.2 C 59.8 99.5 48.8 94.7 47.6 98.7 C 46.4 102.8 64.5 117.1 58.3 127.5 C 52.2 137.8 12.6 155.1 10.8 160.7 Z" fill="#C9A66B" stroke="none"/> <path d="M 167.9 170.6 C 171.0 172.5 180.4 177.6 188.5 181.3 C 196.6 185.1 210.5 190.8 216.3 193.0 C 222.2 195.2 222.0 194.2 223.5 194.8 C 225.0 195.4 224.0 195.8 225.3 196.6 C 226.7 197.3 227.9 197.9 231.6 199.3 C 235.3 200.6 241.6 202.9 247.8 204.7 C 253.9 206.5 262.4 208.7 268.4 210.1 C 274.4 211.4 280.2 212.4 283.7 212.7 C 287.1 213.0 289.0 212.0 289.0 211.8 C 289.0 211.7 287.6 212.4 283.7 211.8 C 279.8 211.3 272.0 209.8 265.7 208.3 C 259.4 206.8 251.0 204.4 246.0 202.9 C 240.9 201.4 239.2 200.9 235.2 199.3 C 231.1 197.6 225.5 194.5 221.7 193.0 C 218.0 191.5 217.8 192.3 212.7 190.3 C 207.7 188.4 198.4 184.8 191.2 181.3 C 184.0 177.9 173.5 171.5 169.7 169.7 C 165.8 167.9 164.7 168.6 167.9 170.6 Z" fill="#C9A66B" stroke="none"/></svg>
+        </div>
+        <div class="gauge-scale">
+          <span class="gs-val">~53m</span>
+          <span class="gs-val">~50m</span>
+          <span class="gs-val">~47m</span>
+          <span class="gs-val">~44m</span>
+        </div>
+      </div>
+      <div class="dam-num-wrap">
+        <span class="dam-num" id="dam-num">46.0</span>
+        <span class="dam-unit">m</span>
+      </div>
+      <span class="dam-status st-warn" id="dam-status">관람 가능 (부분 노출)</span>
+      <div class="water-div-line"></div>
+      <span class="sim-label-text">수위 시뮬레이터 — 드래그하여 변경</span>
+      <input type="range"
+       class="water-slider"
+       id="water-slider"
+       min="44"
+       max="53"
+       step="0.1"
+       value="46">
+    </div>
+  </div>
+</section>
+
+<!-- ════ 체험 프로그램 ════ -->
+<section id="exp" class="exp-section">
+  <div class="exp-inner">
+    <div class="exp-header">
+      <span class="exp-sec-num">05</span>
+      <span class="exp-sec-sub">체험 프로그램</span>
+      <div class="exp-title">암각화의 모든 것을<br><span class="exp-title-gold">느끼고 경험하세요</span></div>
+      <div class="exp-rule"></div>
+      <p class="exp-desc">반구대 암각화의 다양한 체험을 통해 역사의 깊이를 직접 느껴보세요.</p>
+    </div>
+    <!-- 이미지 슬라이드 카드 -->
+    <div class="img-card-wrap">
+      <div class="img-card" style="background-image:url('https://i.imgur.com/yiaR4ZT.png');">
+        <div class="img-card-overlay">
+          <h3>스탬프 체험</h3>
+          <p>6개의 스탬프를 찍으며 그림을 완성하세요.</p>
+        </div>
+      </div>
+      <div class="img-card" style="background-image:url('https://i.imgur.com/y9oxHwt.png');">
+        <div class="img-card-overlay">
+          <h3>암각화 탁본 체험</h3>
+          <p>복제 암각화 위에 한지를 올려 탁본을 직접 제작. 완성된 탁본은 기념품으로 가져갑니다.</p>
+        </div>
+      </div>
+      <div class="img-card" style="background-image:url('https://i.imgur.com/VCd6CXT.png');">
+        <div class="img-card-overlay">
+          <h3>해설사 탐방 코스</h3>
+          <p>전문 문화재 해설사와 함께 대곡천 산책로를 따라 2시간 현장 탐방</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 커뮤니티 ════ -->
+<section id="community" class="community-section">
+  <div class="community-inner">
+    <span class="comm-sec-num">06</span>
+    <span class="comm-sec-sub">커뮤니티</span>
+    <div class="comm-title">질문하고, 기록하고,<br><span class="comm-title-gold">당신의 탐방을 기록으로 남기세요</span></div>
+    <div class="comm-rule"></div>
+    <div class="comm-cols">
+      <div class="comm-col">
+        <div class="comm-col-title">Q&A 게시판</div>
+        <div class="comm-col-desc">궁금한 점을 남겨주세요. 문화재 전문가가 답변합니다.</div>
+        <div class="qa-item"><div class="qa-q-text">사연댐 수위가 높을 때도 관람 가능한가요?</div><div class="qa-meta"><span>2025.11.10</span><span class="qa-ans">답변 2</span></div></div>
+        <div class="qa-item"><div class="qa-q-text">AR 앱은 어디서 다운받을 수 있나요?</div><div class="qa-meta"><span>2026.01.08</span><span class="qa-ans">답변 1</span></div></div>
+        <div class="qa-item"><div class="qa-q-text">아이와 함께 방문 시 추천 코스는?</div><div class="qa-meta"><span>2024.11.05</span><span class="qa-ans">답변 3</span></div></div>
+        <button class="qa-ask-btn">질문 작성하기 →</button>
+      </div>
+      <div class="comm-col">
+        <div class="comm-col-title">디지털 방명록</div>
+        <div class="comm-col-desc">방문의 기억을 7,000년의 기록에 더하세요.</div>
+        <label class="gf-label">이름</label><input type="text" class="gf-input" id="gf-name" placeholder="이름을 입력하세요">
+        <label class="gf-label">메시지</label><textarea class="gf-textarea" id="gf-msg" placeholder="7,000년의 침묵을 해독하다."></textarea>
+        <button class="gf-submit" onclick="addGuestbook(this)">방명록 남기기 →</button>
+        <div class="gf-entries" id="gf-entries">
+          <div class="gf-entry"><div class="gf-entry-name">김민준 · 2024.12.11</div><div class="gf-entry-msg">아이들과 함께 보러 왔는데 좋았습니다.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 오시는 길 ════ -->
+<section id="access" class="access-section">
+  <div class="access-inner">
+    <span class="access-sub">오시는 길</span>
+    <div class="access-title">울산광역시 울주군 언양읍</div>
+    <div class="access-cols">
+      <div class="access-col"><div class="ac-title">대중교통 <span class="ac-detail">자세히</span></div><div class="ac-row"><span class="ac-key">버스</span><span class="ac-val">언양터미널 → 반구대 직행 (328번)</span></div><div class="ac-row"><span class="ac-key">KTX</span><span class="ac-val">울산역 → 언양 버스 환승 (약 40분)</span></div></div>
+      <div class="access-col"><div class="ac-title">자가용 <span class="ac-detail">자세히</span></div><div class="ac-row"><span class="ac-key">경부고속도</span><span class="ac-val">언양 IC → 24번 국도 → 약 15분</span></div><div class="ac-row"><span class="ac-key">주차</span><span class="ac-val">박물관 앞 무료 주차장</span></div></div>
+      <div class="access-col"><div class="ac-title">관람 안내 <span class="ac-detail">자세히</span></div><div class="ac-row"><span class="ac-key">하절기</span><span class="ac-val">3~10월 09:00–18:00</span></div><div class="ac-row"><span class="ac-key">동절기</span><span class="ac-val">11~2월 09:00–17:00</span></div><div class="ac-row"><span class="ac-key">휴관</span><span class="ac-val">매주 월요일 · 1월 1일</span></div><div class="ac-row"><span class="ac-key">입장료</span><span class="ac-val">성인 2,000원 / 울산시민 무료</span></div></div>
+    </div>
+    <div class="access-bottom">
+      <div class="ab-contact">
+        <div><div class="ab-contact-label">고객센터</div><div class="ab-contact-num"><span>☎</span>052-229-4797</div></div>
+        <div><div class="ab-contact-label">팩스</div><div class="ab-contact-num"><span>✆</span>052-229-4797</div></div>
+      </div>
+      <div>
+        <div class="ab-partner-label">협력기관</div>
+        <div class="ab-partners"><span class="ab-partner">울산광역시</span><span class="ab-partner">문화재청</span><span class="ab-partner">한국지질자원연구원</span><span class="ab-partner">울주군청</span><span class="ab-partner">KIGAM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="ft-logo">반구대 암각화</div>
+  <div class="ft-info">울산광역시 울주군 언양읍 반구대안길 285 · TEL 052-229-4797<br>© 반구대 암각화 체험 웹사이트 · 교육 목적 시뮬레이션</div>
+  <div class="ft-copy">Bangudae ✦ 2024</div>
+</footer>
+
+<script>
+/* ══ 공통 ══ */
+window.addEventListener('scroll',()=>{document.querySelector('header').style.borderBottomColor=scrollY>10?'rgba(201,166,107,.12)':'rgba(201,166,107,.08)';},{passive:true});
+
+function toggleExpand(btn){const ex=btn.nextElementSibling;const open=ex.style.maxHeight==='0px'||!ex.style.maxHeight;ex.style.maxHeight=open?'400px':'0px';btn.textContent=open?'접기':'더 읽기';}
+
+/* ══ 글로우 해독 ══ */
+const GD=[
+  {id:0,g:'sea',x:.18,y:.3,svg:`<svg width="168" height="78" viewBox="0 0 168 78" fill="none"><path d="M7 43Q27 13 70 21Q113 7 147 25Q161 17 165 35Q167 47 155 53Q117 65 67 57Q23 61 9 47Z" stroke="#C9A66B" stroke-width="2.2" fill="rgba(201,166,107,.13)"/><path d="M165 35Q173 41 169 53" stroke="#C9A66B" stroke-width="1.8" fill="none"/><path d="M63 55Q77 71 89 61" stroke="#C9A66B" stroke-width="1.6" fill="none"/><circle cx="151" cy="25" r="4.5" fill="#C9A66B" opacity=".9"/></svg>`,q:'이 암각화는 무엇일까요?',choices:['귀신고래','혹등고래','범고래','상어'],answer:0,desc:'세계 최초의 고래 사냥 기록입니다.'},
+  {id:1,g:'sea',x:.52,y:.22,svg:`<svg width="148" height="90" viewBox="0 0 148 90" fill="none"><path d="M9 57Q37 27 73 37Q107 21 131 39Q139 31 141 47Q143 57 131 63Q95 77 53 67Q15 69 11 59Z" stroke="#C9A66B" stroke-width="2" fill="rgba(201,166,107,.11)"/><path d="M81 35Q77 19 69 7M81 35Q85 17 93 5" stroke="#C9A66B" stroke-width="1.4" fill="none" opacity=".85"/><circle cx="125" cy="39" r="3.5" fill="#C9A66B" opacity=".85"/></svg>`,q:'물을 뿜는 이 도상은?',choices:['분기고래','귀신고래','돌고래','참고래'],answer:0,desc:'두 갈래 물줄기가 정밀하게 묘사됩니다.'},
+  {id:2,g:'sea',x:.8,y:.36,svg:`<svg width="153" height="73" viewBox="0 0 153 73" fill="none"><path d="M5 37Q19 13 49 19Q81 7 109 17Q129 11 137 25Q141 33 135 41Q111 53 69 49Q29 51 7 41Z" stroke="#C9A66B" stroke-width="2" fill="rgba(201,166,107,.11)"/><path d="M137 25Q143 21 145 29Q143 37 137 33" stroke="#C9A66B" stroke-width="1.5" fill="none"/><line x1="55" y1="11" x2="91" y2="19" stroke="#C9A66B" stroke-width="1.1" stroke-dasharray="4,3" opacity=".55"/><polygon points="55,7 51,13 59,13" fill="#C9A66B" opacity=".55"/></svg>`,q:'작살이 꽂힌 이 장면은?',choices:['고래 포획 장면','물고기 떼','바다거북','뱃놀이'],answer:0,desc:'세계 최초의 포경 기록입니다.'},
+  {id:3,g:'land',x:.14,y:.62,svg:`<svg width="148" height="102" viewBox="0 0 148 102" fill="none"><path d="M15 55Q21 25 61 17Q101 7 125 31Q143 47 135 71Q119 91 71 89Q23 89 15 59Z" stroke="#C9A66B" stroke-width="2" fill="rgba(201,166,107,.11)"/><path d="M125 31Q143 17 147 35Q143 51 125 43" stroke="#C9A66B" stroke-width="1.6" fill="none"/><circle cx="117" cy="35" r="4" fill="#C9A66B" opacity=".88"/></svg>`,q:'이 짐승은 무엇일까요?',choices:['호랑이','사슴','멧돼지','곰'],answer:0,desc:'완전한 측면 묘사의 맹수입니다.'},
+  {id:4,g:'land',x:.44,y:.68,svg:`<svg width="118" height="118" viewBox="0 0 118 118" fill="none"><ellipse cx="59" cy="70" rx="43" ry="31" stroke="#C9A66B" stroke-width="2" fill="rgba(201,166,107,.11)"/><line x1="59" y1="39" x2="59" y2="19" stroke="#C9A66B" stroke-width="1.8"/><ellipse cx="59" cy="11" rx="15" ry="11" stroke="#C9A66B" stroke-width="1.6" fill="rgba(201,166,107,.08)"/><path d="M51 3L43 -7M67 3L75 -7" stroke="#C9A66B" stroke-width="1.3"/><circle cx="51" cy="9" r="3.2" fill="#C9A66B" opacity=".8"/><circle cx="67" cy="9" r="3.2" fill="#C9A66B" opacity=".8"/></svg>`,q:'큰 뿔의 이 동물은?',choices:['사슴','노루','호랑이','멧돼지'],answer:0,desc:'정면에 가까운 각도로 묘사됩니다.'},
+  {id:5,g:'land',x:.72,y:.72,svg:`<svg width="142" height="92" viewBox="0 0 142 92" fill="none"><path d="M17 55Q21 27 55 19Q89 9 117 29Q137 43 131 65Q117 85 67 83Q21 83 17 59Z" stroke="#C9A66B" stroke-width="2" fill="rgba(201,166,107,.11)"/><path d="M117 29Q135 17 139 29Q135 43 117 37" stroke="#C9A66B" stroke-width="1.6" fill="none"/><circle cx="111" cy="33" r="3.5" fill="#C9A66B" opacity=".82"/></svg>`,q:'뭉툭한 주둥이의 이 짐승은?',choices:['멧돼지','곰','사슴','호랑이'],answer:0,desc:'짧은 다리와 두꺼운 몸통의 정밀한 관찰입니다.'},
+  {id:6,g:'human',x:.28,y:.48,svg:`<svg width="83" height="138" viewBox="0 0 83 138" fill="none"><ellipse cx="41" cy="17" rx="13" ry="13" stroke="#C9A66B" stroke-width="1.8" fill="rgba(201,166,107,.11)"/><line x1="41" y1="30" x2="41" y2="76" stroke="#C9A66B" stroke-width="1.8"/><path d="M41 51 L15 69 M41 51 L67 69" stroke="#C9A66B" stroke-width="1.8"/><line x1="41" y1="76" x2="25" y2="116" stroke="#C9A66B" stroke-width="1.8"/><line x1="41" y1="76" x2="57" y2="116" stroke="#C9A66B" stroke-width="1.8"/><path d="M65 39 Q81 49 65 65" stroke="#C9A66B" stroke-width="1.7" fill="none"/><line x1="65" y1="39" x2="7" y2="55" stroke="#C9A66B" stroke-width="1.5"/><polygon points="7,51 3,57 11,57" fill="#C9A66B" opacity=".72"/></svg>`,q:'활을 든 이 인물은?',choices:['활 든 사냥꾼','어부','부족장','제사장'],answer:0,desc:'선사시대 수렵 활동의 핵심 도상입니다.'},
+  {id:7,g:'human',x:.58,y:.55,svg:`<svg width="152" height="98" viewBox="0 0 152 98" fill="none"><path d="M7 29Q13 13 25 17 L143 29Q149 33 143 37 L7 29Q1 25 7 29Z" stroke="#C9A66B" stroke-width="1.6" fill="rgba(201,166,107,.07)"/><path d="M7 71Q1 81 5 87 L143 73Q149 69 143 65 L7 71Z" stroke="#C9A66B" stroke-width="1.6" fill="rgba(201,166,107,.07)"/><path d="M7 29L7 71 M33 31L33 69 M59 31L59 69 M85 29L85 71 M111 29L111 71 M143 29L143 73" stroke="#C9A66B" stroke-width="1.2"/><path d="M7 43L143 39 M7 57L143 53" stroke="#C9A66B" stroke-width=".85" opacity=".6"/></svg>`,q:'이 격자 도상은 무엇일까요?',choices:['어로 그물','울타리','집','달력'],answer:0,desc:'집단 투망 어업의 증거입니다.'},
+  {id:8,g:'human',x:.86,y:.58,svg:`<svg width="142" height="108" viewBox="0 0 142 108" fill="none"><ellipse cx="35" cy="19" rx="12" ry="12" stroke="#C9A66B" stroke-width="1.7" fill="rgba(201,166,107,.11)"/><line x1="35" y1="31" x2="35" y2="68" stroke="#C9A66B" stroke-width="1.7"/><path d="M35 47 L13 61 M35 47 L57 61" stroke="#C9A66B" stroke-width="1.7"/><line x1="35" y1="68" x2="23" y2="96" stroke="#C9A66B" stroke-width="1.7"/><line x1="35" y1="68" x2="47" y2="96" stroke="#C9A66B" stroke-width="1.7"/><ellipse cx="107" cy="25" rx="12" ry="12" stroke="#C9A66B" stroke-width="1.7" fill="rgba(201,166,107,.11)"/><line x1="107" y1="37" x2="107" y2="74" stroke="#C9A66B" stroke-width="1.7"/><path d="M107 53 L85 65 M107 53 L129 65" stroke="#C9A66B" stroke-width="1.7"/><line x1="107" y1="74" x2="95" y2="102" stroke="#C9A66B" stroke-width="1.7"/><line x1="107" y1="74" x2="119" y2="102" stroke="#C9A66B" stroke-width="1.7"/><path d="M57 61 Q71 57 85 65" stroke="#C9A66B" stroke-width="1.1" stroke-dasharray="4,3" opacity=".6"/></svg>`,q:'두 인물이 함께하는 이 장면은?',choices:['집단 사냥 장면','두 친구','이주 장면','의식 장면'],answer:0,desc:'집단 협업의 핵심 증거입니다.'},
+];
+const CHAPS={
+  sea:{ey:'🌊 바다 계열 클리어',ti:'바다를 읽은<br><em>사람들</em>',bd:'귀신고래, 분기고래, 포획 장면. 세 도상은 세계 최초의 포경 매뉴얼입니다.'},
+  land:{ey:'🏔 산 계열 클리어',ti:'두 세계의<br><em>경계</em>',bd:'호랑이는 완전 측면, 사슴은 정면에 가깝게. 선사인의 인식 체계가 그대로 새겨져 있습니다.'},
+  human:{ey:'🏹 사람 계열 클리어',ti:'집단으로<br><em>살아남다</em>',bd:'사냥꾼, 그물, 집단 사냥. 반구대는 협업이 7,000년 전부터 존재했음을 증명합니다.'},
+};
+const gcv=document.getElementById('gc'),gctx=gcv.getContext('2d');
+let gmx=0,gmy=0;const gtr=[];const GTMAX=32;
+const gsolved=new Set(),gdone={sea:0,land:0,human:0},gclear={sea:false,land:false,human:false};
+let gsel=null;const gels={};
+function resizeGC(){const dm=document.querySelector('.decipher-main');gcv.width=dm.offsetWidth;gcv.height=dm.offsetHeight-54;}
+resizeGC();window.addEventListener('resize',resizeGC);
+function drawGC(){
+  gctx.clearRect(0,0,gcv.width,gcv.height);
+  gtr.forEach((pt,i)=>{const a=(i/GTMAX)*pt.life;const r=120+(i/GTMAX)*80;const g=gctx.createRadialGradient(pt.x,pt.y,0,pt.x,pt.y,r);g.addColorStop(0,`rgba(201,166,107,${a*.34})`);g.addColorStop(.45,`rgba(201,166,107,${a*.13})`);g.addColorStop(1,'transparent');gctx.fillStyle=g;gctx.fillRect(pt.x-r,pt.y-r,r*2,r*2);});
+  gsolved.forEach(id=>{const d=GD[id];const x=d.x*gcv.width,y=d.y*gcv.height,r=200;const g=gctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'rgba(201,166,107,.24)');g.addColorStop(.5,'rgba(201,166,107,.09)');g.addColorStop(1,'transparent');gctx.fillStyle=g;gctx.fillRect(x-r,y-r,r*2,r*2);});
+  if(gsel!==null&&!gsolved.has(gsel)){const d=GD[gsel];const x=d.x*gcv.width,y=d.y*gcv.height,r=220;const g=gctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'rgba(201,166,107,.3)');g.addColorStop(.5,'rgba(201,166,107,.12)');g.addColorStop(1,'transparent');gctx.fillStyle=g;gctx.fillRect(x-r,y-r,r*2,r*2);}
+  requestAnimationFrame(drawGC);
+}
+drawGC();
+setInterval(()=>{for(let i=gtr.length-1;i>=0;i--){gtr[i].life-=.05;if(gtr[i].life<=0)gtr.splice(i,1);}},28);
+const dmEl=document.querySelector('.decipher-main');
+dmEl.addEventListener('mousemove',e=>{const r=dmEl.getBoundingClientRect();gmx=e.clientX-r.left;gmy=e.clientY-r.top;gtr.push({x:gmx,y:gmy,life:1});if(gtr.length>GTMAX)gtr.shift();GD.forEach(d=>{const el=gels[d.id];if(!el)return;const gx=d.x*gcv.width,gy=d.y*gcv.height;const dist=Math.hypot(gmx-gx,gmy-gy);if(dist<120&&!gsolved.has(d.id))el.classList.add('hover');else if(gsel!==d.id&&!gsolved.has(d.id))el.classList.remove('hover');});});
+const gscene=document.getElementById('gscene');
+GD.forEach(d=>{const el=document.createElement('div');el.className='glyph';el.style.left=(d.x*100)+'%';el.style.top=(d.y*100)+'%';el.innerHTML=d.svg;el.addEventListener('click',()=>openQuiz(d.id,el));gscene.appendChild(el);gels[d.id]=el;});
+function openQuiz(id,el){
+  if(gsolved.has(id))return;gsel=id;const d=GD[id];
+  Object.values(gels).forEach(e=>e.classList.remove('hover'));el.classList.add('hover');
+  const pop=document.getElementById('qpop');
+  const gx=d.x*gcv.width,gy=d.y*gcv.height;
+  const W=284,BH=54;
+  let px=gx+140>gcv.width-W?gx-W-16:gx+140;
+  let py=Math.max(60,Math.min(gy-90,gcv.height-320-BH));
+  pop.style.left=px+'px';pop.style.top=py+'px';
+  document.getElementById('qp-chapter').textContent=d.g==='sea'?'Chapter. 바다':d.g==='land'?'Chapter. 산':'Chapter. 사람';
+  document.getElementById('qp-q').textContent=d.q;
+  document.getElementById('qp-fb').className='qp-fb';document.getElementById('qp-fb').innerHTML='';
+  const cl=document.getElementById('qp-choices');cl.innerHTML='';
+  ['A.','B.','C.','D.'].forEach((lbl,i)=>{const b=document.createElement('button');b.className='qpc';b.innerHTML=`<span class="qpc-label">${lbl}</span>${d.choices[i]}`;b.onclick=()=>answerQuiz(id,i);cl.appendChild(b);});
+  pop.classList.add('show');
+  document.getElementById('g-hint').classList.add('off');
+}
+function answerQuiz(id,idx){
+  const d=GD[id];const btns=document.querySelectorAll('.qpc');const fb=document.getElementById('qp-fb');
+  btns.forEach(b=>b.classList.add('disabled'));
+  if(idx===d.answer){
+    btns[idx].classList.add('correct');fb.innerHTML=`<strong style="color:#7acc88;font-weight:400;">정답 ✓</strong><br>${d.desc}`;fb.classList.add('show');
+    gsolved.add(id);gels[id].classList.remove('hover');gels[id].classList.add('solved');
+    gdone[d.g]++;updateBar();
+    document.getElementById(`dc-${d.g}`).textContent=`${gdone[d.g]}/3`;
+    setTimeout(()=>{closeQuiz();if(gdone[d.g]===3&&!gclear[d.g]){gclear[d.g]=true;setTimeout(()=>showCover(d.g),450);}},2100);
+  }else{
+    btns[idx].classList.add('wrong');fb.innerHTML=`<span style="color:rgba(200,80,80,.65);">오답입니다. 다시 살펴보세요.</span>`;fb.classList.add('show');
+    btns.forEach((b,i)=>{if(i!==idx)b.classList.remove('disabled');});
+  }
+}
+function closeQuiz(){document.getElementById('qpop').classList.remove('show');if(gsel!==null){if(!gsolved.has(gsel))gels[gsel]?.classList.remove('hover');gsel=null;}}
+function updateBar(){
+  ['sea','land','human'].forEach(g=>{const cnt=gdone[g];for(let i=0;i<3;i++){const d=document.getElementById(`dd-${g}-${i}`);d.classList.remove('done','clear');if(gclear[g])d.classList.add('clear');else if(i<cnt)d.classList.add('done');}if(gclear[g])document.getElementById(`db-${g}`).classList.add('show');});
+  if(gclear.sea&&gclear.land&&gclear.human)document.getElementById('dbar-next').classList.add('active');
+}
+function showCover(g){
+  const c=CHAPS[g];document.getElementById('cc-eyebrow').textContent=c.ey;document.getElementById('cc-title').innerHTML=c.ti;document.getElementById('cc-body').textContent=c.bd;
+  const anim=document.getElementById('cc-anim');anim.innerHTML='';
+  if(g==='sea')anim.innerHTML=`<svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 800 560" fill="none"><g class="sea-wave" style="animation:sea-wave 5s ease-in-out infinite;opacity:.16"><path d="M-20 420Q80 400 180 420Q280 440 380 420Q480 400 580 420Q680 440 820 420" stroke="#C9A66B" stroke-width="1.5" fill="none"/></g><g style="animation:sea-whale 6s ease-in-out infinite;transform-origin:400px 280px;"><path d="M200 280Q250 240 320 252Q390 232 450 252Q474 240 480 258Q482 270 470 276Q440 288 370 282Q290 286 206 282Z" stroke="#C9A66B" stroke-width="2.8" fill="rgba(201,166,107,.16)"/><path d="M480 258Q494 248 496 262Q492 274 480 268" stroke="#C9A66B" stroke-width="2.2" fill="none"/><circle cx="466" cy="244" r="5.5" fill="#C9A66B" opacity=".92"/></g><circle cx="320" cy="228" r="4" fill="rgba(201,166,107,.45)" style="animation:sea-bub 3.5s ease infinite;"/></svg>`;
+  else if(g==='land')anim.innerHTML=`<svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 800 560" fill="none"><path d="M0 520L140 250L300 380L460 170L620 300L800 210L800 560L0 560Z" fill="rgba(201,166,107,.035)"/><g style="animation:sc-tiger 7s ease-in-out infinite;transform-origin:400px 320px;"><path d="M280 320Q292 278 342 268Q392 258 418 278Q436 268 440 286Q442 298 432 306Q400 320 358 314Q304 318 282 322Z" stroke="#C9A66B" stroke-width="2.5" fill="rgba(201,166,107,.14)"/><circle cx="430" cy="274" r="4.5" fill="#C9A66B" opacity=".9"/></g></svg>`;
+  else anim.innerHTML=`<svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 800 560" fill="none"><g style="animation:hunt-bow 4s ease-in-out infinite;transform-origin:260px 200px;"><ellipse cx="260" cy="168" rx="18" ry="18" stroke="#C9A66B" stroke-width="2" fill="rgba(201,166,107,.12)"/><line x1="260" y1="186" x2="260" y2="248" stroke="#C9A66B" stroke-width="2"/><path d="M260 214L226 236M260 214L294 236" stroke="#C9A66B" stroke-width="2"/><line x1="260" y1="248" x2="238" y2="300" stroke="#C9A66B" stroke-width="2"/><line x1="260" y1="248" x2="282" y2="300" stroke="#C9A66B" stroke-width="2"/></g><g style="animation:hunt-arrow 3s ease-in-out infinite;transform-origin:290px 218px;"><line x1="290" y1="218" x2="440" y2="164" stroke="#C9A66B" stroke-width="1.8"/><polygon points="440,160 448,168 436,170" fill="#C9A66B" opacity=".85"/></g></svg>`;
+  document.getElementById('chapter-cover').classList.add('show');
+}
+function closeCover(){document.getElementById('chapter-cover').classList.remove('show');}
+
+/* ══ 경계 드래그 ══ */
+const zones={threat:[],hunt:[]};
+function dstart(e){e.dataTransfer.setData('text/plain',JSON.stringify({name:e.currentTarget.dataset.name,type:e.currentTarget.dataset.type}));}
+function renderZones(){['threat','hunt'].forEach(zk=>{const el=document.getElementById('dz-'+zk);if(!el)return;el.innerHTML=zones[zk].map(c=>`<span class="dz-chip" onclick="rmCard('${zk}','${c.name}')">${c.name} ✕</span>`).join('');});}
+function dropCard(e,zk){
+  e.preventDefault();
+  var d=JSON.parse(e.dataTransfer.getData('text/plain'));
+  if(!zones[zk].find(function(c){return c.name===d.name;}))zones[zk].push(d);
+  renderZones();updateLifeScene();
+}
+function rmCard(zk,n){zones[zk]=zones[zk].filter(c=>c.name!==n);renderZones();updateLifeScene();}
+function resetZones(){zones.threat=[];zones.hunt=[];renderZones();updateLifeScene();}
+document.querySelectorAll('.drop-zone').forEach(z=>{z.addEventListener('dragover',()=>z.classList.add('over'));z.addEventListener('dragleave',()=>z.classList.remove('over'));z.addEventListener('drop',()=>z.classList.remove('over'));});
+function updateLifeScene(){
+  var t=zones.threat.length,h=zones.hunt.length;
+  var sv=document.getElementById('scene-svg');
+  var info=document.getElementById('scene-info');
+  var txt=document.getElementById('scene-txt');
+  var bdg=document.getElementById('scene-badges');
+  var res=document.getElementById('ch2-res');
+  var PREY=new Set(['사슴','노루','물고기']);
+  var PRED=new Set(['호랑이','멧돼지','늑대']);
+  var threatHasPrey=zones.threat.some(function(c){return PREY.has(c.name);});
+  var huntHasPred=zones.hunt.some(function(c){return PRED.has(c.name);});
+  var animalIMG={
+    '호랑이':`<image href="https://i.imgur.com/ASnRG9y.png" x="0" y="0" width="283" height="150" preserveAspectRatio="xMidYMid meet"/>`,'멧돼지':`<image href="https://i.imgur.com/8OLXqwA.png" x="0" y="0" width="186" height="130" preserveAspectRatio="xMidYMid meet"/>`,'늑대':`<g transform="translate(208,0) scale(-1,1)"><image href="https://i.imgur.com/RQxcwz7.png" x="0" y="0" width="208" height="130" preserveAspectRatio="xMidYMid meet"/></g>`,
+    '사슴':`<image href="https://i.imgur.com/ztjNftM.png" x="0" y="0" width="80" height="160" preserveAspectRatio="xMidYMid meet"/>`,'노루':`<image href="https://i.imgur.com/b1Xfpr2.png" x="0" y="0" width="87" height="150" preserveAspectRatio="xMidYMid meet"/>`
+  };
+  function place(list,baseX,baseY){
+    return list.map(function(c,i){
+      var s=animalIMG[c.name]||'';
+      return s.replace(/x="0"/,'x="'+(baseX+i*200)+'"').replace(/y="0"/,'y="'+baseY+'"');
+    }).join('');
+  }
+  if(t===0&&h===0){
+    if(info)info.style.display='none';
+    sv.innerHTML='<rect width="1280" height="860" fill="#06060a"/><text x="640" y="440" text-anchor="middle" fill="rgba(201,166,107,.2)" font-size="18" font-family="serif">도상을 배치하면 장면이 달라집니다</text>';
+    if(res)res.textContent='아직 배치하지 않았습니다.';return;
+  }
+  if(info)info.style.display='flex';
+  var tA=place(zones.threat,380,360),hA=place(zones.hunt,560,320);
+  if(threatHasPrey&&!huntHasPred){
+    if(txt){txt.style.color='rgba(160,210,160,.9)';txt.textContent='먹잇감이 위협 구역에 평화롭게 서식합니다. 맹수가 없는 낙원 같은 환경입니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(100,200,130,.12);color:rgba(160,210,160,.9);">낙원 환경</span>';
+    if(res)res.textContent='먹잇감이 위협구역 점령 — 낙원';
+    sv.innerHTML=`<rect width="1280" height="860" fill="#081208"/><path d="M0 560Q300 536 640 548Q960 536 1280 560L1280 860L0 860Z" fill="#0e2010"/><g style="animation:sc-deer 1.5s ease-in-out infinite;" opacity="0.9">${tA}</g><g style="animation:sc-deer 2s ease-in-out infinite;animation-delay:.6s;" opacity="0.75">${hA}</g><image href="https://i.imgur.com/GebNK9Q.png" x="180" y="468" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><text x="640" y="840" text-anchor="middle" fill="rgba(100,200,130,.3)" font-size="15" font-family="serif">낙원 환경 · 맹수 없음</text>`;
+  }else if(huntHasPred){
+    if(txt){txt.style.color='rgba(220,100,80,.9)';txt.textContent='맹수가 사냥감 구역을 침입했습니다! 기근이 찾아옵니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(192,60,60,.15);color:rgba(220,100,80,.9);">구역 침입</span>';
+    if(res)res.textContent='맹수가 사냥감구역 침입 — 기근 위기';
+    sv.innerHTML=`<rect width="1280" height="860" fill="#0e0505"/><path d="M0 560Q300 536 640 548Q960 536 1280 560L1280 860L0 860Z" fill="#1a0808" opacity=".8"/><g style="animation:sc-tiger 4s ease-in-out infinite;" opacity="0.88">${hA}</g><g style="animation:sc-tiger 5.5s ease-in-out infinite;" opacity="0.55">${tA}</g><image href="https://i.imgur.com/WvcOO4u.png" x="130" y="460" width="51" height="72" preserveAspectRatio="xMidYMid meet"/><text x="640" y="840" text-anchor="middle" fill="rgba(200,80,60,.3)" font-size="15" font-family="serif">구역 침입 · 생태계 붕괴</text>`;
+  }else if(t>0&&h===0){
+    if(txt){txt.style.color='rgba(220,130,120,.9)';txt.textContent=t>=3?'극도로 위험합니다.':'위협적인 환경입니다. 부족은 이동 생활을 합니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(192,80,80,.15);color:rgba(220,130,120,.9);">이동 생활</span>';
+    if(res)res.textContent='맹수 '+t+'종 배치 — 이동 생활';
+    sv.innerHTML=`<rect width="1280" height="860" fill="#0a0606"/><path d="M0 480Q90 440 180 462Q260 422 340 447L340 860L0 860Z" fill="#180808" opacity=".85"/><ellipse cx="160" cy="480" rx="80" ry="46" fill="#050202"/><text x="160" y="490" text-anchor="middle" fill="rgba(201,166,107,.22)" font-size="16" font-family="serif">동굴</text><g style="transform-origin:270px 468px;animation:sc-flame 1.1s ease-in-out infinite;"><path d="M254 484Q270 446 286 464Q302 426 318 484Z" fill="#e85d24" opacity=".92"/></g><image href="https://i.imgur.com/WvcOO4u.png" x="130" y="460" width="51" height="72" preserveAspectRatio="xMidYMid meet"/><g style="animation:sc-tiger 5.5s ease-in-out infinite;" opacity="${t>=3?.9:.65}">${tA}</g><text x="640" y="840" text-anchor="middle" fill="rgba(192,80,80,.3)" font-size="15" font-family="serif">← 이동 생활 →</text>`;
+  }else if(t===0&&h>0){
+    if(txt){txt.style.color='rgba(100,200,130,.9)';txt.textContent=h>=3?'매우 풍요롭습니다.':'풍요로운 환경입니다. 오두막을 짓고 정착 생활을 합니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(74,154,88,.15);color:rgba(100,200,130,.9);">정착 생활</span>';
+    if(res)res.textContent='먹잇감 '+h+'종 배치 — 정착 생활';
+    sv.innerHTML=`<rect width="1280" height="860" fill="#080f08"/><path d="M0 560Q300 536 640 548Q960 536 1280 560L1280 860L0 860Z" fill="#0f200f"/><g style="animation:sc-build .7s ease both;transform-origin:290px 560px;"><path d="M234 560L290 468L346 560Z" stroke="rgba(201,166,107,.45)" stroke-width="1.8" fill="rgba(201,166,107,.09)"/><rect x="248" y="560" width="84" height="52" stroke="rgba(201,166,107,.35)" stroke-width="1.4" fill="rgba(201,166,107,.06)"/></g><g style="animation:sc-deer 2.2s ease-in-out infinite;">${hA}</g><image href="https://i.imgur.com/GebNK9Q.png" x="180" y="468" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><text x="640" y="840" text-anchor="middle" fill="rgba(74,154,88,.3)" font-size="15" font-family="serif">정착 생활</text>`;
+  }else{
+    if(txt){txt.style.color='rgba(220,190,120,.9)';txt.textContent='맹수와 먹잇감이 공존합니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(201,166,107,.12);color:rgba(220,190,120,.9);">계절 이동</span>';
+    if(res)res.textContent='맹수 '+t+'종 + 먹잇감 '+h+'종 — 균형 생태계';
+    sv.innerHTML=`<rect width="1280" height="860" fill="#090e09"/><path d="M0 560Q300 536 640 548Q960 536 1280 560L1280 860L0 860Z" fill="#0f1c0f" opacity=".8"/><g style="animation:sc-tiger 7s ease-in-out infinite;" opacity="0.42">${tA}</g><g style="animation:sc-deer 2.5s ease-in-out infinite;" opacity="0.65">${hA}</g><g style="animation:sc-walk 10s linear infinite;"><image href="https://i.imgur.com/GebNK9Q.png" x="0" y="462" width="39" height="72" preserveAspectRatio="xMidYMid meet"/></g><text x="640" y="840" text-anchor="middle" fill="rgba(201,166,107,.2)" font-size="15" font-family="serif">계절 이동 · 복합 생존</text>`;
+  }
+}
+
+function updateHunt(){
+  var as=hunters.filter(Boolean);var u=new Set(as).size;
+  var hsvg=document.getElementById('hunt-svg');
+  var hinfo=document.getElementById('hunt-info');
+  var txt=document.getElementById('hunt-txt');
+  var bdg=document.getElementById('hunt-badges');
+  var r3=document.getElementById('ch3-res');
+  var hasBow=as.includes('bow'),hasSpear=as.includes('spear'),hasNet=as.includes('net'),hasTorch=as.includes('torch');
+  if(as.length===0){
+    hinfo.style.display='none';
+    hsvg.innerHTML='<rect width="1280" height="800" fill="#06060a"/><text x="640" y="410" text-anchor="middle" fill="rgba(201,166,107,.2)" font-size="18" font-family="serif">도구를 배분하면 사냥 장면이 달라집니다</text>';
+    if(r3)r3.textContent='아직 배분하지 않았습니다.';return;
+  }
+  hinfo.style.display='flex';
+  if(as.length===3&&u===3&&hasBow&&hasSpear&&hasNet){
+    if(txt){txt.style.color='rgba(100,200,130,.9)';txt.textContent='완벽한 분업! 활잡이가 유인하고, 창잡이가 투척하고, 그물잡이가 포위망을 완성합니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(74,154,88,.15);color:rgba(100,200,130,.9);">사냥 성공</span>';
+    if(r3)r3.textContent='활·창·그물 완벽 분업 — 사냥 성공!';
+    hsvg.innerHTML=`<rect width="1280" height="800" fill="#060e0e"/><path d="M0 560Q320 536 640 548Q960 536 1280 560L1280 800L0 800Z" fill="#0a1a1a" opacity=".7"/><image href="https://i.imgur.com/poXRDLB.png" x="300" y="280" width="277" height="180" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/8567uDu.png" x="70" y="390" width="42" height="60" preserveAspectRatio="xMidYMid meet"/><g style="animation:hunt-arrow 3s ease-in-out infinite;transform-origin:190px 440px;"><line x1="190" y1="440" x2="420" y2="360" stroke="#C9A66B" stroke-width="2"/><polygon points="420,354 432,362 418,366" fill="#C9A66B" opacity=".88"/></g><image href="https://i.imgur.com/vzGGYhD.png" x="1060" y="408" width="71" height="54" preserveAspectRatio="xMidYMid meet"/><g style="animation:hunt-spear2 3.5s ease-in-out infinite;transform-origin:1120px 445px;"><line x1="1120" y1="445" x2="800" y2="360" stroke="#C9A66B" stroke-width="2"/><polygon points="800,354 790,362 804,366" fill="#C9A66B" opacity=".88"/></g><g style="animation:hunt-net-drop 2.5s ease infinite;transform-origin:640px 400px;"><image href="https://i.imgur.com/LLetggA.png" x="560" y="390" width="48" height="52" preserveAspectRatio="xMidYMid meet"/></g><text x="640" y="778" text-anchor="middle" fill="rgba(74,154,88,.38)" font-size="15" font-family="serif" letter-spacing="2">집단 포획 성공</text>`;
+  }else if(hasTorch&&as.length>=2){
+    if(txt){txt.style.color='rgba(220,190,120,.9)';txt.textContent='횃불로 야간 사냥을 시도합니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(201,166,107,.12);color:rgba(220,190,120,.9);">야간 사냥</span>';
+    if(r3)r3.textContent=as.map(function(t){return TN[t];}).join(' · ')+' — 야간 사냥';
+    hsvg.innerHTML=`<rect width="1280" height="800" fill="#04080a"/><circle cx="1100" cy="80" r="32" fill="none" stroke="rgba(201,166,107,.18)" stroke-width="1.5"/><circle cx="1116" cy="74" r="28" fill="#04080a"/><image href="https://i.imgur.com/WvcOO4u.png" x="180" y="390" width="51" height="72" preserveAspectRatio="xMidYMid meet"/><g style="transform-origin:248px 360px;animation:sc-flame 1s ease-in-out infinite;"><path d="M232 374Q248 336 264 354Q280 316 296 374Z" fill="#e85d24" opacity=".92"/></g><g style="animation:sc-deer 1s ease-in-out infinite;"><image href="https://i.imgur.com/ztjNftM.png" x="600" y="320" width="80" height="160" preserveAspectRatio="xMidYMid meet"/></g><text x="640" y="778" text-anchor="middle" fill="rgba(201,166,107,.26)" font-size="15" font-family="serif" letter-spacing="2">야간 사냥 — 부분 성공</text>`;
+  }else if(u>=2){
+    if(txt){txt.style.color='rgba(220,190,120,.85)';txt.textContent=as.map(function(t){return TN[t];}).join('과 ')+'로 협력합니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(201,166,107,.1);color:rgba(220,190,120,.8);">부분 성공</span>';
+    if(r3)r3.textContent=as.map(function(t){return TN[t];}).join(' · ')+' — 부분 성공';
+    hsvg.innerHTML=`<rect width="1280" height="800" fill="#080c08"/><path d="M0 560Q320 536 640 548Q960 536 1280 560L1280 800L0 800Z" fill="#0f1c0f" opacity=".7"/><image href="https://i.imgur.com/8567uDu.png" x="170" y="390" width="42" height="60" preserveAspectRatio="xMidYMid meet"/><g style="animation:sc-deer 2.5s ease-in-out infinite;" opacity="0.65"><image href="https://i.imgur.com/ztjNftM.png" x="700" y="320" width="70" height="140" preserveAspectRatio="xMidYMid meet"/></g><text x="640" y="778" text-anchor="middle" fill="rgba(201,166,107,.24)" font-size="15" font-family="serif" letter-spacing="2">부분 분업 — 협력 중</text>`;
+  }else{
+    if(txt){txt.style.color='rgba(200,120,110,.85)';txt.textContent='같은 도구가 중복됩니다.';}
+    if(bdg)bdg.innerHTML='<span class="scene-bdg" style="background:rgba(192,80,80,.12);color:rgba(200,120,110,.85);">역할 중복</span>';
+    if(r3)r3.textContent='역할 중복 — 효율 저하';
+    hsvg.innerHTML=`<rect width="1280" height="800" fill="#0a0606"/><image href="https://i.imgur.com/GebNK9Q.png" x="190" y="408" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/GebNK9Q.png" x="600" y="408" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/GebNK9Q.png" x="1010" y="408" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><text x="640" y="778" text-anchor="middle" fill="rgba(192,80,80,.28)" font-size="15" font-family="serif">역할 중복 — 효율 저하</text>`;
+  }
+}
+
+document.querySelectorAll('.hunter-zone').forEach(z=>{z.addEventListener('dragover',()=>z.classList.add('over'));z.addEventListener('dragleave',()=>z.classList.remove('over'));z.addEventListener('drop',()=>z.classList.remove('over'));});
+
+/* ══ 바다 계절 ══ */
+const SEA={spring:{desc:'봄 · 접근 — 귀신고래 무리가 연안으로 접근합니다.',svg:`<rect width="1280" height="860" fill="#040d10"/><g style="animation:sea-wave 5s ease-in-out infinite;opacity:.18"><path d="M-20 580Q160 558 360 580Q560 602 760 580Q960 558 1160 580Q1260 602 1320 580" stroke="#5dcaa5" stroke-width="1.8" fill="none"/></g><path d="M0 596Q320 580 640 590Q960 580 1280 596L1280 860L0 860Z" fill="rgba(8,28,34,.6)"/><g style="animation:sea-whale 9s linear infinite"><image href="https://i.imgur.com/eJ3jqL9.png" x="40" y="140" width="394" height="220" preserveAspectRatio="xMidYMid meet"/></g><g style="animation:sea-whale 13s linear infinite;animation-delay:1s" opacity="0.82" transform="translate(735,300) scale(-1,1)"><image href="https://i.imgur.com/U6mLvMN.png" x="0" y="0" width="255" height="160" preserveAspectRatio="xMidYMid meet"/></g><g style="animation:sea-whale 11s linear infinite;animation-delay:2.5s" opacity="0.65" transform="translate(442,250) scale(-1,1)"><image href="https://i.imgur.com/FOe7hZH.png" x="0" y="0" width="242" height="130" preserveAspectRatio="xMidYMid meet"/></g><path d="M880 180Q990 152 1090 168" stroke="rgba(201,166,107,.26)" stroke-width="1.4" stroke-dasharray="7,5" fill="none"/><polygon points="1090,162 1104,170 1090,176" fill="rgba(201,166,107,.26)"/><text x="990" y="144" text-anchor="middle" fill="rgba(201,166,107,.34)" font-size="15" font-family="serif">회유 경로</text><image href="https://i.imgur.com/vzGGYhD.png" x="40" y="482" width="71" height="54" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/GebNK9Q.png" x="200" y="487" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/GebNK9Q.png" x="430" y="487" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/WvcOO4u.png" x="680" y="484" width="51" height="72" preserveAspectRatio="xMidYMid meet"/><circle cx="540" cy="270" r="6" fill="rgba(201,166,107,.5)" style="animation:sea-bub 3.8s ease infinite;"/><text x="640" y="840" text-anchor="middle" fill="rgba(201,166,107,.22)" font-size="15" font-family="serif" letter-spacing="3">봄 · 고래 접근 · 관찰 시작</text>`},summer:{desc:'여름 · 포획 — 작살과 그물로 집단 포경합니다.',svg:`<rect width="1280" height="860" fill="#040d10"/><g style="animation:sea-wave 5s ease-in-out infinite;opacity:.18"><path d="M-20 580Q160 558 360 580Q560 602 760 580Q960 558 1160 580Q1260 602 1320 580" stroke="#5dcaa5" stroke-width="1.8" fill="none"/></g><path d="M0 596Q320 580 640 590Q960 580 1280 596L1280 860L0 860Z" fill="rgba(8,28,34,.6)"/><g style="animation:sea-net 1.8s linear infinite;stroke-dasharray:8,5;stroke-dashoffset:0;"><path d="M120 195Q150 100 230 100L690 100Q770 100 800 195Q770 290 690 290L230 290Q150 290 120 195Z" stroke="rgba(201,166,107,.62)" stroke-width="2.2" fill="rgba(201,166,107,.09)"/><path d="M230 100L230 290 M362 94L362 296 M494 92L494 298 M626 92L626 298 M734 94L734 296 M690 100L690 290" stroke="rgba(201,166,107,.3)" stroke-width="1.3"/><path d="M120 195L800 195" stroke="rgba(201,166,107,.24)" stroke-width="1.3"/></g><image href="https://i.imgur.com/poXRDLB.png" x="140" y="112" width="277" height="180" preserveAspectRatio="xMidYMid meet"/><g transform="translate(812,130) scale(-1,1)"><image href="https://i.imgur.com/FOe7hZH.png" x="0" y="0" width="242" height="130" preserveAspectRatio="xMidYMid meet"/></g><g style="animation:sea-spear 3s ease-in-out infinite;transform-origin:50px 532px;"><line x1="50" y1="532" x2="220" y2="270" stroke="#C9A66B" stroke-width="2.4"/><polygon points="220,264 232,274 218,278" fill="#C9A66B" opacity=".92"/></g><image href="https://i.imgur.com/8567uDu.png" x="20" y="462" width="42" height="60" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/WvcOO4u.png" x="410" y="484" width="51" height="72" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/vzGGYhD.png" x="740" y="482" width="71" height="54" preserveAspectRatio="xMidYMid meet"/><text x="640" y="840" text-anchor="middle" fill="rgba(201,166,107,.22)" font-size="15" font-family="serif" letter-spacing="3">여름 · 집단 포경 · 작살+그물</text>`},autumn:{desc:'가을 · 어로 — 대형 그물로 물고기 떼를 집단 포획합니다.',svg:`<rect width="1280" height="860" fill="#06100a"/><g style="animation:sea-wave 5s ease-in-out infinite;opacity:.18"><path d="M-20 580Q160 558 360 580Q560 602 760 580Q960 558 1160 580Q1260 602 1320 580" stroke="#5dcaa5" stroke-width="1.8" fill="none"/></g><path d="M0 596Q320 580 640 590Q960 580 1280 596L1280 860L0 860Z" fill="rgba(8,28,34,.6)"/><g style="animation:sea-net 2.2s linear infinite;stroke-dasharray:6,4;stroke-dashoffset:0;"><path d="M60 205Q90 110 170 110L770 110Q850 110 880 205Q850 300 770 300L170 300Q90 300 60 205Z" stroke="rgba(201,166,107,.58)" stroke-width="2.2" fill="rgba(201,166,107,.09)"/><path d="M170 110L170 300 M312 102L312 308 M454 100L454 310 M584 100L584 310 M714 102L714 308 M770 110L770 300" stroke="rgba(201,166,107,.3)" stroke-width="1.3"/><path d="M60 205L880 205" stroke="rgba(201,166,107,.24)" stroke-width="1.3"/></g><line x1="0" y1="140" x2="60" y2="562" stroke="rgba(201,166,107,.38)" stroke-width="1.8"/><line x1="0" y1="270" x2="60" y2="562" stroke="rgba(201,166,107,.38)" stroke-width="1.8"/><line x1="880" y1="140" x2="1060" y2="562" stroke="rgba(201,166,107,.38)" stroke-width="1.8"/><line x1="880" y1="270" x2="1060" y2="562" stroke="rgba(201,166,107,.38)" stroke-width="1.8"/><g style="animation:sea-fish-right 5s linear infinite;" opacity=".9"><image href="https://i.imgur.com/5OtrCfX.png" x="100" y="175" width="129" height="40" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/5OtrCfX.png" x="248" y="193" width="113" height="35" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/5OtrCfX.png" x="378" y="213" width="121" height="38" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/5OtrCfX.png" x="510" y="185" width="116" height="36" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/5OtrCfX.png" x="642" y="210" width="119" height="37" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/5OtrCfX.png" x="774" y="197" width="106" height="33" preserveAspectRatio="xMidYMid meet"/></g><image href="https://i.imgur.com/LLetggA.png" x="-20" y="462" width="48" height="52" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/GebNK9Q.png" x="220" y="487" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/GebNK9Q.png" x="1020" y="487" width="39" height="72" preserveAspectRatio="xMidYMid meet"/><text x="640" y="840" text-anchor="middle" fill="rgba(201,166,107,.22)" font-size="15" font-family="serif" letter-spacing="3">가을 · 집단 어로 · 대형 그물</text>`},winter:{desc:'겨울 · 기록 — 고래가 남쪽으로 이동합니다.',svg:`<rect width="1280" height="860" fill="#04080c"/><circle cx="60" cy="40" r="2" fill="rgba(201,166,107,.3)"/><circle cx="220" cy="22" r="1.8" fill="rgba(201,166,107,.2)"/><circle cx="380" cy="38" r="2.2" fill="rgba(201,166,107,.3)"/><circle cx="580" cy="20" r="1.8" fill="rgba(201,166,107,.2)"/><circle cx="780" cy="30" r="2" fill="rgba(201,166,107,.3)"/><circle cx="980" cy="18" r="1.6" fill="rgba(201,166,107,.2)"/><circle cx="1160" cy="26" r="2" fill="rgba(201,166,107,.3)"/><circle cx="150" cy="58" r="1.5" fill="rgba(201,166,107,.2)"/><circle cx="500" cy="44" r="1.8" fill="rgba(201,166,107,.2)"/><circle cx="880" cy="34" r="1.8" fill="rgba(201,166,107,.3)"/><circle cx="900" cy="112" r="34" fill="none" stroke="rgba(201,166,107,.18)" stroke-width="1.5"/><circle cx="918" cy="106" r="30" fill="#04080c"/><g style="animation:sea-wave 5s ease-in-out infinite;opacity:.18"><path d="M-20 580Q160 558 360 580Q560 602 760 580Q960 558 1160 580Q1260 602 1320 580" stroke="#5dcaa5" stroke-width="1.8" fill="none"/></g><path d="M0 596Q320 580 640 590Q960 580 1280 596L1280 860L0 860Z" fill="rgba(8,28,34,.6)"/><g style="animation:sea-whale 14s linear infinite" opacity="0.36"><image href="https://i.imgur.com/eJ3jqL9.png" x="40" y="170" width="315" height="176" preserveAspectRatio="xMidYMid meet"/></g><g style="animation:sea-whale 18s linear infinite;animation-delay:2s" opacity="0.22"><image href="https://i.imgur.com/eJ3jqL9.png" x="320" y="250" width="256" height="143" preserveAspectRatio="xMidYMid meet"/></g><path d="M800 220Q920 192 1030 208" stroke="rgba(201,166,107,.22)" stroke-width="1.5" stroke-dasharray="7,5" fill="none"/><polygon points="1030,202 1044,210 1030,216" fill="rgba(201,166,107,.22)"/><text x="920" y="184" text-anchor="middle" fill="rgba(201,166,107,.26)" font-size="14" font-family="serif">남쪽 이동</text><image href="https://i.imgur.com/vzGGYhD.png" x="180" y="482" width="71" height="54" preserveAspectRatio="xMidYMid meet"/><image href="https://i.imgur.com/WvcOO4u.png" x="460" y="484" width="51" height="72" preserveAspectRatio="xMidYMid meet"/><text x="640" y="840" text-anchor="middle" fill="rgba(201,166,107,.22)" font-size="15" font-family="serif" letter-spacing="3">겨울 · 고래 이동 · 암각화 기록</text>`}};
+function seaSeason(btn,s){
+  document.querySelectorAll('.sea-season-btn').forEach(b=>{b.style.borderBottomColor='transparent';b.style.color='rgba(201,166,107,.38)';b.classList.remove('on');});
+  btn.style.borderBottomColor='#C9A66B';btn.style.color='#C9A66B';btn.classList.add('on');
+  const sc=SEA[s];
+  document.getElementById('sea-scene-svg').innerHTML=sc.svg;
+  document.getElementById('sea-scene-desc').textContent=sc.desc;
+}
+(function(){const sv=document.getElementById('sea-scene-svg');const sd=document.getElementById('sea-scene-desc');if(sv&&sd){sv.innerHTML=SEA.spring.svg;sd.textContent=SEA.spring.desc;}})();
+
+/* ══ 수위 ══ */
+function updateDam(v){
+  const pct=((v-44)/(53-44))*100;
+  document.getElementById('gauge-water').style.height=pct+'%';
+  document.getElementById('dam-num').textContent=parseFloat(v).toFixed(1);
+  document.getElementById('water-slider').style.background='linear-gradient(to right,#C9A66B 0%,#C9A66B '+pct+'%,rgba(201,166,107,.12) '+pct+'%)';
+  const ds=document.getElementById('dam-status'),we=document.getElementById('w-exp');
+  if(v<46){ds.className='dam-status st-ok';ds.textContent='최적 관람';we.style.color='#4a9a58';we.textContent='90% 이상 노출';}
+  else if(v<49){ds.className='dam-status st-warn';ds.textContent='관람 가능 (부분 노출)';we.style.color='#C9A66B';we.textContent=Math.round(100-(v-44)*8)+'% 노출';}
+  else{ds.className='dam-status st-bad';ds.textContent='수몰 (관람 어려움)';we.style.color='#c05050';we.textContent='20% 미만 노출';}
+}
+
+/* ══ 탐방 카드 ══ */
+function selectJt(idx){
+  for(var i=0;i<5;i++){
+    var d=document.getElementById('jd-'+i);var c=document.getElementById('jc-'+i);
+    if(d)d.classList.toggle('active',i===idx);if(c)c.classList.toggle('active',i===idx);
+  }
+  var sc=document.getElementById('jt-scroll');var card=document.getElementById('jc-'+idx);
+  if(sc&&card)sc.scrollTo({left:card.offsetLeft-32,behavior:'smooth'});
+}
+
+/* ══ 체험 카드 ══ */
+function toggleSubcard(el){el.classList.toggle('expanded');}
+
+/* ══ 방명록 ══ */
+function addGuestbook(btn){
+  const n=document.getElementById('gf-name').value.trim();const m=document.getElementById('gf-msg').value.trim();
+  if(!n||!m)return;
+  const e=document.createElement('div');e.className='gf-entry';
+  e.innerHTML='<div class="gf-entry-name">'+n+' · 방금</div><div class="gf-entry-msg">'+m+'</div>';
+  document.getElementById('gf-entries').prepend(e);
+  document.getElementById('gf-name').value='';document.getElementById('gf-msg').value='';
+  btn.textContent='✓ 기록되었습니다';setTimeout(()=>btn.textContent='방명록 남기기 →',2500);
+}
+</script>
+<script>
+const slider = document.getElementById('water-slider');
+
+function updateAll() {
+  const min = slider.min;
+  const max = slider.max;
+  const val = slider.value;
+
+  const percent = ((val - min) / (max - min)) * 100;
+
+  /* 슬라이더 색 */
+  slider.style.background =
+    "linear-gradient(to right, #C9A66B 0%, #C9A66B " + percent + "%, rgba(201,166,107,.12) " + percent + "%, rgba(201,166,107,.12) 100%)";
+
+  /* 기존 기능 연결 */
+  if (typeof updateDam === "function") {
+    updateDam(val);
+  }
+}
+
+/* 이벤트 */
+slider.addEventListener('input', updateAll);
+
+/* 처음 실행 */
+updateAll();
+
+/* ══ 챕터 패널 전환 ══ */
+function showChapter(id) {
+  document.querySelectorAll('.ch-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-ch-link').forEach(a => a.classList.remove('active-ch'));
+  const panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active-ch');
+  // 패널 위치로 스크롤 (헤더 108px 오프셋)
+  navTo('panel-wrap');
+  // 사냥 패널 초기화
+  if (id === 'hunting') {
+    const sv = document.getElementById('sea-scene-svg');
+    const sd = document.getElementById('sea-scene-desc');
+    if (sv && sd) { sv.innerHTML = SEA.spring.svg; sd.textContent = SEA.spring.desc; }
+    document.querySelectorAll('.sea-season-btn').forEach((b,i) => {
+      b.classList.toggle('on', i === 0);
+      b.style.borderBottomColor = i === 0 ? '#C9A66B' : 'transparent';
+      b.style.color = i === 0 ? '#C9A66B' : 'rgba(201,166,107,.38)';
+    });
+  }
+}
+
+/* ── 섹션 스크롤 (헤더 오프셋) ── */
+function navTo(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var top = el.getBoundingClientRect().top + window.pageYOffset - 108;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+}
+
+/* ── 더보기 토글 ── */
+function toggleFpExpand(btn) {
+  const ex = btn.nextElementSibling;
+  const open = !ex.style.maxHeight || ex.style.maxHeight === '0px';
+  ex.style.maxHeight = open ? '200px' : '0px';
+  btn.textContent = open ? '접기' : '더 읽기';
+}
+
+/* ── 패널 SVG viewBox 조정: scene-svg, hunt-svg 크기 수정 ── */
+(function() {
+  // updateLifeScene / updateHunt 기존 함수의 SVG 사이즈를 패널 크기에 맞게 오버라이드
+  var _origLife = typeof updateLifeScene === 'function' ? updateLifeScene : null;
+  // scene-svg viewBox를 1120×580으로, hunt-svg를 1120×520으로 설정
+  var sceneSvgOrig = document.getElementById('scene-svg');
+  var huntSvgOrig  = document.getElementById('hunt-svg');
+})();
+
+</script>
+</body>
+</html>
